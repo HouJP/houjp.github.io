@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-23T20:23:47.000Z</updated>
+  <updated>2017-08-25T22:55:29.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,22 +16,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Test</title>
-    <link href="http://yoursite.com/2017/08/23/Test/"/>
-    <id>http://yoursite.com/2017/08/23/Test/</id>
-    <published>2017-08-23T20:23:33.000Z</published>
-    <updated>2017-08-23T20:23:47.000Z</updated>
+    <title>深度学习(Deep Learning)学习资料</title>
+    <link href="http://yoursite.com/2017/08/25/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Deep-Learning-%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/"/>
+    <id>http://yoursite.com/2017/08/25/深度学习-Deep-Learning-学习资料/</id>
+    <published>2017-08-25T22:53:08.000Z</published>
+    <updated>2017-08-25T22:55:29.000Z</updated>
     
-    <content type="html"><![CDATA[<p>this is a test</p>
+    <content type="html"><![CDATA[<h2 id="公开课"><a href="#公开课" class="headerlink" title="公开课"></a>公开课</h2><ul>
+<li><a href="https://www.coursera.org/specializations/deep-learning" target="_blank" rel="external">Deep Learning Specialization</a><ul>
+<li>Neural Networks and Deep Learning</li>
+<li>Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization</li>
+<li>Structuring Machine Learning Projects</li>
+<li>Convolutional Neural Networks</li>
+<li>Sequence Models</li>
+</ul>
+</li>
+</ul>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;this is a test&lt;/p&gt;
-
+      &lt;h2 id=&quot;公开课&quot;&gt;&lt;a href=&quot;#公开课&quot; class=&quot;headerlink&quot; title=&quot;公开课&quot;&gt;&lt;/a&gt;公开课&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.coursera.org/specializations/deep-learn
     
     </summary>
     
+    
+      <category term="Deep Learning" scheme="http://yoursite.com/tags/Deep-Learning/"/>
     
   </entry>
   
