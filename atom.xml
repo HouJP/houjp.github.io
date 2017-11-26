@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>#include&lt;AI&gt;</title>
+  <title>#include&amp;lt;AI&amp;gt;</title>
   
   <link href="/atom.xml" rel="self"/>
   
@@ -9,7 +9,7 @@
   <id>http://yoursite.com/</id>
   
   <author>
-    <name>#include&lt;AI&gt;</name>
+    <name>HouJP</name>
     
   </author>
   
