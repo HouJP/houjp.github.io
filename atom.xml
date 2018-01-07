@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-27T08:47:35.000Z</updated>
+  <updated>2018-01-07T04:26:16.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Unit Test中的Mock Objects</title>
+    <link href="http://yoursite.com/2018/01/07/mock-objects/"/>
+    <id>http://yoursite.com/2018/01/07/mock-objects/</id>
+    <published>2018-01-07T04:10:18.000Z</published>
+    <updated>2018-01-07T04:26:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Mock-Objects"><a href="#Mock-Objects" class="headerlink" title="Mock Objects"></a>Mock Objects</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Mock-Objects&quot;&gt;&lt;a href=&quot;#Mock-Objects&quot; class=&quot;headerlink&quot; title=&quot;Mock Objects&quot;&gt;&lt;/a&gt;Mock Objects&lt;/h2&gt;
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+      <category term="unit-testing" scheme="http://yoursite.com/tags/unit-testing/"/>
+    
+  </entry>
   
   <entry>
     <title>深度学习(Deep Learning)学习资料</title>
