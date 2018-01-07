@@ -73,6 +73,8 @@
 
 
 
+  
+
 
   <link rel="alternate" href="/atom.xml" title="#include&lt;AI&gt;" type="application/atom+xml" />
 
@@ -81,17 +83,17 @@
 
 
 
-<meta name="description" content="Mock Objects">
+<meta name="description" content="What’s Mock ObjectsMock objects 是 test double 的另一种称呼，包含以下三种类型的对象：  Mocks Stubs Fakes">
 <meta name="keywords" content="java,unit-testing">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Unit Test中的Mock Objects">
 <meta property="og:url" content="http://yoursite.com/2018/01/07/mock-objects/index.html">
 <meta property="og:site_name" content="#include&amp;lt;AI&amp;gt;">
-<meta property="og:description" content="Mock Objects">
-<meta property="og:updated_time" content="2018-01-07T04:26:16.000Z">
+<meta property="og:description" content="What’s Mock ObjectsMock objects 是 test double 的另一种称呼，包含以下三种类型的对象：  Mocks Stubs Fakes">
+<meta property="og:updated_time" content="2018-01-07T08:32:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Unit Test中的Mock Objects">
-<meta name="twitter:description" content="Mock Objects">
+<meta name="twitter:description" content="What’s Mock ObjectsMock objects 是 test double 的另一种称呼，包含以下三种类型的对象：  Mocks Stubs Fakes">
 
 
 
@@ -311,7 +313,39 @@
       
 
       
-        <h2 id="Mock-Objects"><a href="#Mock-Objects" class="headerlink" title="Mock Objects"></a>Mock Objects</h2>
+        <h3 id="What’s-Mock-Objects"><a href="#What’s-Mock-Objects" class="headerlink" title="What’s Mock Objects"></a>What’s Mock Objects</h3><p>Mock objects 是 test double 的另一种称呼，包含以下三种类型的对象：</p>
+<ol>
+<li>Mocks</li>
+<li>Stubs</li>
+<li>Fakes</li>
+</ol>
+<a id="more"></a>
+<h4 id="Mocks"><a href="#Mocks" class="headerlink" title="Mocks"></a>Mocks</h4><p>Mock在单元测试中用来追踪对象的方法是否被正确调用：</p>
+<ol>
+<li>方法的调用次数是否符合预期</li>
+<li>传递给方法的参数是否正确</li>
+</ol>
+<h4 id="Stubs"><a href="#Stubs" class="headerlink" title="Stubs"></a>Stubs</h4><p>当我们不需要知道对象内部的行为情况的时候使用Stub对象，它会返回我们告诉它返回的值。</p>
+<h4 id="Fakes"><a href="#Fakes" class="headerlink" title="Fakes"></a>Fakes</h4><p>Fake是对API的轻量级实现，不适用于真正的产品。</p>
+<h3 id="Testing-State-VS-Testing-Interactions"><a href="#Testing-State-VS-Testing-Interactions" class="headerlink" title="Testing State VS Testing Interactions"></a>Testing State VS Testing Interactions</h3><p>在单元测试中有两种测试的方式：</p>
+<ol>
+<li>Testing state: 测试代码返回的结果的正确性<ul>
+<li>返回结果正确</li>
+<li>系统中状态值正确改变</li>
+</ul>
+</li>
+<li>Testing interactions: 代码调用了希望被调用的某些方法<ul>
+<li>方法是否被调用</li>
+<li>传递给被调用方法的参数是否正确</li>
+</ul>
+</li>
+</ol>
+<p>总结：</p>
+<ul>
+<li>Testing interactions只能保证函数被正确调用，Testing state才能真正保证结果的正确性。</li>
+<li>Testing interactions不利于测试代码的维护。</li>
+</ul>
+
       
     </div>
     
@@ -490,7 +524,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mock-Objects"><span class="nav-number">1.</span> <span class="nav-text">Mock Objects</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#What’s-Mock-Objects"><span class="nav-number">1.</span> <span class="nav-text">What’s Mock Objects</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Mocks"><span class="nav-number">1.1.</span> <span class="nav-text">Mocks</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Stubs"><span class="nav-number">1.2.</span> <span class="nav-text">Stubs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Fakes"><span class="nav-number">1.3.</span> <span class="nav-text">Fakes</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Testing-State-VS-Testing-Interactions"><span class="nav-number">2.</span> <span class="nav-text">Testing State VS Testing Interactions</span></a></li></ol></div>
             
 
           </div>
