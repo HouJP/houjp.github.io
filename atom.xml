@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-01-07T14:39:33.000Z</updated>
+  <updated>2018-01-10T16:17:26.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>convolutional-neural-networks</title>
+    <link href="http://yoursite.com/2018/01/10/convolutional-neural-networks/"/>
+    <id>http://yoursite.com/2018/01/10/convolutional-neural-networks/</id>
+    <published>2018-01-10T15:53:50.000Z</published>
+    <updated>2018-01-10T16:17:26.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Computer-Vision"><a href="#Computer-Vision" class="headerlink" title="Computer Vision"></a>Computer Vision</h3><p>Computer Vision Problems include:</p>
+<ul>
+<li>Image Classication</li>
+<li>Object Detection</li>
+<li>… …</li>
+</ul>
+<p>One of the challenges of computer vision problems is that the input can be very big. For example, a 64 by 64 image can have 64 <em> 64 </em> 3 = 12288 dimensions because there are three color channels.<br>$$<br>64<em>64</em>3=12288<br>$$</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Computer-Vision&quot;&gt;&lt;a href=&quot;#Computer-Vision&quot; class=&quot;headerlink&quot; title=&quot;Computer Vision&quot;&gt;&lt;/a&gt;Computer Vision&lt;/h3&gt;&lt;p&gt;Computer Vision Pr
+    
+    </summary>
+    
+    
+      <category term="deep-learning" scheme="http://yoursite.com/tags/deep-learning/"/>
+    
+      <category term="cnn" scheme="http://yoursite.com/tags/cnn/"/>
+    
+  </entry>
   
   <entry>
     <title>Unit Test中的Mock Objects</title>
