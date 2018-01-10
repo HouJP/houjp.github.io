@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-01-10T16:17:26.000Z</updated>
+  <updated>2018-01-10T16:28:31.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2018/01/10/convolutional-neural-networks/"/>
     <id>http://yoursite.com/2018/01/10/convolutional-neural-networks/</id>
     <published>2018-01-10T15:53:50.000Z</published>
-    <updated>2018-01-10T16:17:26.000Z</updated>
+    <updated>2018-01-10T16:28:31.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Computer-Vision"><a href="#Computer-Vision" class="headerlink" title="Computer Vision"></a>Computer Vision</h3><p>Computer Vision Problems include:</p>
 <ul>
@@ -28,7 +28,8 @@
 <li>Object Detection</li>
 <li>… …</li>
 </ul>
-<p>One of the challenges of computer vision problems is that the input can be very big. For example, a 64 by 64 image can have 64 <em> 64 </em> 3 = 12288 dimensions because there are three color channels.<br>$$<br>64<em>64</em>3=12288<br>$$</p>
+<p>One of the challenges of computer vision problems is that the input can be very big. For example, a 64 by 64 image can have 64 <em> 64 </em> 3 = 12288 dimensions because there are three color channels.</p>
+<p>$$<br>64<em>64</em>3=12288<br>$$</p>
 ]]></content>
     
     <summary type="html">
