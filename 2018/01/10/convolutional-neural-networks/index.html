@@ -7,7 +7,7 @@
 
 <html class="theme-next gemini use-motion" lang="">
 <head>
-  <meta charset="UTF-8"/>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="Computer VisionComputer Vision Problems include:  Image Classication Object Detection … …  One of the challenges of computer vision problems is that the input can be very big. For example, a 64 by 64">
+<meta name="description" content="Computer VisionComputer Vision Problems include:  Image Classication Object Detection … …  One of the challenges of computer vision problems is that the input can be very big. For example, a 1000 by 1">
 <meta name="keywords" content="deep-learning,cnn">
 <meta property="og:type" content="article">
-<meta property="og:title" content="convolutional-neural-networks">
+<meta property="og:title" content="Convolutional Neural Networks">
 <meta property="og:url" content="http://yoursite.com/2018/01/10/convolutional-neural-networks/index.html">
 <meta property="og:site_name" content="#include&amp;lt;AI&amp;gt;">
-<meta property="og:description" content="Computer VisionComputer Vision Problems include:  Image Classication Object Detection … …  One of the challenges of computer vision problems is that the input can be very big. For example, a 64 by 64">
-<meta property="og:updated_time" content="2018-01-10T16:28:31.000Z">
+<meta property="og:description" content="Computer VisionComputer Vision Problems include:  Image Classication Object Detection … …  One of the challenges of computer vision problems is that the input can be very big. For example, a 1000 by 1">
+<meta property="og:updated_time" content="2018-01-14T15:13:55.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="convolutional-neural-networks">
-<meta name="twitter:description" content="Computer VisionComputer Vision Problems include:  Image Classication Object Detection … …  One of the challenges of computer vision problems is that the input can be very big. For example, a 64 by 64">
+<meta name="twitter:title" content="Convolutional Neural Networks">
+<meta name="twitter:description" content="Computer VisionComputer Vision Problems include:  Image Classication Object Detection … …  One of the challenges of computer vision problems is that the input can be very big. For example, a 1000 by 1">
 
 
 
@@ -127,7 +127,7 @@
 
 
 
-  <title>convolutional-neural-networks | #include&lt;AI&gt;</title>
+  <title>Convolutional Neural Networks | #include&lt;AI&gt;</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -146,7 +146,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -261,7 +261,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">convolutional-neural-networks</h1>
+          <h1 class="post-title" itemprop="name headline">Convolutional Neural Networks</h1>
         
 
         <div class="post-meta">
@@ -327,8 +327,19 @@
 <li>Object Detection</li>
 <li>… …</li>
 </ul>
-<p>One of the challenges of computer vision problems is that the input can be very big. For example, a 64 by 64 image can have 64 <em> 64 </em> 3 = 12288 dimensions because there are three color channels.</p>
-<p>$$<br>64<em>64</em>3=12288<br>$$</p>
+<p>One of the challenges of computer vision problems is that the input can be very big. For example, a 1000 by 1000 image can have $1000 \times  64 \times 3 = 12288$ dimensions because there are three color channels. If the size of hidden layer is 1000, the number of parameters from input layer to hidden layer could be 3 billion. This will cause these problems:</p>
+<ol>
+<li>data size requirements;</li>
+<li>computational requirements;</li>
+<li>memory requirements.</li>
+</ol>
+<a id="more"></a>
+<h3 id="Padding"><a href="#Padding" class="headerlink" title="Padding"></a>Padding</h3><p>The problems of convolutional operation:</p>
+<ol>
+<li>shrinking output</li>
+<li>throwing away a lot of information from the edges of the image</li>
+</ol>
+<p>In order to fix these problems, what we need to do is <strong>pad the image</strong>.</p>
 
       
     </div>
@@ -508,7 +519,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Computer-Vision"><span class="nav-number">1.</span> <span class="nav-text">Computer Vision</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Computer-Vision"><span class="nav-number">1.</span> <span class="nav-text">Computer Vision</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Padding"><span class="nav-number">2.</span> <span class="nav-text">Padding</span></a></li></ol></div>
             
 
           </div>
@@ -771,7 +782,24 @@
         }
       });
     </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
   
 
 

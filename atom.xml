@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-01-10T16:28:31.000Z</updated>
+  <updated>2018-01-14T15:13:55.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>convolutional-neural-networks</title>
+    <title>Convolutional Neural Networks</title>
     <link href="http://yoursite.com/2018/01/10/convolutional-neural-networks/"/>
     <id>http://yoursite.com/2018/01/10/convolutional-neural-networks/</id>
     <published>2018-01-10T15:53:50.000Z</published>
-    <updated>2018-01-10T16:28:31.000Z</updated>
+    <updated>2018-01-14T15:13:55.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Computer-Vision"><a href="#Computer-Vision" class="headerlink" title="Computer Vision"></a>Computer Vision</h3><p>Computer Vision Problems include:</p>
 <ul>
@@ -28,13 +28,35 @@
 <li>Object Detection</li>
 <li>… …</li>
 </ul>
-<p>One of the challenges of computer vision problems is that the input can be very big. For example, a 64 by 64 image can have 64 <em> 64 </em> 3 = 12288 dimensions because there are three color channels.</p>
-<p>$$<br>64<em>64</em>3=12288<br>$$</p>
+<p>One of the challenges of computer vision problems is that the input can be very big. For example, a 1000 by 1000 image can have $1000 \times  64 \times 3 = 12288$ dimensions because there are three color channels. If the size of hidden layer is 1000, the number of parameters from input layer to hidden layer could be 3 billion. This will cause these problems:</p>
+<ol>
+<li>data size requirements;</li>
+<li>computational requirements;</li>
+<li>memory requirements.</li>
+</ol>
+<a id="more"></a>
+<h3 id="Padding"><a href="#Padding" class="headerlink" title="Padding"></a>Padding</h3><p>The problems of convolutional operation:</p>
+<ol>
+<li>shrinking output</li>
+<li>throwing away a lot of information from the edges of the image</li>
+</ol>
+<p>In order to fix these problems, what we need to do is <strong>pad the image</strong>.</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;Computer-Vision&quot;&gt;&lt;a href=&quot;#Computer-Vision&quot; class=&quot;headerlink&quot; title=&quot;Computer Vision&quot;&gt;&lt;/a&gt;Computer Vision&lt;/h3&gt;&lt;p&gt;Computer Vision Pr
+      &lt;h3 id=&quot;Computer-Vision&quot;&gt;&lt;a href=&quot;#Computer-Vision&quot; class=&quot;headerlink&quot; title=&quot;Computer Vision&quot;&gt;&lt;/a&gt;Computer Vision&lt;/h3&gt;&lt;p&gt;Computer Vision Problems include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Image Classication&lt;/li&gt;
+&lt;li&gt;Object Detection&lt;/li&gt;
+&lt;li&gt;… …&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;One of the challenges of computer vision problems is that the input can be very big. For example, a 1000 by 1000 image can have $1000 \times  64 \times 3 = 12288$ dimensions because there are three color channels. If the size of hidden layer is 1000, the number of parameters from input layer to hidden layer could be 3 billion. This will cause these problems:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;data size requirements;&lt;/li&gt;
+&lt;li&gt;computational requirements;&lt;/li&gt;
+&lt;li&gt;memory requirements.&lt;/li&gt;
+&lt;/ol&gt;
     
     </summary>
     
