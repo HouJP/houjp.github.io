@@ -4,9 +4,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://houjp.com/"/>
   <updated>2018-01-21T10:08:17.000Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://houjp.com/</id>
   
   <author>
     <name>HouJP</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Guice Notes</title>
-    <link href="http://yoursite.com/2018/01/18/guice/"/>
-    <id>http://yoursite.com/2018/01/18/guice/</id>
+    <link href="http://houjp.com/2018/01/18/guice/"/>
+    <id>http://houjp.com/2018/01/18/guice/</id>
     <published>2018-01-18T15:26:22.000Z</published>
     <updated>2018-01-21T10:08:17.000Z</updated>
     
@@ -212,16 +212,16 @@
     </summary>
     
     
-      <category term="guice" scheme="http://yoursite.com/tags/guice/"/>
+      <category term="guice" scheme="http://houjp.com/tags/guice/"/>
     
-      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+      <category term="java" scheme="http://houjp.com/tags/java/"/>
     
   </entry>
   
   <entry>
     <title>Convolutional Neural Networks</title>
-    <link href="http://yoursite.com/2018/01/10/convolutional-neural-networks/"/>
-    <id>http://yoursite.com/2018/01/10/convolutional-neural-networks/</id>
+    <link href="http://houjp.com/2018/01/10/convolutional-neural-networks/"/>
+    <id>http://houjp.com/2018/01/10/convolutional-neural-networks/</id>
     <published>2018-01-10T15:53:50.000Z</published>
     <updated>2018-01-14T15:13:55.000Z</updated>
     
@@ -264,16 +264,16 @@
     </summary>
     
     
-      <category term="deep-learning" scheme="http://yoursite.com/tags/deep-learning/"/>
+      <category term="deep-learning" scheme="http://houjp.com/tags/deep-learning/"/>
     
-      <category term="cnn" scheme="http://yoursite.com/tags/cnn/"/>
+      <category term="cnn" scheme="http://houjp.com/tags/cnn/"/>
     
   </entry>
   
   <entry>
     <title>Unit Test中的Mock Objects</title>
-    <link href="http://yoursite.com/2018/01/07/mock-objects/"/>
-    <id>http://yoursite.com/2018/01/07/mock-objects/</id>
+    <link href="http://houjp.com/2018/01/07/mock-objects/"/>
+    <id>http://houjp.com/2018/01/07/mock-objects/</id>
     <published>2018-01-07T04:10:18.000Z</published>
     <updated>2018-01-07T14:39:33.000Z</updated>
     
@@ -329,16 +329,16 @@
     </summary>
     
     
-      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+      <category term="java" scheme="http://houjp.com/tags/java/"/>
     
-      <category term="unit-testing" scheme="http://yoursite.com/tags/unit-testing/"/>
+      <category term="unit-testing" scheme="http://houjp.com/tags/unit-testing/"/>
     
   </entry>
   
   <entry>
     <title>深度学习(Deep Learning)学习资料</title>
-    <link href="http://yoursite.com/2017/08/25/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Deep-Learning-%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/"/>
-    <id>http://yoursite.com/2017/08/25/深度学习-Deep-Learning-学习资料/</id>
+    <link href="http://houjp.com/2017/08/25/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Deep-Learning-%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/"/>
+    <id>http://houjp.com/2017/08/25/深度学习-Deep-Learning-学习资料/</id>
     <published>2017-08-25T07:53:08.000Z</published>
     <updated>2017-08-27T08:47:35.000Z</updated>
     
@@ -377,7 +377,7 @@
     </summary>
     
     
-      <category term="Deep Learning" scheme="http://yoursite.com/tags/Deep-Learning/"/>
+      <category term="Deep Learning" scheme="http://houjp.com/tags/Deep-Learning/"/>
     
   </entry>
   
