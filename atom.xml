@@ -212,9 +212,9 @@
     </summary>
     
     
-      <category term="guice" scheme="http://yoursite.com/tags/guice/"/>
-    
       <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+      <category term="guice" scheme="http://yoursite.com/tags/guice/"/>
     
   </entry>
   
