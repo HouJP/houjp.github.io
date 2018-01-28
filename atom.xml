@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://houjp.com/"/>
-  <updated>2018-01-21T10:08:17.000Z</updated>
+  <updated>2018-01-28T09:39:42.000Z</updated>
   <id>http://houjp.com/</id>
   
   <author>
@@ -14,6 +14,80 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>java-concurrency-thread-and-runnable</title>
+    <link href="http://houjp.com/2018/01/28/java-concurrency-thread-and-runnable/"/>
+    <id>http://houjp.com/2018/01/28/java-concurrency-thread-and-runnable/</id>
+    <published>2018-01-28T09:39:42.000Z</published>
+    <updated>2018-01-28T09:39:42.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java Concurrency之Concurency Basics</title>
+    <link href="http://houjp.com/2018/01/28/java-concurrency-basics/"/>
+    <id>http://houjp.com/2018/01/28/java-concurrency-basics/</id>
+    <published>2018-01-28T07:55:07.000Z</published>
+    <updated>2018-01-28T09:38:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><em>Concurrency is the ability to do more than one thing at the same time.</em></p>
+<p><em>Concurrency</em>包含两种情况：</p>
+<ol>
+<li>同时运行多个应用。</li>
+<li>单个应用的多个部分同时执行。</li>
+</ol>
+<a id="more"></a>
+<h3 id="Concurrency-Under-the-Hood"><a href="#Concurrency-Under-the-Hood" class="headerlink" title="Concurrency: Under the Hood"></a>Concurrency: Under the Hood</h3><p>我们都知道计算机可以同时运行multiple tasks，但是这是怎么做到的呢？如今的计算机有multiple processors，如果一个计算机只有一个processor的话可以达到concurrency的目的吗？实际上，计算机可以执行的tasks的数量跟processors的数量之间没有直接的关系。</p>
+<p>那么，multiple tasks是如何同时运行在单个CPU上的呢？Multiple tasks并不是真正地在相同的时刻同时执行，它与<em>parallel</em>的概念不同。</p>
+<p>当我们说，“multiple tasks are executing at the same time”的时候，这句话的真实含义是“multiple tasks are making progress during the same period of time”。这些tasks的执行是交错进行的。操作系统在tasks之间频繁切换，这样在我们看来这些tasks好像是同时在执行一样。</p>
+<p>因此，<em>concurrency</em>与<em>parallelism</em>不同。事实上，<em>parallelism</em>是不可能在单个processor上实现的。</p>
+<h3 id="Unit-of-Concurrency"><a href="#Unit-of-Concurrency" class="headerlink" title="Unit of Concurrency"></a>Unit of Concurrency</h3><p><em>Concurrency</em>是一个较为宽泛的概念，它分为不同的层级：</p>
+<ul>
+<li><strong>Multiprocessing</strong> 多个processors/CPUs同时执行。这里并发的单位是CPU。</li>
+<li><strong>Multitasking</strong> 多个tasks/processes在单个CPU上同时执行。操作系统通过在这些tasks之间频繁切换来执行他们。这里并发的单位是process。</li>
+<li><strong>Multithreading</strong> 相同program的不同部分同时执行。这里，我们将同样的program分为不同的部分/线程，并且将他们并发的执行。</li>
+</ul>
+<h3 id="Processes-and-Threads"><a href="#Processes-and-Threads" class="headerlink" title="Processes and Threads"></a>Processes and Threads</h3><h4 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h4><p><em>A process is a program in execution. It has its own address space, a call stack, and link to any resources such as open files.</em></p>
+<h4 id="Thread"><a href="#Thread" class="headerlink" title="Thread"></a>Thread</h4><p><em>A thread is a path of execution within a process.</em> 每个process至少有一个thread, 称为main thread。Main thread可以创建该Process的其他threads。</p>
+<p>一个process的所有threads共享这个process的资源，包括memory和open files。但是，每个thread有它自己的call stack。</p>
+<p>因为threads共享process的地址空间，因此创建新的threads和threads之间通信会很高效。</p>
+<h3 id="Common-Problems-associated-with-Concurrency"><a href="#Common-Problems-associated-with-Concurrency" class="headerlink" title="Common Problems associated with Concurrency"></a>Common Problems associated with Concurrency</h3><p>Concurrency可以提高CPU的利用率(<font color="red">TODO Why?</font>)，但是带来了如下问题：</p>
+<ul>
+<li><p><strong>Thread interference errors (Race Conditions)</strong>: 这种情况在多个线程同时读写共享变量时发生，并且读写操作之间发生了重叠。</p>
+<p>这会造成结果的不可预见性（取决于读写操作的顺序）。</p>
+<p>这种情况可以通过加exclusive lock来解决。这会带来新的问题<strong>deadlock</strong>和<strong>starvation</strong>。</p>
+</li>
+<li><p><strong>Memory consistency errors</strong>: 它指的是不同的线程对于相同的数据产生了inconsistent views。发生的原因是有的线程更新的共享数据，但是没有传播给其他线程，导致这些线程还在用旧数据。</p>
+</li>
+</ul>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ul>
+<li><a href="https://www.callicoder.com/java-concurrency-multithreading-basics/" target="_blank" rel="external">Java Concurrency / Multithreading Basics</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;em&gt;Concurrency is the ability to do more than one thing at the same time.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Concurrency&lt;/em&gt;包含两种情况：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;同时运行多个应用。&lt;/li&gt;
+&lt;li&gt;单个应用的多个部分同时执行。&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://houjp.com/tags/java/"/>
+    
+      <category term="concurrency" scheme="http://houjp.com/tags/concurrency/"/>
+    
+  </entry>
   
   <entry>
     <title>Guice Notes</title>

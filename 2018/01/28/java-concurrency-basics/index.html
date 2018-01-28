@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="deep-learning,cnn," />
+  <meta name="keywords" content="java,concurrency," />
 
 
 
@@ -83,17 +83,17 @@
 
 
 
-<meta name="description" content="Computer VisionComputer Vision Problems include:  Image Classication Object Detection … …  One of the challenges of computer vision problems is that the input can be very big. For example, a 1000 by 1">
-<meta name="keywords" content="deep-learning,cnn">
+<meta name="description" content="Concurrency is the ability to do more than one thing at the same time. Concurrency包含两种情况：  同时运行多个应用。 单个应用的多个部分同时执行。">
+<meta name="keywords" content="java,concurrency">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Convolutional Neural Networks">
-<meta property="og:url" content="http://houjp.com/2018/01/10/convolutional-neural-networks/index.html">
+<meta property="og:title" content="Java Concurrency之Concurency Basics">
+<meta property="og:url" content="http://houjp.com/2018/01/28/java-concurrency-basics/index.html">
 <meta property="og:site_name" content="#include&amp;lt;AI&amp;gt;">
-<meta property="og:description" content="Computer VisionComputer Vision Problems include:  Image Classication Object Detection … …  One of the challenges of computer vision problems is that the input can be very big. For example, a 1000 by 1">
-<meta property="og:updated_time" content="2018-01-14T15:13:55.000Z">
+<meta property="og:description" content="Concurrency is the ability to do more than one thing at the same time. Concurrency包含两种情况：  同时运行多个应用。 单个应用的多个部分同时执行。">
+<meta property="og:updated_time" content="2018-01-28T09:38:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Convolutional Neural Networks">
-<meta name="twitter:description" content="Computer VisionComputer Vision Problems include:  Image Classication Object Detection … …  One of the challenges of computer vision problems is that the input can be very big. For example, a 1000 by 1">
+<meta name="twitter:title" content="Java Concurrency之Concurency Basics">
+<meta name="twitter:description" content="Concurrency is the ability to do more than one thing at the same time. Concurrency包含两种情况：  同时运行多个应用。 单个应用的多个部分同时执行。">
 
 
 
@@ -123,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://houjp.com/2018/01/10/convolutional-neural-networks/"/>
+  <link rel="canonical" href="http://houjp.com/2018/01/28/java-concurrency-basics/"/>
 
 
 
 
 
-  <title>Convolutional Neural Networks | #include&lt;AI&gt;</title>
+  <title>Java Concurrency之Concurency Basics | #include&lt;AI&gt;</title>
   
 
 
@@ -265,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://houjp.com/2018/01/10/convolutional-neural-networks/">
+    <link itemprop="mainEntityOfPage" href="http://houjp.com/2018/01/28/java-concurrency-basics/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HouJP">
@@ -282,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Convolutional Neural Networks</h1>
+          <h1 class="post-title" itemprop="name headline">Java Concurrency之Concurency Basics</h1>
         
 
         <div class="post-meta">
@@ -294,8 +294,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-10T23:53:50+08:00">
-                2018-01-10
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-28T15:55:07+08:00">
+                2018-01-28
               </time>
             
 
@@ -313,8 +313,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/01/10/convolutional-neural-networks/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/01/10/convolutional-neural-networks/" itemprop="commentsCount"></span>
+                <a href="/2018/01/28/java-concurrency-basics/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/01/28/java-concurrency-basics/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -342,25 +342,39 @@
       
 
       
-        <h3 id="Computer-Vision"><a href="#Computer-Vision" class="headerlink" title="Computer Vision"></a>Computer Vision</h3><p>Computer Vision Problems include:</p>
-<ul>
-<li>Image Classication</li>
-<li>Object Detection</li>
-<li>… …</li>
-</ul>
-<p>One of the challenges of computer vision problems is that the input can be very big. For example, a 1000 by 1000 image can have $1000 \times  64 \times 3 = 12288$ dimensions because there are three color channels. If the size of hidden layer is 1000, the number of parameters from input layer to hidden layer could be 3 billion. This will cause these problems:</p>
+        <p><em>Concurrency is the ability to do more than one thing at the same time.</em></p>
+<p><em>Concurrency</em>包含两种情况：</p>
 <ol>
-<li>data size requirements;</li>
-<li>computational requirements;</li>
-<li>memory requirements.</li>
+<li>同时运行多个应用。</li>
+<li>单个应用的多个部分同时执行。</li>
 </ol>
 <a id="more"></a>
-<h3 id="Padding"><a href="#Padding" class="headerlink" title="Padding"></a>Padding</h3><p>The problems of convolutional operation:</p>
-<ol>
-<li>shrinking output</li>
-<li>throwing away a lot of information from the edges of the image</li>
-</ol>
-<p>In order to fix these problems, what we need to do is <strong>pad the image</strong>.</p>
+<h3 id="Concurrency-Under-the-Hood"><a href="#Concurrency-Under-the-Hood" class="headerlink" title="Concurrency: Under the Hood"></a>Concurrency: Under the Hood</h3><p>我们都知道计算机可以同时运行multiple tasks，但是这是怎么做到的呢？如今的计算机有multiple processors，如果一个计算机只有一个processor的话可以达到concurrency的目的吗？实际上，计算机可以执行的tasks的数量跟processors的数量之间没有直接的关系。</p>
+<p>那么，multiple tasks是如何同时运行在单个CPU上的呢？Multiple tasks并不是真正地在相同的时刻同时执行，它与<em>parallel</em>的概念不同。</p>
+<p>当我们说，“multiple tasks are executing at the same time”的时候，这句话的真实含义是“multiple tasks are making progress during the same period of time”。这些tasks的执行是交错进行的。操作系统在tasks之间频繁切换，这样在我们看来这些tasks好像是同时在执行一样。</p>
+<p>因此，<em>concurrency</em>与<em>parallelism</em>不同。事实上，<em>parallelism</em>是不可能在单个processor上实现的。</p>
+<h3 id="Unit-of-Concurrency"><a href="#Unit-of-Concurrency" class="headerlink" title="Unit of Concurrency"></a>Unit of Concurrency</h3><p><em>Concurrency</em>是一个较为宽泛的概念，它分为不同的层级：</p>
+<ul>
+<li><strong>Multiprocessing</strong> 多个processors/CPUs同时执行。这里并发的单位是CPU。</li>
+<li><strong>Multitasking</strong> 多个tasks/processes在单个CPU上同时执行。操作系统通过在这些tasks之间频繁切换来执行他们。这里并发的单位是process。</li>
+<li><strong>Multithreading</strong> 相同program的不同部分同时执行。这里，我们将同样的program分为不同的部分/线程，并且将他们并发的执行。</li>
+</ul>
+<h3 id="Processes-and-Threads"><a href="#Processes-and-Threads" class="headerlink" title="Processes and Threads"></a>Processes and Threads</h3><h4 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h4><p><em>A process is a program in execution. It has its own address space, a call stack, and link to any resources such as open files.</em></p>
+<h4 id="Thread"><a href="#Thread" class="headerlink" title="Thread"></a>Thread</h4><p><em>A thread is a path of execution within a process.</em> 每个process至少有一个thread, 称为main thread。Main thread可以创建该Process的其他threads。</p>
+<p>一个process的所有threads共享这个process的资源，包括memory和open files。但是，每个thread有它自己的call stack。</p>
+<p>因为threads共享process的地址空间，因此创建新的threads和threads之间通信会很高效。</p>
+<h3 id="Common-Problems-associated-with-Concurrency"><a href="#Common-Problems-associated-with-Concurrency" class="headerlink" title="Common Problems associated with Concurrency"></a>Common Problems associated with Concurrency</h3><p>Concurrency可以提高CPU的利用率(<font color="red">TODO Why?</font>)，但是带来了如下问题：</p>
+<ul>
+<li><p><strong>Thread interference errors (Race Conditions)</strong>: 这种情况在多个线程同时读写共享变量时发生，并且读写操作之间发生了重叠。</p>
+<p>这会造成结果的不可预见性（取决于读写操作的顺序）。</p>
+<p>这种情况可以通过加exclusive lock来解决。这会带来新的问题<strong>deadlock</strong>和<strong>starvation</strong>。</p>
+</li>
+<li><p><strong>Memory consistency errors</strong>: 它指的是不同的线程对于相同的数据产生了inconsistent views。发生的原因是有的线程更新的共享数据，但是没有传播给其他线程，导致这些线程还在用旧数据。</p>
+</li>
+</ul>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ul>
+<li><a href="https://www.callicoder.com/java-concurrency-multithreading-basics/" target="_blank" rel="external">Java Concurrency / Multithreading Basics</a></li>
+</ul>
 
       
     </div>
@@ -378,9 +392,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/deep-learning/" rel="tag"># deep-learning</a>
+            <a href="/tags/java/" rel="tag"># java</a>
           
-            <a href="/tags/cnn/" rel="tag"># cnn</a>
+            <a href="/tags/concurrency/" rel="tag"># concurrency</a>
           
         </div>
       
@@ -393,8 +407,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/07/mock-objects/" rel="next" title="Unit Test中的Mock Objects">
-                <i class="fa fa-chevron-left"></i> Unit Test中的Mock Objects
+              <a href="/2018/01/18/guice/" rel="next" title="Guice Notes">
+                <i class="fa fa-chevron-left"></i> Guice Notes
               </a>
             
           </div>
@@ -403,8 +417,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/01/18/guice/" rel="prev" title="Guice Notes">
-                Guice Notes <i class="fa fa-chevron-right"></i>
+              <a href="/2018/01/28/java-concurrency-thread-and-runnable/" rel="prev" title="java-concurrency-thread-and-runnable">
+                java-concurrency-thread-and-runnable <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -544,7 +558,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Computer-Vision"><span class="nav-number">1.</span> <span class="nav-text">Computer Vision</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Padding"><span class="nav-number">2.</span> <span class="nav-text">Padding</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Concurrency-Under-the-Hood"><span class="nav-number">1.</span> <span class="nav-text">Concurrency: Under the Hood</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unit-of-Concurrency"><span class="nav-number">2.</span> <span class="nav-text">Unit of Concurrency</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Processes-and-Threads"><span class="nav-number">3.</span> <span class="nav-text">Processes and Threads</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Process"><span class="nav-number">3.1.</span> <span class="nav-text">Process</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Thread"><span class="nav-number">3.2.</span> <span class="nav-text">Thread</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Common-Problems-associated-with-Concurrency"><span class="nav-number">4.</span> <span class="nav-text">Common Problems associated with Concurrency</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reference"><span class="nav-number">5.</span> <span class="nav-text">Reference</span></a></li></ol></div>
             
 
           </div>
@@ -795,26 +809,6 @@
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 

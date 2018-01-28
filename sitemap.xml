@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://houjp.com/2018/01/28/java-concurrency-thread-and-runnable/</loc>
+    
+    <lastmod>2018-01-28T09:39:42.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://houjp.com/2018/01/28/java-concurrency-basics/</loc>
+    
+    <lastmod>2018-01-28T09:38:38.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://houjp.com/tags/index.html</loc>
+    
+    <lastmod>2018-01-28T07:48:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://houjp.com/2018/01/18/guice/</loc>
     
     <lastmod>2018-01-21T10:08:17.000Z</lastmod>
@@ -12,13 +33,6 @@
     <loc>http://houjp.com/2018/01/10/convolutional-neural-networks/</loc>
     
     <lastmod>2018-01-14T15:13:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://houjp.com/tags/index.html</loc>
-    
-    <lastmod>2018-01-07T15:26:51.000Z</lastmod>
     
   </url>
   
