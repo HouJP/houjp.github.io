@@ -91,7 +91,7 @@
 <meta property="og:site_name" content="#include&amp;lt;AI&amp;gt;">
 <meta property="og:description" content="Executor Framework大型的多线程应用可能有成百上千个应用，因此需要将线程的创建和应用其他部分的管理进行区分。 Executors, 是一个帮助你创建和管理线程的框架：  线程创建：提供了创建线程的多种方法，具体的说就是一个线程池，应用可以用它来并发的执行tasks。 线程管理：它管理线程池中线程的生命周期。你不需要关心线程池中的线程是否active/busy/dead/…。 任务创">
 <meta property="og:image" content="http://houjp.com/2018/01/28/java-concurrency-executor-service-thread-pool/img/java-concurrency-executor-service-thread-pool/executor-service-thread-pool-blocking-queue-example.jpg">
-<meta property="og:updated_time" content="2018-01-28T14:34:18.000Z">
+<meta property="og:updated_time" content="2018-01-28T14:38:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java Concurrency之Executor Service &amp; Thread Pool">
 <meta name="twitter:description" content="Executor Framework大型的多线程应用可能有成百上千个应用，因此需要将线程的创建和应用其他部分的管理进行区分。 Executors, 是一个帮助你创建和管理线程的框架：  线程创建：提供了创建线程的多种方法，具体的说就是一个线程池，应用可以用它来并发的执行tasks。 线程管理：它管理线程池中线程的生命周期。你不需要关心线程池中的线程是否active/busy/dead/…。 任务创">
@@ -351,6 +351,7 @@
 <li>线程管理：它管理线程池中线程的生命周期。你不需要关心线程池中的线程是否active/busy/dead/…。</li>
 <li>任务创建和执行：Executors框架提供了方法来提交tasks到线程池运行，并且我们可以决定tasks什么时候被执行。</li>
 </ol>
+<a id="more"></a>
 <p>Java Concurrency API定义了如下三种executor interfaces:</p>
 <ul>
 <li><strong>Executor</strong> 一个简单的接口，包含一个<code>execute()</code>方法用来启动<code>Runnable</code>对象指定的task。</li>
@@ -426,6 +427,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/28/java-concurrency-callable-and-future/" rel="prev" title="Java Concurrency之Callable and Future">
+                Java Concurrency之Callable and Future <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -509,7 +514,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

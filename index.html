@@ -261,6 +261,259 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://houjp.com/2018/01/28/java-concurrency-thread-synchronization/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HouJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="#include&lt;AI&gt;">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/28/java-concurrency-thread-synchronization/" itemprop="url">Java Concurrency之Thread Synchronization</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-28T23:15:16+08:00">
+                2018-01-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="Concurrency-Issues"><a href="#Concurrency-Issues" class="headerlink" title="Concurrency Issues"></a>Concurrency Issues</h3><p>当多个线程并发读写共享数据的时候，会造成如下问题：</p>
+<ol>
+<li>Thread interference errors</li>
+<li>Memory consistency errors</li>
+</ol>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/28/java-concurrency-thread-synchronization/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://houjp.com/2018/01/28/java-concurrency-callable-and-future/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HouJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="#include&lt;AI&gt;">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/28/java-concurrency-callable-and-future/" itemprop="url">Java Concurrency之Callable and Future</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-28T22:34:49+08:00">
+                2018-01-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="Callable"><a href="#Callable" class="headerlink" title="Callable"></a>Callable</h3><p><code>Runnable</code>虽然方便但是不能让tasks的执行拥有返回值。</p>
+<p>Java还提供了<code>Callable</code>接口来让tasks返回结果。<code>Callable</code>和<code>Runnable</code>类似，除了可以返回结果以及会抛出一个checked exeption。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/28/java-concurrency-callable-and-future/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://houjp.com/2018/01/28/java-concurrency-executor-service-thread-pool/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -331,50 +584,20 @@
 
       
         
-          
-            <h3 id="Executor-Framework"><a href="#Executor-Framework" class="headerlink" title="Executor Framework"></a>Executor Framework</h3><p>大型的多线程应用可能有成百上千个应用，因此需要将线程的创建和应用其他部分的管理进行区分。</p>
+          <h3 id="Executor-Framework"><a href="#Executor-Framework" class="headerlink" title="Executor Framework"></a>Executor Framework</h3><p>大型的多线程应用可能有成百上千个应用，因此需要将线程的创建和应用其他部分的管理进行区分。</p>
 <p><strong>Executors, 是一个帮助你创建和管理线程的框架</strong>：</p>
 <ol>
 <li>线程创建：提供了创建线程的多种方法，具体的说就是一个线程池，应用可以用它来并发的执行tasks。</li>
 <li>线程管理：它管理线程池中线程的生命周期。你不需要关心线程池中的线程是否active/busy/dead/…。</li>
 <li>任务创建和执行：Executors框架提供了方法来提交tasks到线程池运行，并且我们可以决定tasks什么时候被执行。</li>
 </ol>
-<p>Java Concurrency API定义了如下三种executor interfaces:</p>
-<ul>
-<li><strong>Executor</strong> 一个简单的接口，包含一个<code>execute()</code>方法用来启动<code>Runnable</code>对象指定的task。</li>
-<li><strong>ExecutorService</strong> 是<code>Executor</code>的子接口，添加了管理tasks生命周期的方法。它提供了<code>submit()</code>方法，该方法的重载版本可以接受<code>Runnable</code>和<code>Callable</code>对象。Callable对象和Runnable类似，区别在于Callable对象指定的task可以返回一个值。</li>
-<li><strong>ScheduledExecutorService</strong> <code>ExecutorService</code>的子接口。添加了方法类调度tasks的执行。</li>
-</ul>
-<p>除了上述三种接口，API还提供了<code>Executors</code>类，其中包含了用来创建不同类型executor services的工厂方法。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.concurrent.ExecutorService;</div><div class="line"><span class="keyword">import</span> java.util.concurrent.Executors;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ExecutorsExample</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"Inside : "</span> + Thread.currentThread().getName());</div><div class="line"></div><div class="line">        System.out.println(<span class="string">"Creating Executor Service..."</span>);</div><div class="line">        ExecutorService executorService = Executors.newSingleThreadExecutor();</div><div class="line"></div><div class="line">        System.out.println(<span class="string">"Creating a Runnable..."</span>);</div><div class="line">        Runnable runnable = () -&gt; &#123;</div><div class="line">            System.out.println(<span class="string">"Inside : "</span> + Thread.currentThread().getName());</div><div class="line">        &#125;;</div><div class="line"></div><div class="line">        System.out.println(<span class="string">"Submit the task specified by the runnable to the executor service."</span>);</div><div class="line">        executorService.submit(runnable);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> Output</div><div class="line">Inside : main</div><div class="line">Creating Executor Service...</div><div class="line">Creating a Runnable...</div><div class="line">Submit the task specified by the runnable to the executor service.</div><div class="line">Shutting down the executor</div><div class="line">Inside : pool-1-thread-1</div></pre></td></tr></table></figure>
-<p>如果task被提交时，thread目前正在执行另一个task，那么新的task就会进入等待队列直到线程空闲。</p>
-<p>上述程序不会自动退出，因为executor service会一直监听是否有新的task被提交，除非我们显示关闭它。</p>
-<p>ExecutorService提供了两种方法关闭executor:</p>
-<ul>
-<li><strong>shutdown()</strong> 停止接收新的task，等待之前的tasks执行完毕，然后关闭executor。</li>
-<li><strong>shutdownNow()</strong> 终止正在执行的task，立即关闭executor。</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">System.out.println(<span class="string">"Shutting down the executor"</span>);</div><div class="line">executorService.shutdown();</div></pre></td></tr></table></figure>
-<p>创建线程池，并发执行tasks:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.concurrent.ExecutorService;</div><div class="line"><span class="keyword">import</span> java.util.concurrent.Executors;</div><div class="line"><span class="keyword">import</span> java.util.concurrent.TimeUnit;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ExecutorsExample</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"Inside : "</span> + Thread.currentThread().getName());</div><div class="line"></div><div class="line">        System.out.println(<span class="string">"Creating Executor Service with a thread pool of Size 2"</span>);</div><div class="line">        ExecutorService executorService = Executors.newFixedThreadPool(<span class="number">2</span>);</div><div class="line"></div><div class="line">        Runnable task1 = () -&gt; &#123;</div><div class="line">            System.out.println(<span class="string">"Executing Task1 inside : "</span> + Thread.currentThread().getName());</div><div class="line">            <span class="keyword">try</span> &#123;</div><div class="line">                TimeUnit.SECONDS.sleep(<span class="number">2</span>);</div><div class="line">            &#125; <span class="keyword">catch</span> (InterruptedException ex) &#123;</div><div class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(ex);</div><div class="line">            &#125;</div><div class="line">        &#125;;</div><div class="line"></div><div class="line">        Runnable task2 = () -&gt; &#123;</div><div class="line">            System.out.println(<span class="string">"Executing Task2 inside : "</span> + Thread.currentThread().getName());</div><div class="line">            <span class="keyword">try</span> &#123;</div><div class="line">                TimeUnit.SECONDS.sleep(<span class="number">4</span>);</div><div class="line">            &#125; <span class="keyword">catch</span> (InterruptedException ex) &#123;</div><div class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(ex);</div><div class="line">            &#125;</div><div class="line">        &#125;;</div><div class="line"></div><div class="line">        Runnable task3 = () -&gt; &#123;</div><div class="line">            System.out.println(<span class="string">"Executing Task3 inside : "</span> + Thread.currentThread().getName());</div><div class="line">            <span class="keyword">try</span> &#123;</div><div class="line">                TimeUnit.SECONDS.sleep(<span class="number">3</span>);</div><div class="line">            &#125; <span class="keyword">catch</span> (InterruptedException ex) &#123;</div><div class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(ex);</div><div class="line">            &#125;</div><div class="line">        &#125;;</div><div class="line"></div><div class="line"></div><div class="line">        System.out.println(<span class="string">"Submitting the tasks for execution..."</span>);</div><div class="line">        executorService.submit(task1);</div><div class="line">        executorService.submit(task2);</div><div class="line">        executorService.submit(task3);</div><div class="line"></div><div class="line">        executorService.shutdown();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"># Output</div><div class="line">Inside : main</div><div class="line">Creating Executor Service with a thread pool of Size <span class="number">2</span></div><div class="line">Submitting the tasks <span class="keyword">for</span> execution...</div><div class="line">Executing Task1 inside : pool-<span class="number">1</span>-thread-<span class="number">1</span></div><div class="line">Shutting down the ExecutorService...</div><div class="line">Executing Task2 inside : pool-<span class="number">1</span>-thread-<span class="number">2</span></div><div class="line">Executing Task3 inside : pool-<span class="number">1</span>-thread-<span class="number">1</span></div><div class="line">Completed Task3 inside : pool-<span class="number">1</span>-thread-<span class="number">1</span></div></pre></td></tr></table></figure>
-<p>Fixed thread pool在多线程编程中很常见。在fixed thread pool中，executor service会保证池中有指定数量的线程。运行。如果一个线程挂了，会立即被新的线程替代。</p>
-<p>如果提交的tasks数量超过的可用的线程数量，那么新的tasks会在队列中等待直到轮到它们执行。</p>
-<h3 id="Thread-Pool"><a href="#Thread-Pool" class="headerlink" title="Thread Pool"></a>Thread Pool</h3><p>大多数executor的实现采用的是<em>thread pools</em>来执行tasks。在一个线程池中有多个worker threads，这些与<code>Runnable</code>/<code>Callable</code> tasks不同并且被executor所管理。</p>
-<p>创建线程时代价很大的操作，因此应该被避免。Worker threads的存在减少了创建线程的开销，因为executor service只会创建一次线程池，并通过复用线程来执行tasks。</p>
-<p>Tasks会通过中间队列<strong>Blocking Queue</strong>被提交到线程池。如果tasks数量大于active threads数量，就被会塞入blocking queue来等待有线程被释放。如果blocking queue满了，新的tasks会被拒绝。</p>
-<div align="center"><br><br><img src="img/java-concurrency-executor-service-thread-pool/executor-service-thread-pool-blocking-queue-example.jpg" alt="executor-service-thread-pool-blocking-queue-example"><br><br></div>
-
-<h3 id="Schedule-Executors"><a href="#Schedule-Executors" class="headerlink" title="Schedule Executors"></a>Schedule Executors</h3><p>ScheduleExecutorService可以周期性的执行tasks或指定delay的时间。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.concurrent.Executors;</div><div class="line"><span class="keyword">import</span> java.util.concurrent.ScheduledExecutorService;</div><div class="line"><span class="keyword">import</span> java.util.concurrent.TimeUnit;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ScheduledExecutorsExample</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(<span class="number">1</span>);</div><div class="line">        Runnable task = () -&gt; &#123;</div><div class="line">          System.out.println(<span class="string">"Executing Task At "</span> + System.nanoTime());</div><div class="line">        &#125;;</div><div class="line"></div><div class="line">        System.out.println(<span class="string">"Submitting task at "</span> + System.nanoTime() + <span class="string">" to be executed after 5 seconds."</span>);</div><div class="line">        scheduledExecutorService.schedule(task, <span class="number">5</span>, TimeUnit.SECONDS);</div><div class="line">        </div><div class="line">        scheduledExecutorService.shutdown();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>周期执行：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.concurrent.Executors;</div><div class="line"><span class="keyword">import</span> java.util.concurrent.ScheduledExecutorService;</div><div class="line"><span class="keyword">import</span> java.util.concurrent.TimeUnit;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ScheduledExecutorsPeriodicExample</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(<span class="number">1</span>);</div><div class="line"></div><div class="line">        Runnable task = () -&gt; &#123;</div><div class="line">          System.out.println(<span class="string">"Executing Task At "</span> + System.nanoTime());</div><div class="line">        &#125;;</div><div class="line">        </div><div class="line">        System.out.println(<span class="string">"scheduling task to be executed every 2 seconds with an initial delay of 0 seconds"</span>);</div><div class="line">        scheduledExecutorService.scheduleAtFixedRate(task, <span class="number">0</span>,<span class="number">2</span>, TimeUnit.SECONDS);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ul>
-<li><a href="https://www.callicoder.com/java-executor-service-and-thread-pool-tutorial/" target="_blank" rel="external">Java ExecutorService and Thread Pools Tutorial</a></li>
-</ul>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/28/java-concurrency-executor-service-thread-pool/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1234,7 +1457,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
