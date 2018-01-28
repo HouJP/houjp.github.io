@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://houjp.com/"/>
-  <updated>2018-01-28T10:52:44.000Z</updated>
+  <updated>2018-01-28T10:55:48.000Z</updated>
   <id>http://houjp.com/</id>
   
   <author>
@@ -20,10 +20,11 @@
     <link href="http://houjp.com/2018/01/28/java-concurrency-thread-and-runnable/"/>
     <id>http://houjp.com/2018/01/28/java-concurrency-thread-and-runnable/</id>
     <published>2018-01-28T09:39:42.000Z</published>
-    <updated>2018-01-28T10:52:44.000Z</updated>
+    <updated>2018-01-28T10:55:48.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Creating-and-Strating-a-Thread"><a href="#Creating-and-Strating-a-Thread" class="headerlink" title="Creating and Strating a Thread"></a>Creating and Strating a Thread</h3><p>Java有两种方式创建线程。</p>
 <h4 id="1-By-extending-Thread-class"><a href="#1-By-extending-Thread-class" class="headerlink" title="1. By extending Thread class"></a>1. By extending Thread class</h4><p>继承<code>Thread</code>类，重载<code>run()</code>方法。<code>run()</code>方法中是该线程的执行逻辑。当创建好之后，通过<code>start()</code>方法来启动它。</p>
+<a id="more"></a>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThreadExample</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="comment">// run() method contains the code that is executed by the thread.</span></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"Inside : "</span> + Thread.currentThread().getName());</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"Inside : "</span> + Thread.currentThread().getName());</div><div class="line"></div><div class="line">        System.out.println(<span class="string">"Creating thread..."</span>);</div><div class="line">        Thread thread = <span class="keyword">new</span> ThreadExample();</div><div class="line"></div><div class="line">        System.out.println(<span class="string">"Starting thread..."</span>);</div><div class="line">        thread.start();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> Output</div><div class="line">Inside : main</div><div class="line">Creating thread...</div><div class="line">Starting thread...</div><div class="line">Inside : Thread-0</div></pre></td></tr></table></figure>
 <p>可以通过<code>Thread(String name)</code>构造方法来自定义线程名字。</p>
@@ -65,7 +66,8 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;Creating-and-Strating-a-Thread&quot;&gt;&lt;a href=&quot;#Creating-and-Strating-a-Thread&quot; class=&quot;headerlink&quot; title=&quot;Creating and Strating a Thread&quot;&gt;
+      &lt;h3 id=&quot;Creating-and-Strating-a-Thread&quot;&gt;&lt;a href=&quot;#Creating-and-Strating-a-Thread&quot; class=&quot;headerlink&quot; title=&quot;Creating and Strating a Thread&quot;&gt;&lt;/a&gt;Creating and Strating a Thread&lt;/h3&gt;&lt;p&gt;Java有两种方式创建线程。&lt;/p&gt;
+&lt;h4 id=&quot;1-By-extending-Thread-class&quot;&gt;&lt;a href=&quot;#1-By-extending-Thread-class&quot; class=&quot;headerlink&quot; title=&quot;1. By extending Thread class&quot;&gt;&lt;/a&gt;1. By extending Thread class&lt;/h4&gt;&lt;p&gt;继承&lt;code&gt;Thread&lt;/code&gt;类，重载&lt;code&gt;run()&lt;/code&gt;方法。&lt;code&gt;run()&lt;/code&gt;方法中是该线程的执行逻辑。当创建好之后，通过&lt;code&gt;start()&lt;/code&gt;方法来启动它。&lt;/p&gt;
     
     </summary>
     

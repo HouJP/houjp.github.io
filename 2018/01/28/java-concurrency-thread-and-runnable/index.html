@@ -83,17 +83,17 @@
 
 
 
-<meta name="description" content="Creating and Strating a ThreadJava有两种方式创建线程。 1. By extending Thread class继承Thread类，重载run()方法。run()方法中是该线程的执行逻辑。当创建好之后，通过start()方法来启动它。 123456789101112131415161718public class ThreadExample extends Thr">
+<meta name="description" content="Creating and Strating a ThreadJava有两种方式创建线程。 1. By extending Thread class继承Thread类，重载run()方法。run()方法中是该线程的执行逻辑。当创建好之后，通过start()方法来启动它。">
 <meta name="keywords" content="java,concurrency">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java Concurrency之Thread and Runnable Tutorial">
 <meta property="og:url" content="http://houjp.com/2018/01/28/java-concurrency-thread-and-runnable/index.html">
 <meta property="og:site_name" content="#include&amp;lt;AI&amp;gt;">
-<meta property="og:description" content="Creating and Strating a ThreadJava有两种方式创建线程。 1. By extending Thread class继承Thread类，重载run()方法。run()方法中是该线程的执行逻辑。当创建好之后，通过start()方法来启动它。 123456789101112131415161718public class ThreadExample extends Thr">
-<meta property="og:updated_time" content="2018-01-28T10:52:44.000Z">
+<meta property="og:description" content="Creating and Strating a ThreadJava有两种方式创建线程。 1. By extending Thread class继承Thread类，重载run()方法。run()方法中是该线程的执行逻辑。当创建好之后，通过start()方法来启动它。">
+<meta property="og:updated_time" content="2018-01-28T10:55:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java Concurrency之Thread and Runnable Tutorial">
-<meta name="twitter:description" content="Creating and Strating a ThreadJava有两种方式创建线程。 1. By extending Thread class继承Thread类，重载run()方法。run()方法中是该线程的执行逻辑。当创建好之后，通过start()方法来启动它。 123456789101112131415161718public class ThreadExample extends Thr">
+<meta name="twitter:description" content="Creating and Strating a ThreadJava有两种方式创建线程。 1. By extending Thread class继承Thread类，重载run()方法。run()方法中是该线程的执行逻辑。当创建好之后，通过start()方法来启动它。">
 
 
 
@@ -198,7 +198,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -218,7 +218,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -292,7 +292,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-28T17:39:42+08:00">
                 2018-01-28
@@ -344,6 +344,7 @@
       
         <h3 id="Creating-and-Strating-a-Thread"><a href="#Creating-and-Strating-a-Thread" class="headerlink" title="Creating and Strating a Thread"></a>Creating and Strating a Thread</h3><p>Java有两种方式创建线程。</p>
 <h4 id="1-By-extending-Thread-class"><a href="#1-By-extending-Thread-class" class="headerlink" title="1. By extending Thread class"></a>1. By extending Thread class</h4><p>继承<code>Thread</code>类，重载<code>run()</code>方法。<code>run()</code>方法中是该线程的执行逻辑。当创建好之后，通过<code>start()</code>方法来启动它。</p>
+<a id="more"></a>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThreadExample</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="comment">// run() method contains the code that is executed by the thread.</span></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"Inside : "</span> + Thread.currentThread().getName());</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"Inside : "</span> + Thread.currentThread().getName());</div><div class="line"></div><div class="line">        System.out.println(<span class="string">"Creating thread..."</span>);</div><div class="line">        Thread thread = <span class="keyword">new</span> ThreadExample();</div><div class="line"></div><div class="line">        System.out.println(<span class="string">"Starting thread..."</span>);</div><div class="line">        thread.start();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> Output</div><div class="line">Inside : main</div><div class="line">Creating thread...</div><div class="line">Starting thread...</div><div class="line">Inside : Thread-0</div></pre></td></tr></table></figure>
 <p>可以通过<code>Thread(String name)</code>构造方法来自定义线程名字。</p>
@@ -482,10 +483,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
+            Übersicht
           </li>
         </ul>
       
@@ -506,7 +507,7 @@
                 <a href="/archives/">
               
                   <span class="site-state-item-count">6</span>
-                  <span class="site-state-item-name">posts</span>
+                  <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
             
@@ -519,7 +520,7 @@
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
                   <span class="site-state-item-count">7</span>
-                  <span class="site-state-item-name">tags</span>
+                  <span class="site-state-item-name">Tags</span>
                 </a>
               </div>
             
@@ -590,7 +591,7 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
