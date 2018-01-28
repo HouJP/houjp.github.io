@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://houjp.com/"/>
-  <updated>2018-01-28T10:55:48.000Z</updated>
+  <updated>2018-01-28T10:56:45.000Z</updated>
   <id>http://houjp.com/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Java Concurrency之Thread and Runnable Tutorial</title>
+    <title>Java Concurrency之Thread and Runnable</title>
     <link href="http://houjp.com/2018/01/28/java-concurrency-thread-and-runnable/"/>
     <id>http://houjp.com/2018/01/28/java-concurrency-thread-and-runnable/</id>
     <published>2018-01-28T09:39:42.000Z</published>
-    <updated>2018-01-28T10:55:48.000Z</updated>
+    <updated>2018-01-28T10:56:45.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Creating-and-Strating-a-Thread"><a href="#Creating-and-Strating-a-Thread" class="headerlink" title="Creating and Strating a Thread"></a>Creating and Strating a Thread</h3><p>Java有两种方式创建线程。</p>
 <h4 id="1-By-extending-Thread-class"><a href="#1-By-extending-Thread-class" class="headerlink" title="1. By extending Thread class"></a>1. By extending Thread class</h4><p>继承<code>Thread</code>类，重载<code>run()</code>方法。<code>run()</code>方法中是该线程的执行逻辑。当创建好之后，通过<code>start()</code>方法来启动它。</p>
