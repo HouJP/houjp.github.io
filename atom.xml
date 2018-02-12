@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://houjp.com/"/>
-  <updated>2018-02-04T13:52:44.199Z</updated>
+  <updated>2018-02-12T11:25:18.446Z</updated>
   <id>http://houjp.com/</id>
   
   <author>
@@ -14,6 +14,74 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java Nested Classes</title>
+    <link href="http://houjp.com/2018/02/12/java-nested-classes/"/>
+    <id>http://houjp.com/2018/02/12/java-nested-classes/</id>
+    <published>2018-02-12T01:20:29.000Z</published>
+    <updated>2018-02-12T11:25:18.446Z</updated>
+    
+    <content type="html"><![CDATA[<p>Java允许我们在类中定义新的类，像这样：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">OuterClass</span> </span>&#123;</div><div class="line">  ...</div><div class="line">  <span class="class"><span class="keyword">class</span> <span class="title">NestedClass</span> </span>&#123;</div><div class="line">    ...</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>嵌套在类中的类，被称为<em>Nested Classes</em>。<em>Nested Classes</em>被分为两类：</p>
+<ol>
+<li>static: 声明为<code>static</code>的nested classes。</li>
+<li>non-static: 没有声明为<code>static</code>的nested classes，也被称为inner classes。</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">OuterClass</span> </span>&#123;</div><div class="line">    ...</div><div class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">StaticNestedClass</span> </span>&#123;</div><div class="line">        ...</div><div class="line">    &#125;</div><div class="line">    <span class="class"><span class="keyword">class</span> <span class="title">InnerClass</span> </span>&#123;</div><div class="line">        ...</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Nested class是包含它的类 (enclosing class) 的成员。Non-static nested classes (inner class) 有权限访问enclosing class的包括私有成员在内的其它成员。而static nested class没有权限访问enclosing class的其他成员。</p>
+<p>作为OuterClass的成员，nested class可以被声明为private, public, protected或package private (Outer classes只能声明为public或package private)。</p>
+<blockquote>
+<p><font color="red">TODO</font> 区分protected和package private。 </p>
+</blockquote>
+<h3 id="Why-Use-Nested-Classes"><a href="#Why-Use-Nested-Classes" class="headerlink" title="Why Use Nested Classes?"></a>Why Use Nested Classes?</h3><p>使用nested classes的原因如下：</p>
+<ul>
+<li>类只在一个地方被用到，那么这种方式可以将他们组织在一起。</li>
+<li>增强了密封性。</li>
+<li>增强可读性，并且利于维护。</li>
+</ul>
+<h3 id="Static-Nested-Classes"><a href="#Static-Nested-Classes" class="headerlink" title="Static Nested Classes"></a>Static Nested Classes</h3><p>与类的方法以及变量类似，static nested classes与它的outer class相关联。一个static nested class不能直接获取定义在enclosing class中的实例的变量或者方法，而是只能通过对象引用，这一点与静态类方法相同。</p>
+<p>通过enclosing class的名字来获取static nested classes:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">OuterClass.StaticNestedClass</div></pre></td></tr></table></figure>
+<p>创建对象：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">OuterClass.StaticNestedClass nestedObject =</div><div class="line">     <span class="keyword">new</span> OuterClass.StaticNestedClass();</div></pre></td></tr></table></figure>
+<h3 id="Inner-Classes"><a href="#Inner-Classes" class="headerlink" title="Inner Classes"></a>Inner Classes</h3><p>Inner class与它的enclosing class的实例相关联，并且可以访问对象的方法及字段。也正是因为它与实例相关联，所以不能在其中定义任何的静态成员。</p>
+<p>Inner class的实例依托于outer class的实例而存在。例如，对于以下的情况：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">OuterClass</span> </span>&#123;</div><div class="line">    ...</div><div class="line">    <span class="class"><span class="keyword">class</span> <span class="title">InnerClass</span> </span>&#123;</div><div class="line">        ...</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>InnerClass</code>的实例必须依托于<code>OuterClass</code>的实例而存在，并且可以直接访问其enclosing instance的方法和字段。。</p>
+<p>为了实例化inner class，必须先实例化outer class。然后，通过以下方式来创建inner class对象：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">OuterClass.InnerClass innerObject = outerObject.new InnerClass();</div></pre></td></tr></table></figure>
+<p>有两种特殊的inner classes: </p>
+<ul>
+<li>local classes</li>
+<li>anonymous classes</li>
+</ul>
+<blockquote>
+<p><font color="red">TODO</font> local classes和anonymous classes。</p>
+</blockquote>
+<h3 id="Shadowing"><a href="#Shadowing" class="headerlink" title="Shadowing"></a>Shadowing</h3><p>如果某个特殊范围(如inner class或者某个方法定义)内的一个类型的声明(如成员变量或者某个参数名)与enclosing scope中的另一个声明有相同的名字，那么enclosing scope中的声明就会被遮盖(shadow)。举例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ShadowTest</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">int</span> x = <span class="number">0</span>;</div><div class="line"></div><div class="line">    <span class="class"><span class="keyword">class</span> <span class="title">FirstLevel</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="keyword">public</span> <span class="keyword">int</span> x = <span class="number">1</span>;</div><div class="line"></div><div class="line">        <span class="function"><span class="keyword">void</span> <span class="title">methodInFirstLevel</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</div><div class="line">            System.out.println(<span class="string">"x = "</span> + x);</div><div class="line">            System.out.println(<span class="string">"this.x = "</span> + <span class="keyword">this</span>.x);</div><div class="line">            System.out.println(<span class="string">"ShadowTest.this.x = "</span> + ShadowTest.<span class="keyword">this</span>.x);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String... args)</span> </span>&#123;</div><div class="line">        ShadowTest st = <span class="keyword">new</span> ShadowTest();</div><div class="line">        ShadowTest.FirstLevel fl = st.new FirstLevel();</div><div class="line">        fl.methodInFirstLevel(<span class="number">23</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">x = <span class="number">23</span></div><div class="line"><span class="keyword">this</span>.x = <span class="number">1</span></div><div class="line">ShadowTest.<span class="keyword">this</span>.x = <span class="number">0</span></div></pre></td></tr></table></figure>
+<h3 id="Serialization"><a href="#Serialization" class="headerlink" title="Serialization"></a>Serialization</h3><p>强烈反对序列化inner classes。</p>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ul>
+<li><a href="https://docs.oracle.com/javase/tutorial/java/javaOO/nested.html" target="_blank" rel="external">The Java Tutorials: Nested Classes</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Java允许我们在类中定义新的类，像这样：&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;OuterClass&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  ...&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;NestedClass&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ...&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://houjp.com/tags/java/"/>
+    
+  </entry>
   
   <entry>
     <title>Guice Custom Scopes</title>

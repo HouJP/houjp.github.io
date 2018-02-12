@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="java,concurrency," />
+  <meta name="keywords" content="java," />
 
 
 
@@ -83,17 +83,17 @@
 
 
 
-<meta name="description" content="Concurrency is the ability to do more than one thing at the same time. Concurrency包含两种情况：  同时运行多个应用。 单个应用的多个部分同时执行。">
-<meta name="keywords" content="java,concurrency">
+<meta name="description" content="Java允许我们在类中定义新的类，像这样： 123456class OuterClass &amp;#123;  ...  class NestedClass &amp;#123;    ...  &amp;#125;&amp;#125;">
+<meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java Concurrency之Concurency Basics">
-<meta property="og:url" content="http://houjp.com/2018/01/28/java-concurrency-basics/index.html">
+<meta property="og:title" content="Java Nested Classes">
+<meta property="og:url" content="http://houjp.com/2018/02/12/java-nested-classes/index.html">
 <meta property="og:site_name" content="#include&amp;lt;AI&amp;gt;">
-<meta property="og:description" content="Concurrency is the ability to do more than one thing at the same time. Concurrency包含两种情况：  同时运行多个应用。 单个应用的多个部分同时执行。">
-<meta property="og:updated_time" content="2018-01-28T09:38:38.000Z">
+<meta property="og:description" content="Java允许我们在类中定义新的类，像这样： 123456class OuterClass &amp;#123;  ...  class NestedClass &amp;#123;    ...  &amp;#125;&amp;#125;">
+<meta property="og:updated_time" content="2018-02-12T11:25:18.446Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java Concurrency之Concurency Basics">
-<meta name="twitter:description" content="Concurrency is the ability to do more than one thing at the same time. Concurrency包含两种情况：  同时运行多个应用。 单个应用的多个部分同时执行。">
+<meta name="twitter:title" content="Java Nested Classes">
+<meta name="twitter:description" content="Java允许我们在类中定义新的类，像这样： 123456class OuterClass &amp;#123;  ...  class NestedClass &amp;#123;    ...  &amp;#125;&amp;#125;">
 
 
 
@@ -123,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://houjp.com/2018/01/28/java-concurrency-basics/"/>
+  <link rel="canonical" href="http://houjp.com/2018/02/12/java-nested-classes/"/>
 
 
 
 
 
-  <title>Java Concurrency之Concurency Basics | #include&lt;AI&gt;</title>
+  <title>Java Nested Classes | #include&lt;AI&gt;</title>
   
 
 
@@ -265,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://houjp.com/2018/01/28/java-concurrency-basics/">
+    <link itemprop="mainEntityOfPage" href="http://houjp.com/2018/02/12/java-nested-classes/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HouJP">
@@ -282,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java Concurrency之Concurency Basics</h1>
+          <h1 class="post-title" itemprop="name headline">Java Nested Classes</h1>
         
 
         <div class="post-meta">
@@ -294,8 +294,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-28T15:55:07+08:00">
-                2018-01-28
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-12T09:20:29+08:00">
+                2018-02-12
               </time>
             
 
@@ -313,8 +313,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/01/28/java-concurrency-basics/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/01/28/java-concurrency-basics/" itemprop="commentsCount"></span>
+                <a href="/2018/02/12/java-nested-classes/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/02/12/java-nested-classes/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -342,38 +342,52 @@
       
 
       
-        <p><em>Concurrency is the ability to do more than one thing at the same time.</em></p>
-<p><em>Concurrency</em>包含两种情况：</p>
-<ol>
-<li>同时运行多个应用。</li>
-<li>单个应用的多个部分同时执行。</li>
-</ol>
+        <p>Java允许我们在类中定义新的类，像这样：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">OuterClass</span> </span>&#123;</div><div class="line">  ...</div><div class="line">  <span class="class"><span class="keyword">class</span> <span class="title">NestedClass</span> </span>&#123;</div><div class="line">    ...</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <a id="more"></a>
-<h3 id="Concurrency-Under-the-Hood"><a href="#Concurrency-Under-the-Hood" class="headerlink" title="Concurrency: Under the Hood"></a>Concurrency: Under the Hood</h3><p>我们都知道计算机可以同时运行multiple tasks，但是这是怎么做到的呢？如今的计算机有multiple processors，如果一个计算机只有一个processor的话可以达到concurrency的目的吗？实际上，计算机可以执行的tasks的数量跟processors的数量之间没有直接的关系。</p>
-<p>那么，multiple tasks是如何同时运行在单个CPU上的呢？Multiple tasks并不是真正地在相同的时刻同时执行，它与<em>parallel</em>的概念不同。</p>
-<p>当我们说，“multiple tasks are executing at the same time”的时候，这句话的真实含义是“multiple tasks are making progress during the same period of time”。这些tasks的执行是交错进行的。操作系统在tasks之间频繁切换，这样在我们看来这些tasks好像是同时在执行一样。</p>
-<p>因此，<em>concurrency</em>与<em>parallelism</em>不同。事实上，<em>parallelism</em>是不可能在单个processor上实现的。</p>
-<h3 id="Unit-of-Concurrency"><a href="#Unit-of-Concurrency" class="headerlink" title="Unit of Concurrency"></a>Unit of Concurrency</h3><p><em>Concurrency</em>是一个较为宽泛的概念，它分为不同的层级：</p>
+<p>嵌套在类中的类，被称为<em>Nested Classes</em>。<em>Nested Classes</em>被分为两类：</p>
+<ol>
+<li>static: 声明为<code>static</code>的nested classes。</li>
+<li>non-static: 没有声明为<code>static</code>的nested classes，也被称为inner classes。</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">OuterClass</span> </span>&#123;</div><div class="line">    ...</div><div class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">StaticNestedClass</span> </span>&#123;</div><div class="line">        ...</div><div class="line">    &#125;</div><div class="line">    <span class="class"><span class="keyword">class</span> <span class="title">InnerClass</span> </span>&#123;</div><div class="line">        ...</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Nested class是包含它的类 (enclosing class) 的成员。Non-static nested classes (inner class) 有权限访问enclosing class的包括私有成员在内的其它成员。而static nested class没有权限访问enclosing class的其他成员。</p>
+<p>作为OuterClass的成员，nested class可以被声明为private, public, protected或package private (Outer classes只能声明为public或package private)。</p>
+<blockquote>
+<p><font color="red">TODO</font> 区分protected和package private。 </p>
+</blockquote>
+<h3 id="Why-Use-Nested-Classes"><a href="#Why-Use-Nested-Classes" class="headerlink" title="Why Use Nested Classes?"></a>Why Use Nested Classes?</h3><p>使用nested classes的原因如下：</p>
 <ul>
-<li><strong>Multiprocessing</strong> 多个processors/CPUs同时执行。这里并发的单位是CPU。</li>
-<li><strong>Multitasking</strong> 多个tasks/processes在单个CPU上同时执行。操作系统通过在这些tasks之间频繁切换来执行他们。这里并发的单位是process。</li>
-<li><strong>Multithreading</strong> 相同program的不同部分同时执行。这里，我们将同样的program分为不同的部分/线程，并且将他们并发的执行。</li>
+<li>类只在一个地方被用到，那么这种方式可以将他们组织在一起。</li>
+<li>增强了密封性。</li>
+<li>增强可读性，并且利于维护。</li>
 </ul>
-<h3 id="Processes-and-Threads"><a href="#Processes-and-Threads" class="headerlink" title="Processes and Threads"></a>Processes and Threads</h3><h4 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h4><p><em>A process is a program in execution. It has its own address space, a call stack, and link to any resources such as open files.</em></p>
-<h4 id="Thread"><a href="#Thread" class="headerlink" title="Thread"></a>Thread</h4><p><em>A thread is a path of execution within a process.</em> 每个process至少有一个thread, 称为main thread。Main thread可以创建该Process的其他threads。</p>
-<p>一个process的所有threads共享这个process的资源，包括memory和open files。但是，每个thread有它自己的call stack。</p>
-<p>因为threads共享process的地址空间，因此创建新的threads和threads之间通信会很高效。</p>
-<h3 id="Common-Problems-associated-with-Concurrency"><a href="#Common-Problems-associated-with-Concurrency" class="headerlink" title="Common Problems associated with Concurrency"></a>Common Problems associated with Concurrency</h3><p>Concurrency可以提高CPU的利用率(<font color="red">TODO Why?</font>)，但是带来了如下问题：</p>
+<h3 id="Static-Nested-Classes"><a href="#Static-Nested-Classes" class="headerlink" title="Static Nested Classes"></a>Static Nested Classes</h3><p>与类的方法以及变量类似，static nested classes与它的outer class相关联。一个static nested class不能直接获取定义在enclosing class中的实例的变量或者方法，而是只能通过对象引用，这一点与静态类方法相同。</p>
+<p>通过enclosing class的名字来获取static nested classes:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">OuterClass.StaticNestedClass</div></pre></td></tr></table></figure>
+<p>创建对象：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">OuterClass.StaticNestedClass nestedObject =</div><div class="line">     <span class="keyword">new</span> OuterClass.StaticNestedClass();</div></pre></td></tr></table></figure>
+<h3 id="Inner-Classes"><a href="#Inner-Classes" class="headerlink" title="Inner Classes"></a>Inner Classes</h3><p>Inner class与它的enclosing class的实例相关联，并且可以访问对象的方法及字段。也正是因为它与实例相关联，所以不能在其中定义任何的静态成员。</p>
+<p>Inner class的实例依托于outer class的实例而存在。例如，对于以下的情况：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">OuterClass</span> </span>&#123;</div><div class="line">    ...</div><div class="line">    <span class="class"><span class="keyword">class</span> <span class="title">InnerClass</span> </span>&#123;</div><div class="line">        ...</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>InnerClass</code>的实例必须依托于<code>OuterClass</code>的实例而存在，并且可以直接访问其enclosing instance的方法和字段。。</p>
+<p>为了实例化inner class，必须先实例化outer class。然后，通过以下方式来创建inner class对象：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">OuterClass.InnerClass innerObject = outerObject.new InnerClass();</div></pre></td></tr></table></figure>
+<p>有两种特殊的inner classes: </p>
 <ul>
-<li><p><strong>Thread interference errors (Race Conditions)</strong>: 这种情况在多个线程同时读写共享变量时发生，并且读写操作之间发生了重叠。</p>
-<p>这会造成结果的不可预见性（取决于读写操作的顺序）。</p>
-<p>这种情况可以通过加exclusive lock来解决。这会带来新的问题<strong>deadlock</strong>和<strong>starvation</strong>。</p>
-</li>
-<li><p><strong>Memory consistency errors</strong>: 它指的是不同的线程对于相同的数据产生了inconsistent views。发生的原因是有的线程更新的共享数据，但是没有传播给其他线程，导致这些线程还在用旧数据。</p>
-</li>
+<li>local classes</li>
+<li>anonymous classes</li>
 </ul>
+<blockquote>
+<p><font color="red">TODO</font> local classes和anonymous classes。</p>
+</blockquote>
+<h3 id="Shadowing"><a href="#Shadowing" class="headerlink" title="Shadowing"></a>Shadowing</h3><p>如果某个特殊范围(如inner class或者某个方法定义)内的一个类型的声明(如成员变量或者某个参数名)与enclosing scope中的另一个声明有相同的名字，那么enclosing scope中的声明就会被遮盖(shadow)。举例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ShadowTest</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">int</span> x = <span class="number">0</span>;</div><div class="line"></div><div class="line">    <span class="class"><span class="keyword">class</span> <span class="title">FirstLevel</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="keyword">public</span> <span class="keyword">int</span> x = <span class="number">1</span>;</div><div class="line"></div><div class="line">        <span class="function"><span class="keyword">void</span> <span class="title">methodInFirstLevel</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</div><div class="line">            System.out.println(<span class="string">"x = "</span> + x);</div><div class="line">            System.out.println(<span class="string">"this.x = "</span> + <span class="keyword">this</span>.x);</div><div class="line">            System.out.println(<span class="string">"ShadowTest.this.x = "</span> + ShadowTest.<span class="keyword">this</span>.x);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String... args)</span> </span>&#123;</div><div class="line">        ShadowTest st = <span class="keyword">new</span> ShadowTest();</div><div class="line">        ShadowTest.FirstLevel fl = st.new FirstLevel();</div><div class="line">        fl.methodInFirstLevel(<span class="number">23</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">x = <span class="number">23</span></div><div class="line"><span class="keyword">this</span>.x = <span class="number">1</span></div><div class="line">ShadowTest.<span class="keyword">this</span>.x = <span class="number">0</span></div></pre></td></tr></table></figure>
+<h3 id="Serialization"><a href="#Serialization" class="headerlink" title="Serialization"></a>Serialization</h3><p>强烈反对序列化inner classes。</p>
 <h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ul>
-<li><a href="https://www.callicoder.com/java-concurrency-multithreading-basics/" target="_blank" rel="external">Java Concurrency / Multithreading Basics</a></li>
+<li><a href="https://docs.oracle.com/javase/tutorial/java/javaOO/nested.html" target="_blank" rel="external">The Java Tutorials: Nested Classes</a></li>
 </ul>
 
       
@@ -394,8 +408,6 @@
           
             <a href="/tags/java/" rel="tag"># java</a>
           
-            <a href="/tags/concurrency/" rel="tag"># concurrency</a>
-          
         </div>
       
 
@@ -407,8 +419,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/18/guice/" rel="next" title="Guice Notes">
-                <i class="fa fa-chevron-left"></i> Guice Notes
+              <a href="/2018/02/04/guice-custom-scopes/" rel="next" title="Guice Custom Scopes">
+                <i class="fa fa-chevron-left"></i> Guice Custom Scopes
               </a>
             
           </div>
@@ -416,10 +428,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/01/28/java-concurrency-thread-and-runnable/" rel="prev" title="Java Concurrency之Thread and Runnable">
-                Java Concurrency之Thread and Runnable <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -558,7 +566,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Concurrency-Under-the-Hood"><span class="nav-number">1.</span> <span class="nav-text">Concurrency: Under the Hood</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unit-of-Concurrency"><span class="nav-number">2.</span> <span class="nav-text">Unit of Concurrency</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Processes-and-Threads"><span class="nav-number">3.</span> <span class="nav-text">Processes and Threads</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Process"><span class="nav-number">3.1.</span> <span class="nav-text">Process</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Thread"><span class="nav-number">3.2.</span> <span class="nav-text">Thread</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Common-Problems-associated-with-Concurrency"><span class="nav-number">4.</span> <span class="nav-text">Common Problems associated with Concurrency</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reference"><span class="nav-number">5.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Why-Use-Nested-Classes"><span class="nav-number">1.</span> <span class="nav-text">Why Use Nested Classes?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Static-Nested-Classes"><span class="nav-number">2.</span> <span class="nav-text">Static Nested Classes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Inner-Classes"><span class="nav-number">3.</span> <span class="nav-text">Inner Classes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shadowing"><span class="nav-number">4.</span> <span class="nav-text">Shadowing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Serialization"><span class="nav-number">5.</span> <span class="nav-text">Serialization</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reference"><span class="nav-number">6.</span> <span class="nav-text">Reference</span></a></li></ol></div>
             
 
           </div>

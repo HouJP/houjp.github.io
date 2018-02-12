@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://houjp.com/2018/02/12/java-nested-classes/</loc>
+    
+    <lastmod>2018-02-12T11:25:18.446Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://houjp.com/2018/02/04/guice-custom-scopes/</loc>
     
     <lastmod>2018-02-04T13:52:44.199Z</lastmod>
