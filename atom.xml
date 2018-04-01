@@ -123,9 +123,9 @@
     </summary>
     
     
-      <category term="java" scheme="http://houjp.com/tags/java/"/>
-    
       <category term="guice" scheme="http://houjp.com/tags/guice/"/>
+    
+      <category term="java" scheme="http://houjp.com/tags/java/"/>
     
   </entry>
   
@@ -673,9 +673,9 @@
     </summary>
     
     
-      <category term="java" scheme="http://houjp.com/tags/java/"/>
-    
       <category term="guice" scheme="http://houjp.com/tags/guice/"/>
+    
+      <category term="java" scheme="http://houjp.com/tags/java/"/>
     
   </entry>
   
@@ -684,7 +684,7 @@
     <link href="http://houjp.com/2018/01/10/cnn-w1/"/>
     <id>http://houjp.com/2018/01/10/cnn-w1/</id>
     <published>2018-01-10T15:53:50.000Z</published>
-    <updated>2018-04-01T10:05:11.844Z</updated>
+    <updated>2018-04-01T10:50:56.327Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Computer-Vision"><a href="#Computer-Vision" class="headerlink" title="Computer Vision"></a>Computer Vision</h3><p>Computer Vision Problems include:</p>
 <ul>
@@ -738,8 +738,14 @@
 <p>很有意思的地方在于，对于pooling layer来说，我们只需要确定超参数$f^{[l]}$和$s^{[l]}$，以及是max pooling 还是average pooling，并不需要进行参数的学习。</p>
 <p>在pooling layer中，超参$p^{[l]}$通常设置为0。</p>
 <h3 id="CNN-Example"><a href="#CNN-Example" class="headerlink" title="CNN Example"></a>CNN Example</h3><p>神经网络中常用的一种模式是，若干卷积层之后加池化层，再若干层卷积层之后接池化层，然后接全连接层，最后给softmax单元。NG在课上画了一个例子如下，</p>
-<div align="center"><br><br><img src="img/cnn-w1/cnn-example.jpeg" alt="cnn-example"><br><br></div>
+<div align="center"><br><br><img src="/img/cnn-w1/cnn-example.jpeg" alt="cnn-example"><br><br></div>
 
+<h3 id="Why-Convolutions"><a href="#Why-Convolutions" class="headerlink" title="Why Convolutions"></a>Why Convolutions</h3><p>卷积层最显著的特点就是参数数量大大小于全连接层的数量，因为：</p>
+<ol>
+<li>Parameter sharing: 图像的不同位置共享filters。</li>
+<li>Sparsity of connections: 每个输出值只取决于很小的一部分输入。这样也降低了过拟合的风险。</li>
+</ol>
+<p>卷积神经网络的损失函数定义如下所示，<br>$$<br>Cost~J = \frac{1}{m} \sum_{i-1}^{m} \mathcal{L}(\hat{y}^{(i)}, y^{(i)})<br>$$</p>
 <h3 id="References"><a href="#References" class="headerlink" title="References"></a>References</h3><ul>
 <li><a href="http://www.cnblogs.com/nowgood/p/Latexstart.html" target="_blank" rel="external">MarkDown中使用Latex数学公式</a></li>
 <li><a href="http://masikkk.com/article/hexo-13-MathJax/" target="_blank" rel="external">Hexo博客(13)添加MathJax数学公式渲染</a><ul>
