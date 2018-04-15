@@ -261,7 +261,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://houjp.com/2018/02/12/java-nested-classes/">
+    <link itemprop="mainEntityOfPage" href="http://houjp.com/2018/04/15/rnn-w2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HouJP">
@@ -280,7 +280,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/12/java-nested-classes/" itemprop="url">Java Nested Classes</a></h1>
+                <a class="post-title-link" href="/2018/04/15/rnn-w2/" itemprop="url">Recurrent Neural Networks / Week 2</a></h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-12T09:20:29+08:00">
-                2018-02-12
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-15T07:17:30+08:00">
+                2018-04-15
               </time>
             
 
@@ -331,11 +331,15 @@
 
       
         
-          <p>Java允许我们在类中定义新的类，像这样：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">OuterClass</span> </span>&#123;</div><div class="line">  ...</div><div class="line">  <span class="class"><span class="keyword">class</span> <span class="title">NestedClass</span> </span>&#123;</div><div class="line">    ...</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          <h3 id="Word-Representation"><a href="#Word-Representation" class="headerlink" title="Word Representation"></a>Word Representation</h3><p>One hot编码有天然的劣势，比如，</p>
+<ul>
+<li>I want a glass of orange <u>juice</u>.</li>
+<li>I want a glass of apple <u>juice</u>.</li>
+</ul>
+<p>如果我们从上面一句学到了orange后边是juice，是无法推断出来第二句的填空题中apple后边应该填juice。因为在One hot编码中，orange和apple两个向量之间没有任何的关联关系。因此，我们需要Word representation来对词进行表达，而不是用One hot编码。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/02/12/java-nested-classes/#more" rel="contents">
+            <a class="btn" href="/2018/04/15/rnn-w2/#more" rel="contents">
               Weiterlesen &raquo;
             </a>
           </div>
@@ -386,7 +390,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://houjp.com/2018/02/04/guice-custom-scopes/">
+    <link itemprop="mainEntityOfPage" href="http://houjp.com/2018/04/08/rnn-w1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HouJP">
@@ -405,7 +409,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/04/guice-custom-scopes/" itemprop="url">Guice Custom Scopes</a></h1>
+                <a class="post-title-link" href="/2018/04/08/rnn-w1/" itemprop="url">Recurrent Neural Networks / Week 1</a></h1>
         
 
         <div class="post-meta">
@@ -417,8 +421,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-04T19:08:10+08:00">
-                2018-02-04
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-08T07:17:30+08:00">
+                2018-04-08
               </time>
             
 
@@ -456,17 +460,16 @@
 
       
         
-          <p><em>Guice官方并不建议自定义scopes，它认为自带的scopes已经足够使用。</em></p>
-<p>创建custom scopes需要以下几步：</p>
+          <h3 id="Why-not-a-standard-network"><a href="#Why-not-a-standard-network" class="headerlink" title="Why not a standard network"></a>Why not a standard network</h3><p>传统网络不可行的原因，</p>
 <ol>
-<li>定义一个scoping annotation。</li>
-<li>实现<code>Scope</code>接口。</li>
-<li>将scope annotation绑定到它的实现。</li>
-<li>触发scope的开始以及结束。</li>
+<li>Inputs, outputs can be different lengths in different examples.</li>
+<li>Doesn’t share features learned across different positions of text.</li>
 </ol>
+<p>RNN的网络结构如下所示，</p>
+<p><img src="/img/rnn-w1/rnn.jpeg" width="70%" align="center"></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/02/04/guice-custom-scopes/#more" rel="contents">
+            <a class="btn" href="/2018/04/08/rnn-w1/#more" rel="contents">
               Weiterlesen &raquo;
             </a>
           </div>
@@ -517,7 +520,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://houjp.com/2018/01/28/java-concurrency-thread-synchronization/">
+    <link itemprop="mainEntityOfPage" href="http://houjp.com/2018/04/06/cnn-w4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HouJP">
@@ -536,7 +539,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/01/28/java-concurrency-thread-synchronization/" itemprop="url">Java Concurrency之Thread Synchronization</a></h1>
+                <a class="post-title-link" href="/2018/04/06/cnn-w4/" itemprop="url">Convolutional Neural Networks / Week 4</a></h1>
         
 
         <div class="post-meta">
@@ -548,8 +551,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-28T23:15:16+08:00">
-                2018-01-28
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-06T22:40:27+08:00">
+                2018-04-06
               </time>
             
 
@@ -587,14 +590,24 @@
 
       
         
-          <h3 id="Concurrency-Issues"><a href="#Concurrency-Issues" class="headerlink" title="Concurrency Issues"></a>Concurrency Issues</h3><p>当多个线程并发读写共享数据的时候，会造成如下问题：</p>
-<ol>
-<li>Thread interference errors</li>
-<li>Memory consistency errors</li>
-</ol>
+          <h3 id="What-is-Face-Recognition"><a href="#What-is-Face-Recognition" class="headerlink" title="What is Face Recognition"></a>What is Face Recognition</h3><p>这里区分两个概念，<code>Face verification</code>和<code>Face recognition</code>，</p>
+<ul>
+<li>Verification<ul>
+<li>输入：图像 + 名字/ID</li>
+<li>输出：输入的图像上是否有名字/ID表示的那个人</li>
+</ul>
+</li>
+<li>Recognition<ul>
+<li>数据库中有$K$个人</li>
+<li>输入：图像</li>
+<li>输出：图像上有的数据库中的人的名字/ID</li>
+</ul>
+</li>
+</ul>
+<p>很明显，Recognition比Verification的难度要大得多。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/01/28/java-concurrency-thread-synchronization/#more" rel="contents">
+            <a class="btn" href="/2018/04/06/cnn-w4/#more" rel="contents">
               Weiterlesen &raquo;
             </a>
           </div>
@@ -645,7 +658,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://houjp.com/2018/01/28/java-concurrency-callable-and-future/">
+    <link itemprop="mainEntityOfPage" href="http://houjp.com/2018/04/06/cnn-w3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HouJP">
@@ -664,7 +677,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/01/28/java-concurrency-callable-and-future/" itemprop="url">Java Concurrency之Callable and Future</a></h1>
+                <a class="post-title-link" href="/2018/04/06/cnn-w3/" itemprop="url">Convolutional Neural Networks / Week 3</a></h1>
         
 
         <div class="post-meta">
@@ -676,8 +689,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-28T22:34:49+08:00">
-                2018-01-28
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-06T11:24:21+08:00">
+                2018-04-06
               </time>
             
 
@@ -715,11 +728,11 @@
 
       
         
-          <h3 id="Callable"><a href="#Callable" class="headerlink" title="Callable"></a>Callable</h3><p><code>Runnable</code>虽然方便但是不能让tasks的执行拥有返回值。</p>
-<p>Java还提供了<code>Callable</code>接口来让tasks返回结果。<code>Callable</code>和<code>Runnable</code>类似，除了可以返回结果以及会抛出一个checked exeption。</p>
+          <h3 id="Object-Localization"><a href="#Object-Localization" class="headerlink" title="Object Localization"></a>Object Localization</h3><p>Object localization用来识别图像中是否包含特定对象以及该对象的位置，并最终使用一个矩形框在图像中标出该特定对象。为了简化问题，在这里我们假设图片中最多包含一个待识别的对象。下面对问题进行形式化描述。</p>
+<p>定义目标变量$y$ (同时也是神经网络的输出层)，<br>$$<br>y = [P_c~b_x~b_y~b_h~b_w~C_1~C_2~C_3]^T<br>\tag{1}<br>$$<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/01/28/java-concurrency-callable-and-future/#more" rel="contents">
+            <a class="btn" href="/2018/04/06/cnn-w3/#more" rel="contents">
               Weiterlesen &raquo;
             </a>
           </div>
@@ -770,7 +783,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://houjp.com/2018/01/28/java-concurrency-executor-service-thread-pool/">
+    <link itemprop="mainEntityOfPage" href="http://houjp.com/2018/04/02/cnn-w2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HouJP">
@@ -789,7 +802,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/01/28/java-concurrency-executor-service-thread-pool/" itemprop="url">Java Concurrency之Executor Service & Thread Pool</a></h1>
+                <a class="post-title-link" href="/2018/04/02/cnn-w2/" itemprop="url">Convolutional Neural Networks / Week 2</a></h1>
         
 
         <div class="post-meta">
@@ -801,8 +814,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-28T19:01:57+08:00">
-                2018-01-28
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-02T20:50:35+08:00">
+                2018-04-02
               </time>
             
 
@@ -840,16 +853,11 @@
 
       
         
-          <h3 id="Executor-Framework"><a href="#Executor-Framework" class="headerlink" title="Executor Framework"></a>Executor Framework</h3><p>大型的多线程应用可能有成百上千个应用，因此需要将线程的创建和应用其他部分的管理进行区分。</p>
-<p><strong>Executors, 是一个帮助你创建和管理线程的框架</strong>：</p>
-<ol>
-<li>线程创建：提供了创建线程的多种方法，具体的说就是一个线程池，应用可以用它来并发的执行tasks。</li>
-<li>线程管理：它管理线程池中线程的生命周期。你不需要关心线程池中的线程是否active/busy/dead/…。</li>
-<li>任务创建和执行：Executors框架提供了方法来提交tasks到线程池运行，并且我们可以决定tasks什么时候被执行。</li>
-</ol>
+          <h3 id="Classic-Networks"><a href="#Classic-Networks" class="headerlink" title="Classic Networks"></a>Classic Networks</h3><p>LeNet-5的网络结构如下，</p>
+<p><img src="/img/cnn-w2/lenet-5.jpeg" width="80%" align="center"></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/01/28/java-concurrency-executor-service-thread-pool/#more" rel="contents">
+            <a class="btn" href="/2018/04/02/cnn-w2/#more" rel="contents">
               Weiterlesen &raquo;
             </a>
           </div>
@@ -891,7 +899,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -937,7 +945,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
@@ -950,7 +958,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">Tags</span>
                 </a>
               </div>

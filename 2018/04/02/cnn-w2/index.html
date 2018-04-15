@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="p0bY2JfKZxHdJB1zzqM6oJfcl460YddP7aOTWJ02CE8" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="deep-learning,cnn," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="#include&lt;AI&gt;" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="Classic NetworksLeNet-5的网络结构如下，">
+<meta name="keywords" content="deep-learning,cnn">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Convolutional Neural Networks &#x2F; Week 2">
+<meta property="og:url" content="http://houjp.com/2018/04/02/cnn-w2/index.html">
+<meta property="og:site_name" content="#include&amp;lt;AI&amp;gt;">
+<meta property="og:description" content="Classic NetworksLeNet-5的网络结构如下，">
+<meta property="og:image" content="http://houjp.com/img/cnn-w2/lenet-5.jpeg">
+<meta property="og:image" content="http://houjp.com/img/cnn-w2/alexnet.jpeg">
+<meta property="og:image" content="http://houjp.com/img/cnn-w2/vgg-16.jpeg">
+<meta property="og:image" content="http://houjp.com/img/cnn-w2/inception-2-layer.jpeg">
+<meta property="og:image" content="http://houjp.com/img/cnn-w2/inception-3-layer.jpeg">
+<meta property="og:updated_time" content="2018-04-14T12:37:27.975Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Convolutional Neural Networks &#x2F; Week 2">
+<meta name="twitter:description" content="Classic NetworksLeNet-5的网络结构如下，">
+<meta name="twitter:image" content="http://houjp.com/img/cnn-w2/lenet-5.jpeg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://houjp.com/2018/04/02/cnn-w2/"/>
+
+
+
+
+
+  <title>Convolutional Neural Networks / Week 2 | #include&lt;AI&gt;</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-113164362-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">#include&lt;AI&gt;</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            Sitemap
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://houjp.com/2018/04/02/cnn-w2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HouJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="#include&lt;AI&gt;">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Convolutional Neural Networks / Week 2</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-02T20:50:35+08:00">
+                2018-04-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/02/cnn-w2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/04/02/cnn-w2/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="Classic-Networks"><a href="#Classic-Networks" class="headerlink" title="Classic Networks"></a>Classic Networks</h3><p>LeNet-5的网络结构如下，</p>
+<p><img src="/img/cnn-w2/lenet-5.jpeg" width="80%" align="center"></p>
+<a id="more"></a>
+<p>AlexNet的网络结构如下，</p>
+<p><img src="/img/cnn-w2/alexnet.jpeg" width="80%" align="center"></p>
+<p>VGG-16的网络结构如下，</p>
+<p><img src="/img/cnn-w2/vgg-16.jpeg" width="80%" align="center"></p>
+<h3 id="ResNets"><a href="#ResNets" class="headerlink" title="ResNets"></a>ResNets</h3><p>在一般的神经网络中，两层神经网络的数学表达如下，<br>$$<br>\begin{split}<br>&amp; z^{[l+1]} = W^{[l+1]}a^{[l]} + b^{[l+1]} \\<br>&amp; a^{[l+1]} = g(z^{[l+1]}) \\<br>&amp; z^{[l+2]} = W^{[l+2]}a^{[l + 1]} + b^{[l+2]} \\<br>&amp; a^{[l+2]} = g(z^{[l+2]})<br>\end{split}<br>$$<br>而在ResNets中，修改了$a^{[l+2]}$的生成方式，变成了，<br>$$<br>a^{[l+2]} = g(z^{[l + 2]} + a^{[l]})<br>\tag{1}<br>$$<br>这样的两层神经网络称为Residual block，将这样的Residual block串联起来就构成了ResNets。</p>
+<p>ResNets解决了传统神经网络中存在的层数不能过深的问题。在传统的神经网络中，随着深度的增加，训练误差会先降后升，而对于ResNets，随着网络层数达到一百甚至一千层，训练误差也可以平缓的下降（也可能出现收敛的现象）。</p>
+<h3 id="Why-ResNets-Work"><a href="#Why-ResNets-Work" class="headerlink" title="Why ResNets Work"></a>Why ResNets Work</h3><p>首先来解释一下为什么在传统的网络后面加一个Residual block不会降低原有网络的性能，<br>$$<br>\begin{split}<br>a^{[l+2]} &amp;= g(z^{[l + 2]} + a^{[l]}) \\<br>    &amp;= g((w^{[l+2]}a^{[l + 1]} + b^{[l + 2]}) + a^{[l]})<br>\end{split}<br>$$<br>假设我们采用的激活函数为RELU，同时$w^{[l+2]}$和$b^{[l+2]}$为0，那么，<br>$$<br>a^{[l+2]} = g(a^{[l]}) = a^{[l]}<br>$$<br>所以由于Residual block的存在，网络在第$l+2$层的时候，很容易退回到$l$层去。这样可以达到一个效果，在最差情况下，后边加上的Residual block仿佛不存在一样，这样就不会影响原先的效果。</p>
+<p>Residual block中还有一点值得注意，对于式(1)来说，$z^{[l+2]}$和$a^{[l]}$的维度需要一致，那如果出现维度不一致的情况怎么办呢？增加一个$W_s$矩阵，<br>$$<br>a^{[l+2]} = g(z^{[l + 2]} + W_s a^{[l]})<br>$$<br>$W_s$有两种方式生成，</p>
+<ol>
+<li>随机生成的参数矩阵，跟随其他参数一起训练学习。</li>
+<li>$a^{[l]}$的基础上采用padding操作生成，比如补0。</li>
+</ol>
+<h3 id="Networks-in-Networks-and-1x1-Convolutions"><a href="#Networks-in-Networks-and-1x1-Convolutions" class="headerlink" title="Networks in Networks and 1x1 Convolutions"></a>Networks in Networks and 1x1 Convolutions</h3><p>1x1 Convolutons也称为Networks in networks，它是一个1x1的filters并使用了Relu非线性变换。</p>
+<h3 id="Inception-Network-Motivation"><a href="#Inception-Network-Motivation" class="headerlink" title="Inception Network Motivation"></a>Inception Network Motivation</h3><p>在构造神经网络的时候，我们有时候会很困惑，用$1\times1$的卷积效果好，还是$f^{[l]}\times f^{[l]}$的卷积效果好，或者用Max-pooling效果会更好呢？Inception Network的思想是，那就把他们在同一层中都用一遍，这样就会得到若干tensor的输出，然后再把这些tensor在channel的纬度上拼在一起，组合一个大的tensor。最后，用数据去训练学习，决定这些filters的参数。</p>
+<p>这样会有如下问题，</p>
+<ol>
+<li>如何让这些tensor在除了channel之外的其他维度上保持尺寸一致？</li>
+<li>会不会造成计算量的显著增加？</li>
+</ol>
+<p>对于问题(1)其实很好解决，采用padding的方式就可以让这些tensor的$n_H$和$n_W$保持一致。</p>
+<p>对于问题(2)可以通过在两层网络中间增加一层$1\times1$ filter来解决。下面详细描述原理。</p>
+<p>假设我们有这样两层网络，</p>
+<p><img src="/img/cnn-w2/inception-2-layer.jpeg" width="50%" title="图 1" align="center"></p>
+<p>那么从左到右需要的乘法运算的数量为，<br>$$<br>(28 \times 28 \times 32) \times (5 \times 5 \times 192) \approx 120~million<br>$$<br>如果我们在图(1)两层网络中间加入一层使用了$1\times1$ filter的卷积层，如图(2)所示，</p>
+<p><img src="/img/cnn-w2/inception-3-layer.jpeg" width="50%" title="图 2" align="center"></p>
+<p>那么从左到右所需要的乘法运算的数量为，<br>$$<br>\begin{split}<br>&amp;1st~layer \rightarrow 2nd~layer：&amp;(28 \times 28 \times 16) \times (1 \times 1 \times 192) \approx 2.4~million \\<br>&amp;2nd~layer \rightarrow 3rd~layer：&amp;(28 \times 28 \times 32) \times (5 \times 5 \times 16) \approx 10~million<br>\end{split}<br>$$<br>也就是共需要$12.4~million$的乘法运算。从中可以看到，加入”bottleneck layer”之后，所需要的计算量减少为了原来的十分之一。</p>
+<h3 id="Transfer-Learning"><a href="#Transfer-Learning" class="headerlink" title="Transfer Learning"></a>Transfer Learning</h3><p>当我们有一个比较小的训练数据集的时候，我们可以在别人训练好的模型的基础上来达到我们的目的：删除最后的softmax layers，保留之前的layers的模型结构和权重，并在之后增加我们自己的softmax layers。然后用较小的训练数据集来训练我们新增加的layers的参数。这样就可以用较少的数据来得到不错的预测效果。</p>
+<p>其中，我们可以预先存储训练数据集中的样本经过之前的layers (删除原先的softmax layers)之后得到的activations，这样就不用在之后训练新的softmax layers参数的时候反复计算，从而节省计算量并提高效率。</p>
+<p>随着我们拥有的训练数据的增加，我们可以保留较少层数的参数不发生改变，其余网络层以原先权重为初始参数，然后在新的训练数据集上进行训练调整。如果我们的训练数据足够大，那么原先所有层的参数都可以只作为初始参数，让它们在新的数据集上进行训练调整。</p>
+<h3 id="Data-Augmentation"><a href="#Data-Augmentation" class="headerlink" title="Data Augmentation"></a>Data Augmentation</h3><p>通常在机器学习中，我们需要大量的训练数据，因此有一些常用的有效的增加数据集的方法，</p>
+<ul>
+<li>Mirroring: 镜像处理</li>
+<li>Random Cropping: 随机图像裁剪</li>
+<li>Rotation: 图像旋转</li>
+<li>Shearing: </li>
+<li>Local warping: 局部变形</li>
+<li>Color Shifting: 在不同的颜色通道上增减一定的数值，例如$R+20, G-20, B+20$</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/deep-learning/" rel="tag"># deep-learning</a>
+          
+            <a href="/tags/cnn/" rel="tag"># cnn</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/01/cnn-w1/" rel="next" title="Convolutional Neural Networks / Week 1">
+                <i class="fa fa-chevron-left"></i> Convolutional Neural Networks / Week 1
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/06/cnn-w3/" rel="prev" title="Convolutional Neural Networks / Week 3">
+                Convolutional Neural Networks / Week 3 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">HouJP</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">Artikel</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">Tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Classic-Networks"><span class="nav-number">1.</span> <span class="nav-text">Classic Networks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ResNets"><span class="nav-number">2.</span> <span class="nav-text">ResNets</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Why-ResNets-Work"><span class="nav-number">3.</span> <span class="nav-text">Why ResNets Work</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Networks-in-Networks-and-1x1-Convolutions"><span class="nav-number">4.</span> <span class="nav-text">Networks in Networks and 1x1 Convolutions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Inception-Network-Motivation"><span class="nav-number">5.</span> <span class="nav-text">Inception Network Motivation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Transfer-Learning"><span class="nav-number">6.</span> <span class="nav-text">Transfer Learning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-Augmentation"><span class="nav-number">7.</span> <span class="nav-text">Data Augmentation</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">HouJP</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'houjp',
+            repo: 'houjp.github.io',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: 'd7a7cf68b545d23fcfdd3ee662a10d20a8620f91',
+            
+                client_id: 'b2444c028f2f5885276c'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

@@ -87,11 +87,11 @@
 <meta name="keywords" content="deep-learning,cnn">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Convolutional Neural Networks &#x2F; Week 1">
-<meta property="og:url" content="http://houjp.com/2018/01/10/cnn-w1/index.html">
+<meta property="og:url" content="http://houjp.com/2018/04/01/cnn-w1/index.html">
 <meta property="og:site_name" content="#include&amp;lt;AI&amp;gt;">
 <meta property="og:description" content="Computer VisionComputer Vision Problems include:  Image Classication Object Detection … …  One of the challenges of computer vision problems is that the input can be very big. For example, a 1000 by 1">
 <meta property="og:image" content="http://houjp.com/img/cnn-w1/cnn-example.jpeg">
-<meta property="og:updated_time" content="2018-04-01T10:50:56.327Z">
+<meta property="og:updated_time" content="2018-04-14T12:37:27.974Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Convolutional Neural Networks &#x2F; Week 1">
 <meta name="twitter:description" content="Computer VisionComputer Vision Problems include:  Image Classication Object Detection … …  One of the challenges of computer vision problems is that the input can be very big. For example, a 1000 by 1">
@@ -125,7 +125,7 @@
 
 
 
-  <link rel="canonical" href="http://houjp.com/2018/01/10/cnn-w1/"/>
+  <link rel="canonical" href="http://houjp.com/2018/04/01/cnn-w1/"/>
 
 
 
@@ -267,7 +267,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://houjp.com/2018/01/10/cnn-w1/">
+    <link itemprop="mainEntityOfPage" href="http://houjp.com/2018/04/01/cnn-w1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HouJP">
@@ -296,8 +296,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-10T23:53:50+08:00">
-                2018-01-10
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-01T23:50:35+08:00">
+                2018-04-01
               </time>
             
 
@@ -315,8 +315,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/01/10/cnn-w1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/01/10/cnn-w1/" itemprop="commentsCount"></span>
+                <a href="/2018/04/01/cnn-w1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/04/01/cnn-w1/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -404,6 +404,11 @@
 <li>Sparsity of connections: 每个输出值只取决于很小的一部分输入。这样也降低了过拟合的风险。</li>
 </ol>
 <p>卷积神经网络的损失函数定义如下所示，<br>$$<br>Cost~J = \frac{1}{m} \sum_{i-1}^{m} \mathcal{L}(\hat{y}^{(i)}, y^{(i)})<br>$$</p>
+<h3 id="Programming-Assignments"><a href="#Programming-Assignments" class="headerlink" title="Programming Assignments"></a>Programming Assignments</h3><h4 id="Convolutional-Model-step-by-step"><a href="#Convolutional-Model-step-by-step" class="headerlink" title="Convolutional Model: step by step"></a>Convolutional Model: step by step</h4><p>卷积层和池化层的区别：</p>
+<ul>
+<li>卷积层中的每个filter都会同时作用在不同的channel上</li>
+<li>在池化层中，filter与channel一一对应，作用在对应的channel上</li>
+</ul>
 <h3 id="References"><a href="#References" class="headerlink" title="References"></a>References</h3><ul>
 <li><a href="http://www.cnblogs.com/nowgood/p/Latexstart.html" target="_blank" rel="external">MarkDown中使用Latex数学公式</a></li>
 <li><a href="http://masikkk.com/article/hexo-13-MathJax/" target="_blank" rel="external">Hexo博客(13)添加MathJax数学公式渲染</a><ul>
@@ -443,8 +448,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/07/mock-objects/" rel="next" title="Unit Test中的Mock Objects">
-                <i class="fa fa-chevron-left"></i> Unit Test中的Mock Objects
+              <a href="/2018/04/01/hexo-notes/" rel="next" title="Hexo Notes">
+                <i class="fa fa-chevron-left"></i> Hexo Notes
               </a>
             
           </div>
@@ -453,8 +458,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/01/18/guice/" rel="prev" title="Guice Notes">
-                Guice Notes <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/02/cnn-w2/" rel="prev" title="Convolutional Neural Networks / Week 2">
+                Convolutional Neural Networks / Week 2 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -539,7 +544,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
@@ -552,7 +557,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">Tags</span>
                 </a>
               </div>
@@ -594,7 +599,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Computer-Vision"><span class="nav-number">1.</span> <span class="nav-text">Computer Vision</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Padding"><span class="nav-number">2.</span> <span class="nav-text">Padding</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Strided-Convolutions"><span class="nav-number">3.</span> <span class="nav-text">Strided Convolutions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Convolutions-Over-Volume"><span class="nav-number">4.</span> <span class="nav-text">Convolutions Over Volume</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#One-Layer-of-a-Convolutional-Network"><span class="nav-number">5.</span> <span class="nav-text">One Layer of a Convolutional Network</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Simple-Convolution-Network-Example"><span class="nav-number">6.</span> <span class="nav-text">Simple Convolution Network Example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pooling-Layers"><span class="nav-number">7.</span> <span class="nav-text">Pooling Layers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CNN-Example"><span class="nav-number">8.</span> <span class="nav-text">CNN Example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Why-Convolutions"><span class="nav-number">9.</span> <span class="nav-text">Why Convolutions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#References"><span class="nav-number">10.</span> <span class="nav-text">References</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Computer-Vision"><span class="nav-number">1.</span> <span class="nav-text">Computer Vision</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Padding"><span class="nav-number">2.</span> <span class="nav-text">Padding</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Strided-Convolutions"><span class="nav-number">3.</span> <span class="nav-text">Strided Convolutions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Convolutions-Over-Volume"><span class="nav-number">4.</span> <span class="nav-text">Convolutions Over Volume</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#One-Layer-of-a-Convolutional-Network"><span class="nav-number">5.</span> <span class="nav-text">One Layer of a Convolutional Network</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Simple-Convolution-Network-Example"><span class="nav-number">6.</span> <span class="nav-text">Simple Convolution Network Example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pooling-Layers"><span class="nav-number">7.</span> <span class="nav-text">Pooling Layers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CNN-Example"><span class="nav-number">8.</span> <span class="nav-text">CNN Example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Why-Convolutions"><span class="nav-number">9.</span> <span class="nav-text">Why Convolutions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Programming-Assignments"><span class="nav-number">10.</span> <span class="nav-text">Programming Assignments</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Convolutional-Model-step-by-step"><span class="nav-number">10.1.</span> <span class="nav-text">Convolutional Model: step by step</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#References"><span class="nav-number">11.</span> <span class="nav-text">References</span></a></li></ol></div>
             
 
           </div>

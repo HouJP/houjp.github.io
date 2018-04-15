@@ -261,7 +261,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://houjp.com/2017/08/25/深度学习-Deep-Learning-学习资料/">
+    <link itemprop="mainEntityOfPage" href="http://houjp.com/2018/01/28/java-concurrency-callable-and-future/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HouJP">
@@ -280,7 +280,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/25/深度学习-Deep-Learning-学习资料/" itemprop="url">深度学习(Deep Learning)学习资料</a></h1>
+                <a class="post-title-link" href="/2018/01/28/java-concurrency-callable-and-future/" itemprop="url">Java Concurrency之Callable and Future</a></h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-25T15:53:08+08:00">
-                2017-08-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-28T22:34:49+08:00">
+                2018-01-28
               </time>
             
 
@@ -331,19 +331,524 @@
 
       
         
-          <h3 id="公开课"><a href="#公开课" class="headerlink" title="公开课"></a>公开课</h3><ul>
-<li><a href="https://www.coursera.org/specializations/deep-learning" target="_blank" rel="external">Deep Learning Specialization</a><ul>
-<li>Neural Networks and Deep Learning</li>
-<li>Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization</li>
-<li>Structuring Machine Learning Projects</li>
-<li>Convolutional Neural Networks</li>
-<li>Sequence Models</li>
-</ul>
-</li>
-</ul>
+          <h3 id="Callable"><a href="#Callable" class="headerlink" title="Callable"></a>Callable</h3><p><code>Runnable</code>虽然方便但是不能让tasks的执行拥有返回值。</p>
+<p>Java还提供了<code>Callable</code>接口来让tasks返回结果。<code>Callable</code>和<code>Runnable</code>类似，除了可以返回结果以及会抛出一个checked exeption。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/08/25/深度学习-Deep-Learning-学习资料/#more" rel="contents">
+            <a class="btn" href="/2018/01/28/java-concurrency-callable-and-future/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://houjp.com/2018/01/28/java-concurrency-executor-service-thread-pool/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HouJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="#include&lt;AI&gt;">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/28/java-concurrency-executor-service-thread-pool/" itemprop="url">Java Concurrency之Executor Service & Thread Pool</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-28T19:01:57+08:00">
+                2018-01-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="Executor-Framework"><a href="#Executor-Framework" class="headerlink" title="Executor Framework"></a>Executor Framework</h3><p>大型的多线程应用可能有成百上千个应用，因此需要将线程的创建和应用其他部分的管理进行区分。</p>
+<p><strong>Executors, 是一个帮助你创建和管理线程的框架</strong>：</p>
+<ol>
+<li>线程创建：提供了创建线程的多种方法，具体的说就是一个线程池，应用可以用它来并发的执行tasks。</li>
+<li>线程管理：它管理线程池中线程的生命周期。你不需要关心线程池中的线程是否active/busy/dead/…。</li>
+<li>任务创建和执行：Executors框架提供了方法来提交tasks到线程池运行，并且我们可以决定tasks什么时候被执行。</li>
+</ol>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/28/java-concurrency-executor-service-thread-pool/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://houjp.com/2018/01/28/java-concurrency-thread-and-runnable/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HouJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="#include&lt;AI&gt;">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/28/java-concurrency-thread-and-runnable/" itemprop="url">Java Concurrency之Thread and Runnable</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-28T17:39:42+08:00">
+                2018-01-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="Creating-and-Strating-a-Thread"><a href="#Creating-and-Strating-a-Thread" class="headerlink" title="Creating and Strating a Thread"></a>Creating and Strating a Thread</h3><p>Java有两种方式创建线程。</p>
+<h4 id="1-By-extending-Thread-class"><a href="#1-By-extending-Thread-class" class="headerlink" title="1. By extending Thread class"></a>1. By extending Thread class</h4><p>继承<code>Thread</code>类，重载<code>run()</code>方法。<code>run()</code>方法中是该线程的执行逻辑。当创建好之后，通过<code>start()</code>方法来启动它。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/28/java-concurrency-thread-and-runnable/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://houjp.com/2018/01/28/java-concurrency-basics/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HouJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="#include&lt;AI&gt;">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/28/java-concurrency-basics/" itemprop="url">Java Concurrency之Concurency Basics</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-28T15:55:07+08:00">
+                2018-01-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><em>Concurrency is the ability to do more than one thing at the same time.</em></p>
+<p><em>Concurrency</em>包含两种情况：</p>
+<ol>
+<li>同时运行多个应用。</li>
+<li>单个应用的多个部分同时执行。</li>
+</ol>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/28/java-concurrency-basics/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://houjp.com/2018/01/18/guice/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HouJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="#include&lt;AI&gt;">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/18/guice/" itemprop="url">Guice Notes</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-18T23:26:22+08:00">
+                2018-01-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><p>Guice是一个轻量级的依赖注入(DI)框架。它减轻了对<code>factories</code>以及<code>new</code>的使用，我们可以把Guice视为另一种<code>new</code>。在某些时候依然需要写<code>factories</code>，但是代码不需要直接依赖它们。使用Guice有以下好处：</p>
+<ol>
+<li>易于改变</li>
+<li>易于单元测试</li>
+<li>易于复用</li>
+</ol>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/18/guice/#more" rel="contents">
               Weiterlesen &raquo;
             </a>
           </div>
@@ -385,7 +890,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -431,7 +936,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
@@ -444,7 +949,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">Tags</span>
                 </a>
               </div>
