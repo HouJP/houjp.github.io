@@ -7,7 +7,7 @@
 
 <html class="theme-next gemini use-motion" lang="">
 <head>
-  <meta charset="UTF-8"/>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
@@ -90,12 +90,10 @@
 <meta property="og:url" content="http://houjp.com/2018/01/28/java-concurrency-executor-service-thread-pool/index.html">
 <meta property="og:site_name" content="#include&amp;lt;AI&amp;gt;">
 <meta property="og:description" content="Executor Framework大型的多线程应用可能有成百上千个应用，因此需要将线程的创建和应用其他部分的管理进行区分。 Executors, 是一个帮助你创建和管理线程的框架：  线程创建：提供了创建线程的多种方法，具体的说就是一个线程池，应用可以用它来并发的执行tasks。 线程管理：它管理线程池中线程的生命周期。你不需要关心线程池中的线程是否active/busy/dead/…。 任务创">
-<meta property="og:image" content="http://houjp.com/img/java-concurrency-executor-service-thread-pool/executor-service-thread-pool-blocking-queue-example.jpg">
 <meta property="og:updated_time" content="2018-01-28T17:23:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java Concurrency之Executor Service &amp; Thread Pool">
 <meta name="twitter:description" content="Executor Framework大型的多线程应用可能有成百上千个应用，因此需要将线程的创建和应用其他部分的管理进行区分。 Executors, 是一个帮助你创建和管理线程的框架：  线程创建：提供了创建线程的多种方法，具体的说就是一个线程池，应用可以用它来并发的执行tasks。 线程管理：它管理线程池中线程的生命周期。你不需要关心线程池中的线程是否active/busy/dead/…。 任务创">
-<meta name="twitter:image" content="http://houjp.com/img/java-concurrency-executor-service-thread-pool/executor-service-thread-pool-blocking-queue-example.jpg">
 
 
 
@@ -144,7 +142,7 @@
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
   ga('create', 'UA-113164362-1', 'auto');
   ga('send', 'pageview');
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 
@@ -159,7 +157,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -200,7 +198,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -220,7 +218,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -294,7 +292,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-28T19:01:57+08:00">
                 2018-01-28
@@ -377,7 +375,11 @@
 <h3 id="Thread-Pool"><a href="#Thread-Pool" class="headerlink" title="Thread Pool"></a>Thread Pool</h3><p>大多数executor的实现采用的是<em>thread pools</em>来执行tasks。在一个线程池中有多个worker threads，这些与<code>Runnable</code>/<code>Callable</code> tasks不同并且被executor所管理。</p>
 <p>创建线程时代价很大的操作，因此应该被避免。Worker threads的存在减少了创建线程的开销，因为executor service只会创建一次线程池，并通过复用线程来执行tasks。</p>
 <p>Tasks会通过中间队列<strong>Blocking Queue</strong>被提交到线程池。如果tasks数量大于active threads数量，就被会塞入blocking queue来等待有线程被释放。如果blocking queue满了，新的tasks会被拒绝。</p>
-<div align="center"><br><br><img src="/img/java-concurrency-executor-service-thread-pool/executor-service-thread-pool-blocking-queue-example.jpg" alt="executor-service-thread-pool-blocking-queue-example"><br><br></div>
+<div align="center">
+
+![executor-service-thread-pool-blocking-queue-example](/img/java-concurrency-executor-service-thread-pool/executor-service-thread-pool-blocking-queue-example.jpg)
+
+</div>
 
 <h3 id="Schedule-Executors"><a href="#Schedule-Executors" class="headerlink" title="Schedule Executors"></a>Schedule Executors</h3><p>ScheduleExecutorService可以周期性的执行tasks或指定delay的时间。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.concurrent.Executors;</div><div class="line"><span class="keyword">import</span> java.util.concurrent.ScheduledExecutorService;</div><div class="line"><span class="keyword">import</span> java.util.concurrent.TimeUnit;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ScheduledExecutorsExample</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(<span class="number">1</span>);</div><div class="line">        Runnable task = () -&gt; &#123;</div><div class="line">          System.out.println(<span class="string">"Executing Task At "</span> + System.nanoTime());</div><div class="line">        &#125;;</div><div class="line"></div><div class="line">        System.out.println(<span class="string">"Submitting task at "</span> + System.nanoTime() + <span class="string">" to be executed after 5 seconds."</span>);</div><div class="line">        scheduledExecutorService.schedule(task, <span class="number">5</span>, TimeUnit.SECONDS);</div><div class="line">        </div><div class="line">        scheduledExecutorService.shutdown();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -491,10 +493,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Inhaltsverzeichnis
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Übersicht
+            Overview
           </li>
         </ul>
       
@@ -514,8 +516,8 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">17</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
@@ -528,7 +530,7 @@
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
                   <span class="site-state-item-count">8</span>
-                  <span class="site-state-item-name">Tags</span>
+                  <span class="site-state-item-name">tags</span>
                 </a>
               </div>
             
@@ -599,7 +601,7 @@
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
@@ -795,7 +797,24 @@
       
       renderGitment();
       
-      </script>
+      </script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
     
 
 

@@ -7,7 +7,7 @@
 
 <html class="theme-next gemini use-motion" lang="">
 <head>
-  <meta charset="UTF-8"/>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
@@ -142,7 +142,7 @@
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
   ga('create', 'UA-113164362-1', 'auto');
   ga('send', 'pageview');
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 
@@ -157,7 +157,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -198,7 +198,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -218,7 +218,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -292,7 +292,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-06T22:40:27+08:00">
                 2018-04-06
@@ -363,15 +363,31 @@
 <p>Learning from one example to recognize the person again.</p>
 </blockquote>
 <p>很多时候公司的数据库中只有一张员工的照片，那么我们在做人脸识别系统的时候怎么根据这一张照片来再次识别相同的人的影像？如果用传统的卷积神经网络来做的话，因为训练数据很小，所以通常效果并不理想。</p>
-<p>在这种情况下，我们应该学习”similarity” function,<br>$$<br>d(img1, img2) = degree~of~difference~between~images<br>$$<br>然后可以根据Similarity function完成verification,<br>$$<br>\begin{split}<br>If~d(img1, img2) &amp;\le \tau~same\\<br>&amp;&gt; \tau~different<br>\end{split}<br>$$</p>
-<h3 id="Siamese-Network"><a href="#Siamese-Network" class="headerlink" title="Siamese Network"></a>Siamese Network</h3><p>Parameters of NN define an encoding $f(x^{(i)})$</p>
+<p>在这种情况下，我们应该学习”similarity” function,</p>
+<script type="math/tex; mode=display">
+d(img1, img2) = degree~of~difference~between~images</script><p>然后可以根据Similarity function完成verification,</p>
+<script type="math/tex; mode=display">
+\begin{split}
+If~d(img1, img2) &\le \tau~same\\\\
+&> \tau~different
+\end{split}</script><h3 id="Siamese-Network"><a href="#Siamese-Network" class="headerlink" title="Siamese Network"></a>Siamese Network</h3><p>Parameters of NN define an encoding $f(x^{(i)})$</p>
 <p>Learn parameters so that:</p>
 <ul>
 <li>If $x^{(i)}, x^{(j)}$ are the same person, $| f(x^{(i)}) - f(x^{(j)}) |^2$ is small</li>
 <li>If $x^{(i)}, x^{(j)}$ are the different person, $| f(x^{(i)}) - f(x^{(j)}) |^2$ is large</li>
 </ul>
 <p>那么，该网络学习的目标函数应该怎么定义呢？</p>
-<h3 id="Triple-Loss"><a href="#Triple-Loss" class="headerlink" title="Triple Loss"></a>Triple Loss</h3><p>在Triple loss中，基准人脸图像称为Anchor image，正样本为Positive image，负样本为Negative image，那么我们希望得到的是，<br>$$<br>|f(A) - f(P) | ^2 \le | f(A) - f(N) | ^2<br>$$<br>也就是，<br>$$<br>|f(A) - f(P) | ^2 - | f(A) - f(N) | ^2 \le 0<br>$$<br>这里有个问题，如果$f$始终预测0，那么上述条件始终满足。为了防止这种情况发生，所以需要增加一个超参$\alpha$，也称为margin，<br>$$<br>|f(A) - f(P) | ^2 - | f(A) - f(N) | ^2 + \alpha \le 0<br>$$<br>下面对Loss function进行形式化定义，给定3个图像 A, P, N，<br>$$<br>\mathcal{L}(A, P, N) = max(|f(A) - f(P)|^2 -|f(A) - f(N)|^2  + \alpha, 0)<br>$$<br>在整体样本上的损失为，<br>$$<br>J = \sum_{i=1}^{M} \mathcal{L}(A^{(i)}, P^{(i)}, N^{(i)})<br>$$<br>很明显，在训练样本中，一个人需要有多张照片才能组合出这样的三元组。</p>
+<h3 id="Triple-Loss"><a href="#Triple-Loss" class="headerlink" title="Triple Loss"></a>Triple Loss</h3><p>在Triple loss中，基准人脸图像称为Anchor image，正样本为Positive image，负样本为Negative image，那么我们希望得到的是，</p>
+<script type="math/tex; mode=display">
+\|f(A) - f(P) \| ^2 \le \| f(A) - f(N) \| ^2</script><p>也就是，</p>
+<script type="math/tex; mode=display">
+\|f(A) - f(P) \| ^2 - \| f(A) - f(N) \| ^2 \le 0</script><p>这里有个问题，如果$f$始终预测0，那么上述条件始终满足。为了防止这种情况发生，所以需要增加一个超参$\alpha$，也称为margin，</p>
+<script type="math/tex; mode=display">
+\|f(A) - f(P) \| ^2 - \| f(A) - f(N) \| ^2 + \alpha \le 0</script><p>下面对Loss function进行形式化定义，给定3个图像 A, P, N，</p>
+<script type="math/tex; mode=display">
+\mathcal{L}(A, P, N) = max(\|f(A) - f(P)\|^2 -\|f(A) - f(N)\|^2  + \alpha, 0)</script><p>在整体样本上的损失为，</p>
+<script type="math/tex; mode=display">
+J = \sum_{i=1}^{M} \mathcal{L}(A^{(i)}, P^{(i)}, N^{(i)})</script><p>很明显，在训练样本中，一个人需要有多张照片才能组合出这样的三元组。</p>
 <p>那么，应该怎么选择三元组呢，</p>
 <ul>
 <li>During training, if A, P, N are chsen randomly, $d(A, P) + \alpha \le d(A, N)$ is easily satisfied.<ul>
@@ -383,14 +399,23 @@
 </ul>
 </li>
 </ul>
-<h3 id="Face-Verification-and-Binary-Classification"><a href="#Face-Verification-and-Binary-Classification" class="headerlink" title="Face Verification and Binary Classification"></a>Face Verification and Binary Classification</h3><p>另一种similarity function，以一对图像作为输入，<br>$$<br>\hat{y} = \delta ( \sum_{k=1}^{128} w_i | f(x^{(i)})_k - f(x^{(j)})_k   | + b  )<br>$$<br>其中，$f(x^{(i)})$表示对第i张图像的128维的embedding表达。</p>
+<h3 id="Face-Verification-and-Binary-Classification"><a href="#Face-Verification-and-Binary-Classification" class="headerlink" title="Face Verification and Binary Classification"></a>Face Verification and Binary Classification</h3><p>另一种similarity function，以一对图像作为输入，</p>
+<script type="math/tex; mode=display">
+\hat{y} = \delta ( \sum_{k=1}^{128} w_i | f(x^{(i)})_k - f(x^{(j)})_k   | + b  )</script><p>其中，$f(x^{(i)})$表示对第i张图像的128维的embedding表达。</p>
 <h3 id="What-are-deep-ConvNets-Learning"><a href="#What-are-deep-ConvNets-Learning" class="headerlink" title="What are deep ConvNets Learning"></a>What are deep ConvNets Learning</h3><p>这里介绍了怎么将卷积神经网络的hidden layer可视化。以第一层为例，</p>
 <blockquote>
 <p>Pick a unit in layer 1. Find the nine image patches that maximize the unit’s activation.</p>
 <p>Repeat for other units.</p>
 </blockquote>
 <p>可以看到，每个unit’s activation针对的方向不同，有的是颜色，有的是不同方向的边。随着网络深度的增加，每个unit’s activation可以看到的图像的范围越来越大。 </p>
-<h3 id="Neural-Style-Transfer-Cost-Function"><a href="#Neural-Style-Transfer-Cost-Function" class="headerlink" title="Neural Style Transfer Cost Function"></a>Neural Style Transfer Cost Function</h3><p>原始内容图片为C，风格图片为S，目标图片为G，那么，<br>$$<br>J(G) = \alpha J<em>{content}(C, G) + \beta J</em>{style}(S, G)<br>$$<br>下面介绍Style matrix,<br>$$<br>\begin{split}<br>&amp; Let~a_{i,j,k}^{[l]} &amp;= activation~at~(i,j,k). G^{[l]}~is~n_c^{[l]} \times n<em>c^{[l]} \\<br>\rightarrow &amp; G</em>{kk’}^{[l]} &amp;= \sum_{i=1}^{n<em>H^{[l]}} \sum</em>{j=1}^{[n<em>W]^{[l]}} a</em>{ijk}^{[l]} a_{ijk’}^{[l]}<br>\end{split}<br>$$<br>其中，$G^{[l]}$为Style matrix。</p>
+<h3 id="Neural-Style-Transfer-Cost-Function"><a href="#Neural-Style-Transfer-Cost-Function" class="headerlink" title="Neural Style Transfer Cost Function"></a>Neural Style Transfer Cost Function</h3><p>原始内容图片为C，风格图片为S，目标图片为G，那么，</p>
+<script type="math/tex; mode=display">
+J(G) = \alpha J_{content}(C, G) + \beta J_{style}(S, G)</script><p>下面介绍Style matrix,</p>
+<script type="math/tex; mode=display">
+\begin{split}
+& Let~a_{i,j,k}^{[l]} &= activation~at~(i,j,k). G^{[l]}~is~n_c^{[l]} \times n_c^{[l]} \\\\
+\rightarrow & G_{kk'}^{[l]} &= \sum_{i=1}^{n_H^{[l]}} \sum_{j=1}^{[n_W]^{[l]}} a_{ijk}^{[l]} a_{ijk'}^{[l]}
+\end{split}</script><p>其中，$G^{[l]}$为Style matrix。</p>
 
       
     </div>
@@ -496,10 +521,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Inhaltsverzeichnis
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Übersicht
+            Overview
           </li>
         </ul>
       
@@ -519,8 +544,8 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">17</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
@@ -533,7 +558,7 @@
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
                   <span class="site-state-item-count">8</span>
-                  <span class="site-state-item-name">Tags</span>
+                  <span class="site-state-item-name">tags</span>
                 </a>
               </div>
             
@@ -604,7 +629,7 @@
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
@@ -844,7 +869,24 @@
         }
       });
     </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
   
 
 

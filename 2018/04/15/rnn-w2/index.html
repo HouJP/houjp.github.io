@@ -7,7 +7,7 @@
 
 <html class="theme-next gemini use-motion" lang="">
 <head>
-  <meta charset="UTF-8"/>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
@@ -142,7 +142,7 @@
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
   ga('create', 'UA-113164362-1', 'auto');
   ga('send', 'pageview');
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 
@@ -157,7 +157,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -198,7 +198,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -218,7 +218,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -292,7 +292,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-15T07:17:30+08:00">
                 2018-04-15
@@ -359,18 +359,35 @@
 </li>
 </ol>
 <h3 id="Relation-to-Face-Encoding"><a href="#Relation-to-Face-Encoding" class="headerlink" title="Relation to Face Encoding"></a>Relation to Face Encoding</h3><p>在Face encoding中，人脸图像的输入可以是任意一张图像，经过CNN之后可以变成向量的表达，这个过程叫做Encoding。而对于Word embedding来说，我们的词表是固定的，在WE模型训练的过程中决定了我们对哪些words进行表达学习。</p>
-<h3 id="Properties-of-Word-Embeddings"><a href="#Properties-of-Word-Embeddings" class="headerlink" title="Properties of Word Embeddings"></a>Properties of Word Embeddings</h3><p>Word embedding有一些有趣的性质，比如，<br>$$<br>e _ { man } - e _ { woman } \approx e _ { king } - e _ { queen }<br>$$</p>
-<h3 id="Embedding-Matrix"><a href="#Embedding-Matrix" class="headerlink" title="Embedding Matrix"></a>Embedding Matrix</h3><p>假设Embedding matrix是$m\times n$的矩阵，其中$m$是embedding的维度，$n$是词表的大小，第$j$个词的embedding必到可以通过Embedding matrix与该词One-hot编码（$shape=n\times1$）相乘得到，<br>$$<br>E~o_j = e_j<br>$$<br>当然实际运算中不会这么计算，效率太低了。</p>
-<h3 id="Word2Vec之Skip-gram-Model"><a href="#Word2Vec之Skip-gram-Model" class="headerlink" title="Word2Vec之Skip-gram Model"></a>Word2Vec之Skip-gram Model</h3><p>Skip-gram的思想是在句子中随机摘取一个词作为context，再在这个词的上下文中（一定长度的窗口）中随机摘取另一个词作为target，训练如下的神经网络结构，<br>$$<br>o_c \rightarrow Embedding~Layer \rightarrow e_c \rightarrow Softmax~Layer \rightarrow \hat{y}<br>$$<br>Softmax layer的概率预测如下所示，<br>$$<br>Softmax:~p(t|c) = \frac{e^{\theta_{t}^{T}e_c}}{\sum_{j=1}^{Vocab~size} e^{\theta_{j}^{T}e_c}}<br>\tag{1}<br>$$<br>其中，$\theta<span class="md-search-hit">_</span>t$表示与目标词One-hot向量第$t$维有关的参数向量。</p>
-<p>Loss function如下，<br>$$<br>\mathcal{L}(\hat{y}, y) = - \sum_{i=1}^{Vocab~size} y_i \log \hat{y}_i<br>$$<br>但是在式(1)的计算中，计算量是很大的（需要遍历词表），所以采用Hierarchical softmax来计算给定context:c的情况下target:t出现的概率，而不是采用普通的Softmax classification方法。</p>
+<h3 id="Properties-of-Word-Embeddings"><a href="#Properties-of-Word-Embeddings" class="headerlink" title="Properties of Word Embeddings"></a>Properties of Word Embeddings</h3><p>Word embedding有一些有趣的性质，比如，</p>
+<script type="math/tex; mode=display">
+e \_ { man } - e \_ { woman } \approx e \_ { king } - e \_ { queen }</script><h3 id="Embedding-Matrix"><a href="#Embedding-Matrix" class="headerlink" title="Embedding Matrix"></a>Embedding Matrix</h3><p>假设Embedding matrix是$m\times n$的矩阵，其中$m$是embedding的维度，$n$是词表的大小，第$j$个词的embedding必到可以通过Embedding matrix与该词One-hot编码（$shape=n\times1$）相乘得到，</p>
+<script type="math/tex; mode=display">
+E~o_j = e_j</script><p>当然实际运算中不会这么计算，效率太低了。</p>
+<h3 id="Word2Vec之Skip-gram-Model"><a href="#Word2Vec之Skip-gram-Model" class="headerlink" title="Word2Vec之Skip-gram Model"></a>Word2Vec之Skip-gram Model</h3><p>Skip-gram的思想是在句子中随机摘取一个词作为context，再在这个词的上下文中（一定长度的窗口）中随机摘取另一个词作为target，训练如下的神经网络结构，</p>
+<script type="math/tex; mode=display">
+o\_c \rightarrow Embedding~Layer \rightarrow e\_c \rightarrow Softmax~Layer \rightarrow \hat{y}</script><p>Softmax layer的概率预测如下所示，</p>
+<script type="math/tex; mode=display">
+Softmax:~p(t|c) = \frac{e^{\theta\_{t}^{T}e\_c}}{\sum\_{j=1}^{Vocab~size} e^{\theta\_{j}^{T}e\_c}}
+\tag{1}</script><p>其中，$\theta<span class="md-search-hit">_</span>t$表示与目标词One-hot向量第$t$维有关的参数向量。</p>
+<p>Loss function如下，</p>
+<script type="math/tex; mode=display">
+\mathcal{L}(\hat{y}, y) = - \sum_{i=1}^{Vocab~size} y_i \log \hat{y}_i</script><p>但是在式(1)的计算中，计算量是很大的（需要遍历词表），所以采用Hierarchical softmax来计算给定context:c的情况下target:t出现的概率，而不是采用普通的Softmax classification方法。</p>
 <blockquote>
 <p><a href="https://blog.csdn.net/itplus/article/details/37969979" target="_blank" rel="external">word2vec 中的数学原理详解（四）基于 Hierarchical Softmax 的模型</a></p>
 </blockquote>
 <p>Word2Vec有两个版本，Skip-gram和CBOW。</p>
-<h3 id="Negative-Sampling"><a href="#Negative-Sampling" class="headerlink" title="Negative Sampling"></a>Negative Sampling</h3><p>首先定义一个监督学习问题，给定一个词对$&lt; c, t &gt;$，并对该词对进行二分类。这个问题的正样本可以通过上一小节中介绍的方法得到，然后根据每个正样本可以通过随机采样词表的方式来得到$k$条负样本。这样，针对一个词对，我们可以计算词对为正样本的概率，<br>$$<br>p(y=1 | c,t) = \delta(\theta_t^{T} e_c)<br>$$<br>构造如下结构的网络，<br>$$<br>o_c \rightarrow Embedding~Layer \rightarrow e_c \rightarrow Vocab~size \times Logistic~Unit<br>$$<br>这样，针对每个样本，我们只需要从Vocab size个Logistic Unit中选择target:t所对应的那个二分类器去更新参数就好了，这样极大的减少了计算量。</p>
-<h3 id="GloVe-Word-Vectors"><a href="#GloVe-Word-Vectors" class="headerlink" title="GloVe Word Vectors"></a>GloVe Word Vectors</h3><p>Glove Word Vectors的目的是给定一个词对$&lt; c, t &gt;$，来进行一个回归问题，预测目标词t在c的上下文中出现的次数。它的优化目标是，<br>$$<br>minimize \sum_{i=1}^{Vocab~size} \sum_{j=1}^{Vocab~size} f(x_{ii}) (\theta_i^T e_j + b_i + b_j’ - \log x_{ij})^2<br>$$<br>其中，$i, j$分别表示$t, c$在词表中的编号，$x<em>{ij}$表示$t$在$c$的上下文中出现的次数。$f(x</em>{ij})$是weight function，当$x<em>{ij}=0$的时候，$f(x</em>{ij})=0$。</p>
-<p>在这个式子中，我们可以发现，$\theta_i$与$e_j$是对称的，所以，<br>$$<br>e_w^{final} = \frac{e_w + \theta_w}{2}<br>$$</p>
-<h3 id="Debiasing-Word-Embeddings"><a href="#Debiasing-Word-Embeddings" class="headerlink" title="Debiasing Word Embeddings"></a>Debiasing Word Embeddings</h3><p>无关主题的话，在上NG的课的时候，听到NG介绍了一些人的工作，比如说给你一幅油画，怎么把照片变成油画的风格，再比如有的人会去研究word embedding中的歧视现象（性别、种族等），发现这些人都好有意思啊，老外们不一样的科研。</p>
+<h3 id="Negative-Sampling"><a href="#Negative-Sampling" class="headerlink" title="Negative Sampling"></a>Negative Sampling</h3><p>首先定义一个监督学习问题，给定一个词对$&lt; c, t &gt;$，并对该词对进行二分类。这个问题的正样本可以通过上一小节中介绍的方法得到，然后根据每个正样本可以通过随机采样词表的方式来得到$k$条负样本。这样，针对一个词对，我们可以计算词对为正样本的概率，</p>
+<script type="math/tex; mode=display">
+p(y=1 | c,t) = \delta(\theta_t^{T} e_c)</script><p>构造如下结构的网络，</p>
+<script type="math/tex; mode=display">
+o_c \rightarrow Embedding~Layer \rightarrow e_c \rightarrow Vocab~size \times Logistic~Unit</script><p>这样，针对每个样本，我们只需要从Vocab size个Logistic Unit中选择target:t所对应的那个二分类器去更新参数就好了，这样极大的减少了计算量。</p>
+<h3 id="GloVe-Word-Vectors"><a href="#GloVe-Word-Vectors" class="headerlink" title="GloVe Word Vectors"></a>GloVe Word Vectors</h3><p>Glove Word Vectors的目的是给定一个词对$&lt; c, t &gt;$，来进行一个回归问题，预测目标词t在c的上下文中出现的次数。它的优化目标是，</p>
+<script type="math/tex; mode=display">
+minimize \sum\_{i=1}^{Vocab~size} \sum\_{j=1}^{Vocab~size} f(x\_{ii}) (\theta\_i^T e\_j + b\_i + b\_j' - \log x\_{ij})^2</script><p>其中，$i, j$分别表示$t, c$在词表中的编号，$x<em>{ij}$表示$t$在$c$的上下文中出现的次数。$f(x</em>{ij})$是weight function，当$x<em>{ij}=0$的时候，$f(x</em>{ij})=0$。</p>
+<p>在这个式子中，我们可以发现，$\theta_i$与$e_j$是对称的，所以，</p>
+<script type="math/tex; mode=display">
+e_w^{final} = \frac{e_w + \theta_w}{2}</script><h3 id="Debiasing-Word-Embeddings"><a href="#Debiasing-Word-Embeddings" class="headerlink" title="Debiasing Word Embeddings"></a>Debiasing Word Embeddings</h3><p>无关主题的话，在上NG的课的时候，听到NG介绍了一些人的工作，比如说给你一幅油画，怎么把照片变成油画的风格，再比如有的人会去研究word embedding中的歧视现象（性别、种族等），发现这些人都好有意思啊，老外们不一样的科研。</p>
 
       
     </div>
@@ -412,6 +429,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/21/rnn-w3/" rel="prev" title="Recurrent Neural Networks / Week 3">
+                Recurrent Neural Networks / Week 3 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -472,10 +493,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Inhaltsverzeichnis
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Übersicht
+            Overview
           </li>
         </ul>
       
@@ -495,8 +516,8 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">17</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
@@ -509,7 +530,7 @@
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
                   <span class="site-state-item-count">8</span>
-                  <span class="site-state-item-name">Tags</span>
+                  <span class="site-state-item-name">tags</span>
                 </a>
               </div>
             
@@ -580,7 +601,7 @@
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
@@ -820,7 +841,24 @@
         }
       });
     </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
   
 
 

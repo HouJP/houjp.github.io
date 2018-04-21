@@ -7,7 +7,7 @@
 
 <html class="theme-next gemini use-motion" lang="">
 <head>
-  <meta charset="UTF-8"/>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
@@ -148,7 +148,7 @@
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
   ga('create', 'UA-113164362-1', 'auto');
   ga('send', 'pageview');
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 
@@ -163,7 +163,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -204,7 +204,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -224,7 +224,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -298,7 +298,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-02T20:50:35+08:00">
                 2018-04-02
@@ -355,10 +355,29 @@
 <p><img src="/img/cnn-w2/alexnet.jpeg" width="80%" align="center"></p>
 <p>VGG-16的网络结构如下，</p>
 <p><img src="/img/cnn-w2/vgg-16.jpeg" width="80%" align="center"></p>
-<h3 id="ResNets"><a href="#ResNets" class="headerlink" title="ResNets"></a>ResNets</h3><p>在一般的神经网络中，两层神经网络的数学表达如下，<br>$$<br>\begin{split}<br>&amp; z^{[l+1]} = W^{[l+1]}a^{[l]} + b^{[l+1]} \\<br>&amp; a^{[l+1]} = g(z^{[l+1]}) \\<br>&amp; z^{[l+2]} = W^{[l+2]}a^{[l + 1]} + b^{[l+2]} \\<br>&amp; a^{[l+2]} = g(z^{[l+2]})<br>\end{split}<br>$$<br>而在ResNets中，修改了$a^{[l+2]}$的生成方式，变成了，<br>$$<br>a^{[l+2]} = g(z^{[l + 2]} + a^{[l]})<br>\tag{1}<br>$$<br>这样的两层神经网络称为Residual block，将这样的Residual block串联起来就构成了ResNets。</p>
+<h3 id="ResNets"><a href="#ResNets" class="headerlink" title="ResNets"></a>ResNets</h3><p>在一般的神经网络中，两层神经网络的数学表达如下，</p>
+<script type="math/tex; mode=display">
+\begin{split}
+& z^{[l+1]} = W^{[l+1]}a^{[l]} + b^{[l+1]} \\\\
+& a^{[l+1]} = g(z^{[l+1]}) \\\\
+& z^{[l+2]} = W^{[l+2]}a^{[l + 1]} + b^{[l+2]} \\\\
+& a^{[l+2]} = g(z^{[l+2]})
+\end{split}</script><p>而在ResNets中，修改了$a^{[l+2]}$的生成方式，变成了，</p>
+<script type="math/tex; mode=display">
+a^{[l+2]} = g(z^{[l + 2]} + a^{[l]}) 
+\tag{1}</script><p>这样的两层神经网络称为Residual block，将这样的Residual block串联起来就构成了ResNets。</p>
 <p>ResNets解决了传统神经网络中存在的层数不能过深的问题。在传统的神经网络中，随着深度的增加，训练误差会先降后升，而对于ResNets，随着网络层数达到一百甚至一千层，训练误差也可以平缓的下降（也可能出现收敛的现象）。</p>
-<h3 id="Why-ResNets-Work"><a href="#Why-ResNets-Work" class="headerlink" title="Why ResNets Work"></a>Why ResNets Work</h3><p>首先来解释一下为什么在传统的网络后面加一个Residual block不会降低原有网络的性能，<br>$$<br>\begin{split}<br>a^{[l+2]} &amp;= g(z^{[l + 2]} + a^{[l]}) \\<br>    &amp;= g((w^{[l+2]}a^{[l + 1]} + b^{[l + 2]}) + a^{[l]})<br>\end{split}<br>$$<br>假设我们采用的激活函数为RELU，同时$w^{[l+2]}$和$b^{[l+2]}$为0，那么，<br>$$<br>a^{[l+2]} = g(a^{[l]}) = a^{[l]}<br>$$<br>所以由于Residual block的存在，网络在第$l+2$层的时候，很容易退回到$l$层去。这样可以达到一个效果，在最差情况下，后边加上的Residual block仿佛不存在一样，这样就不会影响原先的效果。</p>
-<p>Residual block中还有一点值得注意，对于式(1)来说，$z^{[l+2]}$和$a^{[l]}$的维度需要一致，那如果出现维度不一致的情况怎么办呢？增加一个$W_s$矩阵，<br>$$<br>a^{[l+2]} = g(z^{[l + 2]} + W_s a^{[l]})<br>$$<br>$W_s$有两种方式生成，</p>
+<h3 id="Why-ResNets-Work"><a href="#Why-ResNets-Work" class="headerlink" title="Why ResNets Work"></a>Why ResNets Work</h3><p>首先来解释一下为什么在传统的网络后面加一个Residual block不会降低原有网络的性能，</p>
+<script type="math/tex; mode=display">
+\begin{split}
+a^{[l+2]} &= g(z^{[l + 2]} + a^{[l]}) \\\\
+    &= g((w^{[l+2]}a^{[l + 1]} + b^{[l + 2]}) + a^{[l]})
+\end{split}</script><p>假设我们采用的激活函数为RELU，同时$w^{[l+2]}$和$b^{[l+2]}$为0，那么，</p>
+<script type="math/tex; mode=display">
+a^{[l+2]} = g(a^{[l]}) = a^{[l]}</script><p>所以由于Residual block的存在，网络在第$l+2$层的时候，很容易退回到$l$层去。这样可以达到一个效果，在最差情况下，后边加上的Residual block仿佛不存在一样，这样就不会影响原先的效果。</p>
+<p>Residual block中还有一点值得注意，对于式(1)来说，$z^{[l+2]}$和$a^{[l]}$的维度需要一致，那如果出现维度不一致的情况怎么办呢？增加一个$W_s$矩阵，</p>
+<script type="math/tex; mode=display">
+a^{[l+2]} = g(z^{[l + 2]} + W_s a^{[l]})</script><p>$W_s$有两种方式生成，</p>
 <ol>
 <li>随机生成的参数矩阵，跟随其他参数一起训练学习。</li>
 <li>$a^{[l]}$的基础上采用padding操作生成，比如补0。</li>
@@ -374,9 +393,16 @@
 <p>对于问题(2)可以通过在两层网络中间增加一层$1\times1$ filter来解决。下面详细描述原理。</p>
 <p>假设我们有这样两层网络，</p>
 <p><img src="/img/cnn-w2/inception-2-layer.jpeg" width="50%" title="图 1" align="center"></p>
-<p>那么从左到右需要的乘法运算的数量为，<br>$$<br>(28 \times 28 \times 32) \times (5 \times 5 \times 192) \approx 120~million<br>$$<br>如果我们在图(1)两层网络中间加入一层使用了$1\times1$ filter的卷积层，如图(2)所示，</p>
+<p>那么从左到右需要的乘法运算的数量为，</p>
+<script type="math/tex; mode=display">
+(28 \times 28 \times 32) \times (5 \times 5 \times 192) \approx 120~million</script><p>如果我们在图(1)两层网络中间加入一层使用了$1\times1$ filter的卷积层，如图(2)所示，</p>
 <p><img src="/img/cnn-w2/inception-3-layer.jpeg" width="50%" title="图 2" align="center"></p>
-<p>那么从左到右所需要的乘法运算的数量为，<br>$$<br>\begin{split}<br>&amp;1st~layer \rightarrow 2nd~layer：&amp;(28 \times 28 \times 16) \times (1 \times 1 \times 192) \approx 2.4~million \\<br>&amp;2nd~layer \rightarrow 3rd~layer：&amp;(28 \times 28 \times 32) \times (5 \times 5 \times 16) \approx 10~million<br>\end{split}<br>$$<br>也就是共需要$12.4~million$的乘法运算。从中可以看到，加入”bottleneck layer”之后，所需要的计算量减少为了原来的十分之一。</p>
+<p>那么从左到右所需要的乘法运算的数量为，</p>
+<script type="math/tex; mode=display">
+\begin{split}
+&1st~layer \rightarrow 2nd~layer：&(28 \times 28 \times 16) \times (1 \times 1 \times 192) \approx 2.4~million \\\\
+&2nd~layer \rightarrow 3rd~layer：&(28 \times 28 \times 32) \times (5 \times 5 \times 16) \approx 10~million
+\end{split}</script><p>也就是共需要$12.4~million$的乘法运算。从中可以看到，加入”bottleneck layer”之后，所需要的计算量减少为了原来的十分之一。</p>
 <h3 id="Transfer-Learning"><a href="#Transfer-Learning" class="headerlink" title="Transfer Learning"></a>Transfer Learning</h3><p>当我们有一个比较小的训练数据集的时候，我们可以在别人训练好的模型的基础上来达到我们的目的：删除最后的softmax layers，保留之前的layers的模型结构和权重，并在之后增加我们自己的softmax layers。然后用较小的训练数据集来训练我们新增加的layers的参数。这样就可以用较少的数据来得到不错的预测效果。</p>
 <p>其中，我们可以预先存储训练数据集中的样本经过之前的layers (删除原先的softmax layers)之后得到的activations，这样就不用在之后训练新的softmax layers参数的时候反复计算，从而节省计算量并提高效率。</p>
 <p>随着我们拥有的训练数据的增加，我们可以保留较少层数的参数不发生改变，其余网络层以原先权重为初始参数，然后在新的训练数据集上进行训练调整。如果我们的训练数据足够大，那么原先所有层的参数都可以只作为初始参数，让它们在新的数据集上进行训练调整。</p>
@@ -494,10 +520,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Inhaltsverzeichnis
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Übersicht
+            Overview
           </li>
         </ul>
       
@@ -517,8 +543,8 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">17</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
@@ -531,7 +557,7 @@
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
                   <span class="site-state-item-count">8</span>
-                  <span class="site-state-item-name">Tags</span>
+                  <span class="site-state-item-name">tags</span>
                 </a>
               </div>
             
@@ -602,7 +628,7 @@
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
@@ -842,7 +868,24 @@
         }
       });
     </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
   
 
 

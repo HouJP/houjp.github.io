@@ -7,7 +7,7 @@
 
 <html class="theme-next gemini use-motion" lang="">
 <head>
-  <meta charset="UTF-8"/>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
@@ -142,7 +142,7 @@
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
   ga('create', 'UA-113164362-1', 'auto');
   ga('send', 'pageview');
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 
@@ -157,7 +157,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -198,7 +198,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -218,7 +218,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -292,7 +292,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-18T23:26:22+08:00">
                 2018-01-18
@@ -452,8 +452,7 @@
 <li>request lifetime (<code>@RequestScoped</code>)</li>
 </ul>
 <p>Guice包含一套servlet extension，它是为web apps定义的scopes。也可以为其他应用自定义scopes (custom scopes)。</p>
-<p>####Applying Scopes</p>
-<p>Guices使用annotations来定义scopes。通过对实现类使用scope annotation来指定类型的scope。</p>
+<h4 id="Applying-Scopes"><a href="#Applying-Scopes" class="headerlink" title="Applying Scopes"></a>Applying Scopes</h4><p>Guices使用annotations来定义scopes。通过对实现类使用scope annotation来指定类型的scope。</p>
 <p><code>@Singleton</code>要求类是线程安全的：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Singleton</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InMemoryTransactionLog</span> <span class="keyword">implements</span> <span class="title">TransactionLog</span> </span>&#123;</div><div class="line">  <span class="comment">/* everything here should be threadsafe! */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>Scopes可以在<code>bind</code>语句中配置：</p>
@@ -623,10 +622,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Inhaltsverzeichnis
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Übersicht
+            Overview
           </li>
         </ul>
       
@@ -646,8 +645,8 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">17</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
@@ -660,7 +659,7 @@
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
                   <span class="site-state-item-count">8</span>
-                  <span class="site-state-item-name">Tags</span>
+                  <span class="site-state-item-name">tags</span>
                 </a>
               </div>
             
@@ -701,7 +700,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Motivation"><span class="nav-number">2.</span> <span class="nav-text">Motivation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Dependency-Injection"><span class="nav-number">2.1.</span> <span class="nav-text">Dependency Injection</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dependency-Injection-with-Guice"><span class="nav-number">2.2.</span> <span class="nav-text">Dependency Injection with Guice</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bindings"><span class="nav-number">3.</span> <span class="nav-text">Bindings</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Creating-Bindings"><span class="nav-number">3.1.</span> <span class="nav-text">Creating Bindings</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Linked-Bindings"><span class="nav-number">3.2.</span> <span class="nav-text">Linked Bindings</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Binding-Annotations"><span class="nav-number">3.3.</span> <span class="nav-text">Binding Annotations</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Named"><span class="nav-number">3.3.1.</span> <span class="nav-text">@Named</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Instance-Bindings"><span class="nav-number">3.4.</span> <span class="nav-text">Instance Bindings</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Provides-Methods"><span class="nav-number">3.5.</span> <span class="nav-text">@Provides Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Throwing-Exceptions"><span class="nav-number">3.5.1.</span> <span class="nav-text">Throwing Exceptions</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Provider-Bindings"><span class="nav-number">3.6.</span> <span class="nav-text">Provider Bindings</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Throwing-Exceptions-1"><span class="nav-number">3.6.1.</span> <span class="nav-text">Throwing Exceptions</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Untargeted-Bindings"><span class="nav-number">3.7.</span> <span class="nav-text">Untargeted Bindings</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Constructor-Bindings"><span class="nav-number">3.8.</span> <span class="nav-text">Constructor Bindings</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Built-in-Bindings"><span class="nav-number">3.9.</span> <span class="nav-text">Built-in Bindings</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Just-In-Time-Bindings"><span class="nav-number">3.10.</span> <span class="nav-text">Just-In-Time Bindings</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Eligible-Constructors"><span class="nav-number">3.10.1.</span> <span class="nav-text">Eligible Constructors</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ImplementedBy"><span class="nav-number">3.10.2.</span> <span class="nav-text">@ImplementedBy</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ProvidedBy"><span class="nav-number">3.10.3.</span> <span class="nav-text">@ProvidedBy</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Scopes"><span class="nav-number">4.</span> <span class="nav-text">Scopes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Injections"><span class="nav-number">5.</span> <span class="nav-text">Injections</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Injections-1"><span class="nav-number">5.1.</span> <span class="nav-text">Injections</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Constructor-Injection"><span class="nav-number">5.1.1.</span> <span class="nav-text">Constructor Injection</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Method-Injection"><span class="nav-number">5.1.2.</span> <span class="nav-text">Method Injection</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Field-Injection"><span class="nav-number">5.1.3.</span> <span class="nav-text">Field Injection</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Optional-Injections"><span class="nav-number">5.1.4.</span> <span class="nav-text">Optional Injections</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#On-demand-Injection"><span class="nav-number">5.2.</span> <span class="nav-text">On-demand Injection</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Static-Injections"><span class="nav-number">5.3.</span> <span class="nav-text">Static Injections</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Automatic-Injection"><span class="nav-number">5.4.</span> <span class="nav-text">Automatic Injection</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Injecting-Providers"><span class="nav-number">5.5.</span> <span class="nav-text">Injecting Providers</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Provider-for-multiple-instances"><span class="nav-number">5.5.1.</span> <span class="nav-text">Provider for multiple instances</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Providers-for-lazy-loading"><span class="nav-number">5.5.2.</span> <span class="nav-text">Providers for lazy loading</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Providers-for-Mixing-Scopes"><span class="nav-number">5.5.3.</span> <span class="nav-text">Providers for Mixing Scopes</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AOP"><span class="nav-number">6.</span> <span class="nav-text">AOP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Aspect-Oriented-Programming"><span class="nav-number">6.1.</span> <span class="nav-text">Aspect Oriented Programming</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#References"><span class="nav-number">7.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#More-Questions"><span class="nav-number">8.</span> <span class="nav-text">More Questions</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Motivation"><span class="nav-number">2.</span> <span class="nav-text">Motivation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Dependency-Injection"><span class="nav-number">2.1.</span> <span class="nav-text">Dependency Injection</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dependency-Injection-with-Guice"><span class="nav-number">2.2.</span> <span class="nav-text">Dependency Injection with Guice</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bindings"><span class="nav-number">3.</span> <span class="nav-text">Bindings</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Creating-Bindings"><span class="nav-number">3.1.</span> <span class="nav-text">Creating Bindings</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Linked-Bindings"><span class="nav-number">3.2.</span> <span class="nav-text">Linked Bindings</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Binding-Annotations"><span class="nav-number">3.3.</span> <span class="nav-text">Binding Annotations</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Named"><span class="nav-number">3.3.1.</span> <span class="nav-text">@Named</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Instance-Bindings"><span class="nav-number">3.4.</span> <span class="nav-text">Instance Bindings</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Provides-Methods"><span class="nav-number">3.5.</span> <span class="nav-text">@Provides Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Throwing-Exceptions"><span class="nav-number">3.5.1.</span> <span class="nav-text">Throwing Exceptions</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Provider-Bindings"><span class="nav-number">3.6.</span> <span class="nav-text">Provider Bindings</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Throwing-Exceptions-1"><span class="nav-number">3.6.1.</span> <span class="nav-text">Throwing Exceptions</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Untargeted-Bindings"><span class="nav-number">3.7.</span> <span class="nav-text">Untargeted Bindings</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Constructor-Bindings"><span class="nav-number">3.8.</span> <span class="nav-text">Constructor Bindings</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Built-in-Bindings"><span class="nav-number">3.9.</span> <span class="nav-text">Built-in Bindings</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Just-In-Time-Bindings"><span class="nav-number">3.10.</span> <span class="nav-text">Just-In-Time Bindings</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Eligible-Constructors"><span class="nav-number">3.10.1.</span> <span class="nav-text">Eligible Constructors</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ImplementedBy"><span class="nav-number">3.10.2.</span> <span class="nav-text">@ImplementedBy</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ProvidedBy"><span class="nav-number">3.10.3.</span> <span class="nav-text">@ProvidedBy</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Scopes"><span class="nav-number">4.</span> <span class="nav-text">Scopes</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Applying-Scopes"><span class="nav-number">4.1.</span> <span class="nav-text">Applying Scopes</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Injections"><span class="nav-number">5.</span> <span class="nav-text">Injections</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Injections-1"><span class="nav-number">5.1.</span> <span class="nav-text">Injections</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Constructor-Injection"><span class="nav-number">5.1.1.</span> <span class="nav-text">Constructor Injection</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Method-Injection"><span class="nav-number">5.1.2.</span> <span class="nav-text">Method Injection</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Field-Injection"><span class="nav-number">5.1.3.</span> <span class="nav-text">Field Injection</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Optional-Injections"><span class="nav-number">5.1.4.</span> <span class="nav-text">Optional Injections</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#On-demand-Injection"><span class="nav-number">5.2.</span> <span class="nav-text">On-demand Injection</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Static-Injections"><span class="nav-number">5.3.</span> <span class="nav-text">Static Injections</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Automatic-Injection"><span class="nav-number">5.4.</span> <span class="nav-text">Automatic Injection</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Injecting-Providers"><span class="nav-number">5.5.</span> <span class="nav-text">Injecting Providers</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Provider-for-multiple-instances"><span class="nav-number">5.5.1.</span> <span class="nav-text">Provider for multiple instances</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Providers-for-lazy-loading"><span class="nav-number">5.5.2.</span> <span class="nav-text">Providers for lazy loading</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Providers-for-Mixing-Scopes"><span class="nav-number">5.5.3.</span> <span class="nav-text">Providers for Mixing Scopes</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AOP"><span class="nav-number">6.</span> <span class="nav-text">AOP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Aspect-Oriented-Programming"><span class="nav-number">6.1.</span> <span class="nav-text">Aspect Oriented Programming</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#References"><span class="nav-number">7.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#More-Questions"><span class="nav-number">8.</span> <span class="nav-text">More Questions</span></a></li></ol></div>
             
 
           </div>
@@ -731,7 +730,7 @@
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
@@ -927,7 +926,24 @@
       
       renderGitment();
       
-      </script>
+      </script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
     
 
 
