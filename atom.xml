@@ -263,7 +263,7 @@ a^{ [2] < 3 > } = g( W_a^{[2]} [ a^{[2]< 2 >}, a^{[1] < 3 >} ] + b_a^{[2]} )</sc
     <link href="http://houjp.com/2018/04/06/cnn-w4/"/>
     <id>http://houjp.com/2018/04/06/cnn-w4/</id>
     <published>2018-04-06T14:40:27.000Z</published>
-    <updated>2018-04-14T12:37:27.977Z</updated>
+    <updated>2018-04-21T15:49:43.154Z</updated>
     
     <content type="html"><![CDATA[<h3 id="What-is-Face-Recognition"><a href="#What-is-Face-Recognition" class="headerlink" title="What is Face Recognition"></a>What is Face Recognition</h3><p>这里区分两个概念，<code>Face verification</code>和<code>Face recognition</code>，</p>
 <ul>
@@ -373,7 +373,7 @@ J(G) = \alpha J_{content}(C, G) + \beta J_{style}(S, G)</script><p>下面介绍S
     <link href="http://houjp.com/2018/04/06/cnn-w3/"/>
     <id>http://houjp.com/2018/04/06/cnn-w3/</id>
     <published>2018-04-06T03:24:21.000Z</published>
-    <updated>2018-04-14T12:37:27.976Z</updated>
+    <updated>2018-04-21T15:49:40.321Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Object-Localization"><a href="#Object-Localization" class="headerlink" title="Object Localization"></a>Object Localization</h3><p>Object localization用来识别图像中是否包含特定对象以及该对象的位置，并最终使用一个矩形框在图像中标出该特定对象。为了简化问题，在这里我们假设图片中最多包含一个待识别的对象。下面对问题进行形式化描述。</p>
 <p>定义目标变量$y$ (同时也是神经网络的输出层)，</p>
