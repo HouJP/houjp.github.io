@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://houjp.com/"/>
-  <updated>2018-04-21T12:15:56.691Z</updated>
+  <updated>2018-04-23T10:12:02.056Z</updated>
   <id>http://houjp.com/</id>
   
   <author>
@@ -14,6 +14,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SSH Notes</title>
+    <link href="http://houjp.com/2018/04/23/ssh-notes/"/>
+    <id>http://houjp.com/2018/04/23/ssh-notes/</id>
+    <published>2018-04-23T09:42:52.000Z</published>
+    <updated>2018-04-23T10:12:02.056Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="配置跳板机"><a href="#配置跳板机" class="headerlink" title="配置跳板机"></a>配置跳板机</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> 通过命令行</div><div class="line">ssh username@目标机器IP -p 22 -o ProxyCommand='ssh -p 22 username@跳板机IP -W %h:%p'</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> 通过ssh config</div><div class="line">vim ~/.ssh/config</div><div class="line"></div><div class="line">Host tiaoban				# 跳板机别名</div><div class="line">    HostName 192.168.1.1	# 跳板机IP/HostName</div><div class="line">    Port 22      			# 跳板机端口</div><div class="line">    User username_tiaoban	# 跳板机用户</div><div class="line"></div><div class="line">Host nginx      			# 目的主机别名</div><div class="line">    HostName 192.168.1.2  	# 目的主机IP/HostName</div><div class="line">    Port 22   				# 目的主机端口</div><div class="line">    User username   		# 目的主机用户</div><div class="line">    ProxyCommand ssh username_tiaoban@tiaoban -W %h:%p</div><div class="line"></div><div class="line">Host 10.10.0.*      		# 批量配置目的主机</div><div class="line">    Port 22   				# 目的主机端口</div><div class="line">    User username   		# 目的主机用户</div><div class="line">    ProxyCommand ssh username_tiaoban@tiaoban -W %h:%p</div><div class="line"></div><div class="line"><span class="meta">#</span> 通过nginx登录</div><div class="line">ssh nginx</div><div class="line"></div><div class="line"><span class="meta">#</span> 通过批量配置登录</div><div class="line">ssh username@10.10.0.&#123;&#125;		# &#123;&#125; 需要根据需要填充</div></pre></td></tr></table></figure>
+<h3 id="免密登录"><a href="#免密登录" class="headerlink" title="免密登录"></a>免密登录</h3><p>如果想在A服务器上不需要密码登录到B服务器，那么需要将A服务器的公钥放到B服务器上，具体如下。</p>
+<ol>
+<li><p>在A服务器上生成公钥。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> located at A server</div><div class="line">ssh-keygen -t rsa</div><div class="line">cat ~/.ssh/id_rsa.pub</div></pre></td></tr></table></figure>
+</li>
+<li><p>将A服务器的公钥拷贝到B服务器的<code>authorized_keys</code>文件中。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> located at B server</div><div class="line">vim ~/.ssh/authorized_keys</div><div class="line">chmod 600 ~/.ssh/authorized_keys</div></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;配置跳板机&quot;&gt;&lt;a href=&quot;#配置跳板机&quot; class=&quot;headerlink&quot; title=&quot;配置跳板机&quot;&gt;&lt;/a&gt;配置跳板机&lt;/h3&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt; 通过命令行&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;ssh username@目标机器IP -p 22 -o ProxyCommand=&#39;ssh -p 22 username@跳板机IP -W %h:%p&#39;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="ssh" scheme="http://houjp.com/tags/ssh/"/>
+    
+  </entry>
   
   <entry>
     <title>Recurrent Neural Networks / Week 3</title>

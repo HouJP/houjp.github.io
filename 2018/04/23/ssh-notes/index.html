@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="deep-learning,cnn," />
+  <meta name="keywords" content="ssh," />
 
 
 
@@ -83,17 +83,17 @@
 
 
 
-<meta name="description" content="Object LocalizationObject localization用来识别图像中是否包含特定对象以及该对象的位置，并最终使用一个矩形框在图像中标出该特定对象。为了简化问题，在这里我们假设图片中最多包含一个待识别的对象。下面对问题进行形式化描述。 定义目标变量$y$ (同时也是神经网络的输出层)，  y = [P_c~b_x~b_y~b_h~b_w~C_1~C_2~C_3]^T \tag{">
-<meta name="keywords" content="deep-learning,cnn">
+<meta name="description" content="配置跳板机12# 通过命令行ssh username@目标机器IP -p 22 -o ProxyCommand=&apos;ssh -p 22 username@跳板机IP -W %h:%p&apos;">
+<meta name="keywords" content="ssh">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Convolutional Neural Networks &#x2F; Week 3">
-<meta property="og:url" content="http://houjp.com/2018/04/06/cnn-w3/index.html">
+<meta property="og:title" content="SSH Notes">
+<meta property="og:url" content="http://houjp.com/2018/04/23/ssh-notes/index.html">
 <meta property="og:site_name" content="#include&amp;lt;AI&amp;gt;">
-<meta property="og:description" content="Object LocalizationObject localization用来识别图像中是否包含特定对象以及该对象的位置，并最终使用一个矩形框在图像中标出该特定对象。为了简化问题，在这里我们假设图片中最多包含一个待识别的对象。下面对问题进行形式化描述。 定义目标变量$y$ (同时也是神经网络的输出层)，  y = [P_c~b_x~b_y~b_h~b_w~C_1~C_2~C_3]^T \tag{">
-<meta property="og:updated_time" content="2018-04-21T15:49:40.321Z">
+<meta property="og:description" content="配置跳板机12# 通过命令行ssh username@目标机器IP -p 22 -o ProxyCommand=&apos;ssh -p 22 username@跳板机IP -W %h:%p&apos;">
+<meta property="og:updated_time" content="2018-04-23T10:12:02.056Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Convolutional Neural Networks &#x2F; Week 3">
-<meta name="twitter:description" content="Object LocalizationObject localization用来识别图像中是否包含特定对象以及该对象的位置，并最终使用一个矩形框在图像中标出该特定对象。为了简化问题，在这里我们假设图片中最多包含一个待识别的对象。下面对问题进行形式化描述。 定义目标变量$y$ (同时也是神经网络的输出层)，  y = [P_c~b_x~b_y~b_h~b_w~C_1~C_2~C_3]^T \tag{">
+<meta name="twitter:title" content="SSH Notes">
+<meta name="twitter:description" content="配置跳板机12# 通过命令行ssh username@目标机器IP -p 22 -o ProxyCommand=&apos;ssh -p 22 username@跳板机IP -W %h:%p&apos;">
 
 
 
@@ -123,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://houjp.com/2018/04/06/cnn-w3/"/>
+  <link rel="canonical" href="http://houjp.com/2018/04/23/ssh-notes/"/>
 
 
 
 
 
-  <title>Convolutional Neural Networks / Week 3 | #include&lt;AI&gt;</title>
+  <title>SSH Notes | #include&lt;AI&gt;</title>
   
 
 
@@ -265,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://houjp.com/2018/04/06/cnn-w3/">
+    <link itemprop="mainEntityOfPage" href="http://houjp.com/2018/04/23/ssh-notes/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HouJP">
@@ -282,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Convolutional Neural Networks / Week 3</h1>
+          <h1 class="post-title" itemprop="name headline">SSH Notes</h1>
         
 
         <div class="post-meta">
@@ -294,8 +294,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-06T11:24:21+08:00">
-                2018-04-06
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-23T17:42:52+08:00">
+                2018-04-23
               </time>
             
 
@@ -313,8 +313,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/04/06/cnn-w3/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/04/06/cnn-w3/" itemprop="commentsCount"></span>
+                <a href="/2018/04/23/ssh-notes/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/04/23/ssh-notes/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -342,47 +342,19 @@
       
 
       
-        <h3 id="Object-Localization"><a href="#Object-Localization" class="headerlink" title="Object Localization"></a>Object Localization</h3><p>Object localization用来识别图像中是否包含特定对象以及该对象的位置，并最终使用一个矩形框在图像中标出该特定对象。为了简化问题，在这里我们假设图片中最多包含一个待识别的对象。下面对问题进行形式化描述。</p>
-<p>定义目标变量$y$ (同时也是神经网络的输出层)，</p>
-<script type="math/tex; mode=display">
-y = [P_c~b_x~b_y~b_h~b_w~C_1~C_2~C_3]^T
-\tag{1}</script><a id="more"></a>
-<p>其中，$P_c$表示图像中是否包含特定对象，$(b_x, b_y)$表示特定对象的中心位置在图像中的坐标（图像左上角坐标为$(0,0)$，右下角坐标为$(1,1)$），$b_h,b_w$分别表示特定对象的高度和宽度，$C_1-C_3$表示特定对象的类型（行人，汽车，摩托车）。</p>
-<p>定义损失函数$\mathcal{L(\hat{y}, y)}$，</p>
-<script type="math/tex; mode=display">
-\mathcal{L}(\hat{y}, y) = 
-\begin{split}
-\begin{cases}
-\sum_{i=1}^{i=8} (\hat{y}_i - y_i)^2,&~if~y_1=1 \\\\
-(\hat{y}_1 - y_1)^2,&~if~y_1=0
-\end{cases}
-\end{split}</script><p>这里针对不同的维度都使用了平方差损失函数，可以针对不同的维度使用不同的损失函数。</p>
-<h3 id="Landmark-Detection"><a href="#Landmark-Detection" class="headerlink" title="Landmark Detection"></a>Landmark Detection</h3><p> 有时候我们需要识别图中的一些关键点的坐标，这些坐标称为Landmarks。这时候，我们可以定义如下的目标变量$y$，</p>
-<script type="math/tex; mode=display">
-y = [P~l_{1x}~l_{1y}~\dots~l_{nx}~l_{ny}]^T</script><p>以识别人面部眼角嘴角为例，其中$P$代表是否包含人脸，$(l<em>{ix}, l</em>{iy})$代表关键点的坐标。</p>
-<h3 id="Object-Detection"><a href="#Object-Detection" class="headerlink" title="Object Detection"></a>Object Detection</h3><p> Object Detction的其中一种办法叫做Sliding windows detection，采用不同尺寸的矩形框，从左至右、从上到下遍历枚举图像的子图，判断子图中是否包含需要的目标对象。很明显，这种办法比较笨，需要消耗大量的计算量。</p>
-<h3 id="Convolutional-Implementation-of-Sliding-Windows"><a href="#Convolutional-Implementation-of-Sliding-Windows" class="headerlink" title="Convolutional Implementation of Sliding Windows"></a>Convolutional Implementation of Sliding Windows</h3><p>全连接是可以通过卷积来实现的，并且两者直接是等价的。例如，如果$5\times 5 \times 16$的卷积层之后接的是一个$400$个神经元的全连接层，那么它等价于$5 \times 5 \times 16$的卷积层之后采用400个$5 \times 5 \times 16$的filters得到的$1 \times 1 \times 400$的卷积层。</p>
-<p>得益于卷积的存在，Sliding windows detection可以做到同时预测同一张图像不同子图中是否包含特定对象。但是这样做的不利条件是预测出来的对象的边界（bounding box）会相对不准确。因为这种办法采用的是子图的边界来作为待预测对象的边界。 </p>
-<h3 id="Bounding-Box-Predictions"><a href="#Bounding-Box-Predictions" class="headerlink" title="Bounding Box Predictions"></a>Bounding Box Predictions</h3><p>这里介绍了YOLO algorithm (You Only Look Once)，该算法用来识别同一张图像上的多个目标简单。它将图像切分为了$M \times N$的网格并在此基础上构造了卷积神经网络。该网络的输入依然为整张图片，切分并不影响输入，而是决定了网络的输出尺寸为$M \times N \times 8$。这样，每个子图就拥有了一个$1 \times 1 \times 8$的预测结果，用来表示图像中是否包含特定的对象，如果包含的话，该特定对象的中心位置、长宽以及类别分别是什么。</p>
-<p>该算法利用了卷积操作提高了对同一张图像上不同子图的模型训练预测的效率，使得一次训练就可以完成对多个子图的建模（这里有个假设，就是每个子图上只包含最多一个特定对象）。</p>
-<h3 id="Intersection-Over-Union"><a href="#Intersection-Over-Union" class="headerlink" title="Intersection Over Union"></a>Intersection Over Union</h3><script type="math/tex; mode=display">
-Intersection over Union (loU) = \frac{size~of~intersection}{size~of~union}</script><p>通过loU，我们可以知道两个矩形在大小和位置上的相像程度。这样，我们就可以用它来评价object detection算法的优劣。</p>
-<h3 id="Non-max-Suppression"><a href="#Non-max-Suppression" class="headerlink" title="Non-max Suppression"></a>Non-max Suppression</h3><p>有时候，我们的算法会将相同的对象识别多次，non-max suppression算法用来解决这个问题。举例，</p>
-<p>假设卷积神经网络最后的输出为$19 \times 19 \times 5$，也就是说图像被切分为了$19 \times 19$的子图，每个子图的预测结果为一个5维的向量，该向量如下，</p>
-<script type="math/tex; mode=display">
-y = [p_c~b_x~b_y~b_h~b_w]^T</script><p>那么，在训练结束之后，non-max suppression算法会执行如下步骤，</p>
+        <h3 id="配置跳板机"><a href="#配置跳板机" class="headerlink" title="配置跳板机"></a>配置跳板机</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> 通过命令行</div><div class="line">ssh username@目标机器IP -p 22 -o ProxyCommand='ssh -p 22 username@跳板机IP -W %h:%p'</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> 通过ssh config</div><div class="line">vim ~/.ssh/config</div><div class="line"></div><div class="line">Host tiaoban				# 跳板机别名</div><div class="line">    HostName 192.168.1.1	# 跳板机IP/HostName</div><div class="line">    Port 22      			# 跳板机端口</div><div class="line">    User username_tiaoban	# 跳板机用户</div><div class="line"></div><div class="line">Host nginx      			# 目的主机别名</div><div class="line">    HostName 192.168.1.2  	# 目的主机IP/HostName</div><div class="line">    Port 22   				# 目的主机端口</div><div class="line">    User username   		# 目的主机用户</div><div class="line">    ProxyCommand ssh username_tiaoban@tiaoban -W %h:%p</div><div class="line"></div><div class="line">Host 10.10.0.*      		# 批量配置目的主机</div><div class="line">    Port 22   				# 目的主机端口</div><div class="line">    User username   		# 目的主机用户</div><div class="line">    ProxyCommand ssh username_tiaoban@tiaoban -W %h:%p</div><div class="line"></div><div class="line"><span class="meta">#</span> 通过nginx登录</div><div class="line">ssh nginx</div><div class="line"></div><div class="line"><span class="meta">#</span> 通过批量配置登录</div><div class="line">ssh username@10.10.0.&#123;&#125;		# &#123;&#125; 需要根据需要填充</div></pre></td></tr></table></figure>
+<h3 id="免密登录"><a href="#免密登录" class="headerlink" title="免密登录"></a>免密登录</h3><p>如果想在A服务器上不需要密码登录到B服务器，那么需要将A服务器的公钥放到B服务器上，具体如下。</p>
 <ol>
-<li>扔掉所有$p_c \le 0.6$的bounding boxes</li>
-<li>取出剩余bounding boxes中$p_c$最大的那个bounding box，作为新检测到的目标</li>
-<li>删除剩余所有与该box的loU值$\ge 0.5$的bounding boxes</li>
-<li>重复(2-3)步，直到没有bounding boxes剩余</li>
+<li><p>在A服务器上生成公钥。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> located at A server</div><div class="line">ssh-keygen -t rsa</div><div class="line">cat ~/.ssh/id_rsa.pub</div></pre></td></tr></table></figure>
+</li>
+<li><p>将A服务器的公钥拷贝到B服务器的<code>authorized_keys</code>文件中。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> located at B server</div><div class="line">vim ~/.ssh/authorized_keys</div><div class="line">chmod 600 ~/.ssh/authorized_keys</div></pre></td></tr></table></figure>
+<p>​</p>
+</li>
 </ol>
-<p>从上可以看出，non-max suppression其实是个简单的贪心算法。</p>
-<h3 id="Anchor-Boxes"><a href="#Anchor-Boxes" class="headerlink" title="Anchor Boxes"></a>Anchor Boxes</h3><p>在Object detection问题中，还有一个难点就是图像划分出网格后，每个网格中只能最多识别一个对象。为了让单个网格识别多个对象，可以采用Anchor boxes方法。</p>
-<p>Anchor boxes方法的思想很简单，将式(1)改为如下形式，</p>
-<script type="math/tex; mode=display">
-y = [P_c~b_x~b_y~b_h~b_w~C_1~C_2~C_3~P_c~b_x~b_y~b_h~b_w~C_1~C_2~C_3]^T 
-\tag{2}</script><p>式(2)表示在识别的过程中采用了两个Anchor box。每个Anchor box都负责识别所有类别的对象。</p>
 
       
     </div>
@@ -400,9 +372,7 @@ y = [P_c~b_x~b_y~b_h~b_w~C_1~C_2~C_3~P_c~b_x~b_y~b_h~b_w~C_1~C_2~C_3]^T
       
         <div class="post-tags">
           
-            <a href="/tags/deep-learning/" rel="tag"># deep-learning</a>
-          
-            <a href="/tags/cnn/" rel="tag"># cnn</a>
+            <a href="/tags/ssh/" rel="tag"># ssh</a>
           
         </div>
       
@@ -415,8 +385,8 @@ y = [P_c~b_x~b_y~b_h~b_w~C_1~C_2~C_3~P_c~b_x~b_y~b_h~b_w~C_1~C_2~C_3]^T
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/02/cnn-w2/" rel="next" title="Convolutional Neural Networks / Week 2">
-                <i class="fa fa-chevron-left"></i> Convolutional Neural Networks / Week 2
+              <a href="/2018/04/21/rnn-w3/" rel="next" title="Recurrent Neural Networks / Week 3">
+                <i class="fa fa-chevron-left"></i> Recurrent Neural Networks / Week 3
               </a>
             
           </div>
@@ -424,10 +394,6 @@ y = [P_c~b_x~b_y~b_h~b_w~C_1~C_2~C_3~P_c~b_x~b_y~b_h~b_w~C_1~C_2~C_3]^T
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/06/cnn-w4/" rel="prev" title="Convolutional Neural Networks / Week 4">
-                Convolutional Neural Networks / Week 4 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -566,7 +532,7 @@ y = [P_c~b_x~b_y~b_h~b_w~C_1~C_2~C_3~P_c~b_x~b_y~b_h~b_w~C_1~C_2~C_3]^T
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-Localization"><span class="nav-number">1.</span> <span class="nav-text">Object Localization</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Landmark-Detection"><span class="nav-number">2.</span> <span class="nav-text">Landmark Detection</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-Detection"><span class="nav-number">3.</span> <span class="nav-text">Object Detection</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Convolutional-Implementation-of-Sliding-Windows"><span class="nav-number">4.</span> <span class="nav-text">Convolutional Implementation of Sliding Windows</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bounding-Box-Predictions"><span class="nav-number">5.</span> <span class="nav-text">Bounding Box Predictions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Intersection-Over-Union"><span class="nav-number">6.</span> <span class="nav-text">Intersection Over Union</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Non-max-Suppression"><span class="nav-number">7.</span> <span class="nav-text">Non-max Suppression</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Anchor-Boxes"><span class="nav-number">8.</span> <span class="nav-text">Anchor Boxes</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置跳板机"><span class="nav-number">1.</span> <span class="nav-text">配置跳板机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#免密登录"><span class="nav-number">2.</span> <span class="nav-text">免密登录</span></a></li></ol></div>
             
 
           </div>
@@ -792,7 +758,24 @@ y = [P_c~b_x~b_y~b_h~b_w~C_1~C_2~C_3~P_c~b_x~b_y~b_h~b_w~C_1~C_2~C_3]^T
       
       renderGitment();
       
-      </script>
+      </script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
     
 
 
@@ -817,43 +800,6 @@ y = [P_c~b_x~b_y~b_h~b_w~C_1~C_2~C_3~P_c~b_x~b_y~b_h~b_w~C_1~C_2~C_3]^T
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config("");
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-<script type="text/javascript" src="custom_mathjax_source">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
   
 
 
