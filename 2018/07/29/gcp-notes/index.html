@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="deep-learning,cnn," />
+  <meta name="keywords" content="google-cloud-platform," />
 
 
 
@@ -83,17 +83,17 @@
 
 
 
-<meta name="description" content="What is Face Recognition这里区分两个概念，Face verification和Face recognition，  Verification 输入：图像 + 名字/ID 输出：输入的图像上是否有名字/ID表示的那个人   Recognition 数据库中有$K$个人 输入：图像 输出：图像上有的数据库中的人的名字/ID    很明显，Recognition比Verifica">
-<meta name="keywords" content="deep-learning,cnn">
+<meta name="description" content="防火墙配置1234# 检查现有规则gcloud compute firewall-rules list# 开放ssh端口gcloud compute firewall-rules create default-allow-ssh --allow tcp:22">
+<meta name="keywords" content="google-cloud-platform">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Convolutional Neural Networks &#x2F; Week 4">
-<meta property="og:url" content="http://houjp.com/2018/04/06/cnn-w4/index.html">
+<meta property="og:title" content="Google Cloud Platform Notes">
+<meta property="og:url" content="http://houjp.com/2018/07/29/gcp-notes/index.html">
 <meta property="og:site_name" content="#include&amp;lt;AI&amp;gt;">
-<meta property="og:description" content="What is Face Recognition这里区分两个概念，Face verification和Face recognition，  Verification 输入：图像 + 名字/ID 输出：输入的图像上是否有名字/ID表示的那个人   Recognition 数据库中有$K$个人 输入：图像 输出：图像上有的数据库中的人的名字/ID    很明显，Recognition比Verifica">
-<meta property="og:updated_time" content="2018-04-21T15:49:43.154Z">
+<meta property="og:description" content="防火墙配置1234# 检查现有规则gcloud compute firewall-rules list# 开放ssh端口gcloud compute firewall-rules create default-allow-ssh --allow tcp:22">
+<meta property="og:updated_time" content="2018-07-29T01:45:27.941Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Convolutional Neural Networks &#x2F; Week 4">
-<meta name="twitter:description" content="What is Face Recognition这里区分两个概念，Face verification和Face recognition，  Verification 输入：图像 + 名字/ID 输出：输入的图像上是否有名字/ID表示的那个人   Recognition 数据库中有$K$个人 输入：图像 输出：图像上有的数据库中的人的名字/ID    很明显，Recognition比Verifica">
+<meta name="twitter:title" content="Google Cloud Platform Notes">
+<meta name="twitter:description" content="防火墙配置1234# 检查现有规则gcloud compute firewall-rules list# 开放ssh端口gcloud compute firewall-rules create default-allow-ssh --allow tcp:22">
 
 
 
@@ -123,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://houjp.com/2018/04/06/cnn-w4/"/>
+  <link rel="canonical" href="http://houjp.com/2018/07/29/gcp-notes/"/>
 
 
 
 
 
-  <title>Convolutional Neural Networks / Week 4 | #include&lt;AI&gt;</title>
+  <title>Google Cloud Platform Notes | #include&lt;AI&gt;</title>
   
 
 
@@ -265,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://houjp.com/2018/04/06/cnn-w4/">
+    <link itemprop="mainEntityOfPage" href="http://houjp.com/2018/07/29/gcp-notes/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HouJP">
@@ -282,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Convolutional Neural Networks / Week 4</h1>
+          <h1 class="post-title" itemprop="name headline">Google Cloud Platform Notes</h1>
         
 
         <div class="post-meta">
@@ -294,8 +294,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-06T22:40:27+08:00">
-                2018-04-06
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-29T09:42:50+08:00">
+                2018-07-29
               </time>
             
 
@@ -313,8 +313,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/04/06/cnn-w4/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/04/06/cnn-w4/" itemprop="commentsCount"></span>
+                <a href="/2018/07/29/gcp-notes/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/07/29/gcp-notes/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -342,81 +342,8 @@
       
 
       
-        <h3 id="What-is-Face-Recognition"><a href="#What-is-Face-Recognition" class="headerlink" title="What is Face Recognition"></a>What is Face Recognition</h3><p>这里区分两个概念，<code>Face verification</code>和<code>Face recognition</code>，</p>
-<ul>
-<li>Verification<ul>
-<li>输入：图像 + 名字/ID</li>
-<li>输出：输入的图像上是否有名字/ID表示的那个人</li>
-</ul>
-</li>
-<li>Recognition<ul>
-<li>数据库中有$K$个人</li>
-<li>输入：图像</li>
-<li>输出：图像上有的数据库中的人的名字/ID</li>
-</ul>
-</li>
-</ul>
-<p>很明显，Recognition比Verification的难度要大得多。</p>
+        <h3 id="防火墙配置"><a href="#防火墙配置" class="headerlink" title="防火墙配置"></a>防火墙配置</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> 检查现有规则</div><div class="line">gcloud compute firewall-rules list</div><div class="line"><span class="meta">#</span> 开放ssh端口</div><div class="line">gcloud compute firewall-rules create default-allow-ssh --allow tcp:22</div></pre></td></tr></table></figure>
 <a id="more"></a>
-<h3 id="One-Shot-Learning"><a href="#One-Shot-Learning" class="headerlink" title="One Shot Learning"></a>One Shot Learning</h3><p>什么是One-shot learning，</p>
-<blockquote>
-<p>Learning from one example to recognize the person again.</p>
-</blockquote>
-<p>很多时候公司的数据库中只有一张员工的照片，那么我们在做人脸识别系统的时候怎么根据这一张照片来再次识别相同的人的影像？如果用传统的卷积神经网络来做的话，因为训练数据很小，所以通常效果并不理想。</p>
-<p>在这种情况下，我们应该学习”similarity” function,</p>
-<script type="math/tex; mode=display">
-d(img1, img2) = degree~of~difference~between~images</script><p>然后可以根据Similarity function完成verification,</p>
-<script type="math/tex; mode=display">
-\begin{split}
-If~d(img1, img2) &\le \tau~same\\\\
-&> \tau~different
-\end{split}</script><h3 id="Siamese-Network"><a href="#Siamese-Network" class="headerlink" title="Siamese Network"></a>Siamese Network</h3><p>Parameters of NN define an encoding $f(x^{(i)})$</p>
-<p>Learn parameters so that:</p>
-<ul>
-<li>If $x^{(i)}, x^{(j)}$ are the same person, $| f(x^{(i)}) - f(x^{(j)}) |^2$ is small</li>
-<li>If $x^{(i)}, x^{(j)}$ are the different person, $| f(x^{(i)}) - f(x^{(j)}) |^2$ is large</li>
-</ul>
-<p>那么，该网络学习的目标函数应该怎么定义呢？</p>
-<h3 id="Triple-Loss"><a href="#Triple-Loss" class="headerlink" title="Triple Loss"></a>Triple Loss</h3><p>在Triple loss中，基准人脸图像称为Anchor image，正样本为Positive image，负样本为Negative image，那么我们希望得到的是，</p>
-<script type="math/tex; mode=display">
-\|f(A) - f(P) \| ^2 \le \| f(A) - f(N) \| ^2</script><p>也就是，</p>
-<script type="math/tex; mode=display">
-\|f(A) - f(P) \| ^2 - \| f(A) - f(N) \| ^2 \le 0</script><p>这里有个问题，如果$f$始终预测0，那么上述条件始终满足。为了防止这种情况发生，所以需要增加一个超参$\alpha$，也称为margin，</p>
-<script type="math/tex; mode=display">
-\|f(A) - f(P) \| ^2 - \| f(A) - f(N) \| ^2 + \alpha \le 0</script><p>下面对Loss function进行形式化定义，给定3个图像 A, P, N，</p>
-<script type="math/tex; mode=display">
-\mathcal{L}(A, P, N) = max(\|f(A) - f(P)\|^2 -\|f(A) - f(N)\|^2  + \alpha, 0)</script><p>在整体样本上的损失为，</p>
-<script type="math/tex; mode=display">
-J = \sum_{i=1}^{M} \mathcal{L}(A^{(i)}, P^{(i)}, N^{(i)})</script><p>很明显，在训练样本中，一个人需要有多张照片才能组合出这样的三元组。</p>
-<p>那么，应该怎么选择三元组呢，</p>
-<ul>
-<li>During training, if A, P, N are chsen randomly, $d(A, P) + \alpha \le d(A, N)$ is easily satisfied.<ul>
-<li>这种方法容易选择，但是训练出来的模型效果一般</li>
-</ul>
-</li>
-<li>Choose triplets that’re “hard” to train on.<ul>
-<li>这种方法不容易选择，但是模型能学习到更多的信息。</li>
-</ul>
-</li>
-</ul>
-<h3 id="Face-Verification-and-Binary-Classification"><a href="#Face-Verification-and-Binary-Classification" class="headerlink" title="Face Verification and Binary Classification"></a>Face Verification and Binary Classification</h3><p>另一种similarity function，以一对图像作为输入，</p>
-<script type="math/tex; mode=display">
-\hat{y} = \delta ( \sum_{k=1}^{128} w_i | f(x^{(i)})_k - f(x^{(j)})_k   | + b  )</script><p>其中，$f(x^{(i)})$表示对第i张图像的128维的embedding表达。</p>
-<h3 id="What-are-deep-ConvNets-Learning"><a href="#What-are-deep-ConvNets-Learning" class="headerlink" title="What are deep ConvNets Learning"></a>What are deep ConvNets Learning</h3><p>这里介绍了怎么将卷积神经网络的hidden layer可视化。以第一层为例，</p>
-<blockquote>
-<p>Pick a unit in layer 1. Find the nine image patches that maximize the unit’s activation.</p>
-<p>Repeat for other units.</p>
-</blockquote>
-<p>可以看到，每个unit’s activation针对的方向不同，有的是颜色，有的是不同方向的边。随着网络深度的增加，每个unit’s activation可以看到的图像的范围越来越大。 </p>
-<h3 id="Neural-Style-Transfer-Cost-Function"><a href="#Neural-Style-Transfer-Cost-Function" class="headerlink" title="Neural Style Transfer Cost Function"></a>Neural Style Transfer Cost Function</h3><p>原始内容图片为C，风格图片为S，目标图片为G，那么，</p>
-<script type="math/tex; mode=display">
-J(G) = \alpha J_{content}(C, G) + \beta J_{style}(S, G)</script><p>下面介绍Style matrix,</p>
-<script type="math/tex; mode=display">
-\begin{split}
-& Let~a_{i,j,k}^{[l]} &= activation~at~(i,j,k). G^{[l]}~is~n_c^{[l]} \times n_c^{[l]} \\\\
-\rightarrow & G_{kk'}^{[l]} &= \sum_{i=1}^{n_H^{[l]}} \sum_{j=1}^{[n_W]^{[l]}} a_{ijk}^{[l]} a_{ijk'}^{[l]}
-\end{split}</script><p>其中，$G^{[l]}$为Style matrix。</p>
-
       
     </div>
     
@@ -433,9 +360,7 @@ J(G) = \alpha J_{content}(C, G) + \beta J_{style}(S, G)</script><p>下面介绍S
       
         <div class="post-tags">
           
-            <a href="/tags/deep-learning/" rel="tag"># deep-learning</a>
-          
-            <a href="/tags/cnn/" rel="tag"># cnn</a>
+            <a href="/tags/google-cloud-platform/" rel="tag"># google-cloud-platform</a>
           
         </div>
       
@@ -448,8 +373,8 @@ J(G) = \alpha J_{content}(C, G) + \beta J_{style}(S, G)</script><p>下面介绍S
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/06/cnn-w3/" rel="next" title="Convolutional Neural Networks / Week 3">
-                <i class="fa fa-chevron-left"></i> Convolutional Neural Networks / Week 3
+              <a href="/2018/04/23/ssh-notes/" rel="next" title="SSH Notes">
+                <i class="fa fa-chevron-left"></i> SSH Notes
               </a>
             
           </div>
@@ -457,10 +382,6 @@ J(G) = \alpha J_{content}(C, G) + \beta J_{style}(S, G)</script><p>下面介绍S
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/08/rnn-w1/" rel="prev" title="Recurrent Neural Networks / Week 1">
-                Recurrent Neural Networks / Week 1 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -599,7 +520,7 @@ J(G) = \alpha J_{content}(C, G) + \beta J_{style}(S, G)</script><p>下面介绍S
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-Face-Recognition"><span class="nav-number">1.</span> <span class="nav-text">What is Face Recognition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#One-Shot-Learning"><span class="nav-number">2.</span> <span class="nav-text">One Shot Learning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Siamese-Network"><span class="nav-number">3.</span> <span class="nav-text">Siamese Network</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Triple-Loss"><span class="nav-number">4.</span> <span class="nav-text">Triple Loss</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Face-Verification-and-Binary-Classification"><span class="nav-number">5.</span> <span class="nav-text">Face Verification and Binary Classification</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#What-are-deep-ConvNets-Learning"><span class="nav-number">6.</span> <span class="nav-text">What are deep ConvNets Learning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Neural-Style-Transfer-Cost-Function"><span class="nav-number">7.</span> <span class="nav-text">Neural Style Transfer Cost Function</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#防火墙配置"><span class="nav-number">1.</span> <span class="nav-text">防火墙配置</span></a></li></ol></div>
             
 
           </div>
@@ -825,7 +746,24 @@ J(G) = \alpha J_{content}(C, G) + \beta J_{style}(S, G)</script><p>下面介绍S
       
       renderGitment();
       
-      </script>
+      </script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
     
 
 
@@ -850,43 +788,6 @@ J(G) = \alpha J_{content}(C, G) + \beta J_{style}(S, G)</script><p>下面介绍S
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config("");
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-<script type="text/javascript" src="custom_mathjax_source">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
   
 
 

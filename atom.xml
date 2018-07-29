@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://houjp.com/"/>
-  <updated>2018-04-23T10:12:02.056Z</updated>
+  <updated>2018-07-29T01:45:27.941Z</updated>
   <id>http://houjp.com/</id>
   
   <author>
@@ -14,6 +14,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Google Cloud Platform Notes</title>
+    <link href="http://houjp.com/2018/07/29/gcp-notes/"/>
+    <id>http://houjp.com/2018/07/29/gcp-notes/</id>
+    <published>2018-07-29T01:42:50.000Z</published>
+    <updated>2018-07-29T01:45:27.941Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="防火墙配置"><a href="#防火墙配置" class="headerlink" title="防火墙配置"></a>防火墙配置</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> 检查现有规则</div><div class="line">gcloud compute firewall-rules list</div><div class="line"><span class="meta">#</span> 开放ssh端口</div><div class="line">gcloud compute firewall-rules create default-allow-ssh --allow tcp:22</div></pre></td></tr></table></figure>
+<a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;防火墙配置&quot;&gt;&lt;a href=&quot;#防火墙配置&quot; class=&quot;headerlink&quot; title=&quot;防火墙配置&quot;&gt;&lt;/a&gt;防火墙配置&lt;/h3&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt; 检查现有规则&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;gcloud compute firewall-rules list&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt; 开放ssh端口&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;gcloud compute firewall-rules create default-allow-ssh --allow tcp:22&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="google-cloud-platform" scheme="http://houjp.com/tags/google-cloud-platform/"/>
+    
+  </entry>
   
   <entry>
     <title>SSH Notes</title>
