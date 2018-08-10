@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="ssh," />
+  <meta name="keywords" content="paper,computer-vision," />
 
 
 
@@ -83,17 +83,17 @@
 
 
 
-<meta name="description" content="配置跳板机12# 通过命令行ssh username@目标机器IP -p 22 -o ProxyCommand=&apos;ssh -p 22 username@跳板机IP -W %h:%p&apos;">
-<meta name="keywords" content="ssh">
+<meta name="description" content="BLEU ScoreBLEU (Bilingual Evaluation Understudy Score)，is a metric used to evaluate a generated sentence to a reference sentence. BLEU的范围是[0.0, 1.0]，完美结果为1.0。BLEU的计算公式可以在[1]中找到。 ROUGE ScoreROUGE表示的是Re">
+<meta name="keywords" content="paper,computer-vision">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SSH Notes">
-<meta property="og:url" content="http://houjp.com/2018/04/23/ssh-notes/index.html">
+<meta property="og:title" content="Paper &#x2F; Neural Sign Language Translation">
+<meta property="og:url" content="http://houjp.com/2018/08/09/paper-neural-sign-language-translation/index.html">
 <meta property="og:site_name" content="#include&amp;lt;AI&amp;gt;">
-<meta property="og:description" content="配置跳板机12# 通过命令行ssh username@目标机器IP -p 22 -o ProxyCommand=&apos;ssh -p 22 username@跳板机IP -W %h:%p&apos;">
-<meta property="og:updated_time" content="2018-04-23T10:12:02.056Z">
+<meta property="og:description" content="BLEU ScoreBLEU (Bilingual Evaluation Understudy Score)，is a metric used to evaluate a generated sentence to a reference sentence. BLEU的范围是[0.0, 1.0]，完美结果为1.0。BLEU的计算公式可以在[1]中找到。 ROUGE ScoreROUGE表示的是Re">
+<meta property="og:updated_time" content="2018-08-10T00:25:23.157Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SSH Notes">
-<meta name="twitter:description" content="配置跳板机12# 通过命令行ssh username@目标机器IP -p 22 -o ProxyCommand=&apos;ssh -p 22 username@跳板机IP -W %h:%p&apos;">
+<meta name="twitter:title" content="Paper &#x2F; Neural Sign Language Translation">
+<meta name="twitter:description" content="BLEU ScoreBLEU (Bilingual Evaluation Understudy Score)，is a metric used to evaluate a generated sentence to a reference sentence. BLEU的范围是[0.0, 1.0]，完美结果为1.0。BLEU的计算公式可以在[1]中找到。 ROUGE ScoreROUGE表示的是Re">
 
 
 
@@ -123,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://houjp.com/2018/04/23/ssh-notes/"/>
+  <link rel="canonical" href="http://houjp.com/2018/08/09/paper-neural-sign-language-translation/"/>
 
 
 
 
 
-  <title>SSH Notes | #include&lt;AI&gt;</title>
+  <title>Paper / Neural Sign Language Translation | #include&lt;AI&gt;</title>
   
 
 
@@ -265,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://houjp.com/2018/04/23/ssh-notes/">
+    <link itemprop="mainEntityOfPage" href="http://houjp.com/2018/08/09/paper-neural-sign-language-translation/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HouJP">
@@ -282,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">SSH Notes</h1>
+          <h1 class="post-title" itemprop="name headline">Paper / Neural Sign Language Translation</h1>
         
 
         <div class="post-meta">
@@ -294,8 +294,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-23T17:42:52+08:00">
-                2018-04-23
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-09T23:06:27+08:00">
+                2018-08-09
               </time>
             
 
@@ -313,8 +313,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/04/23/ssh-notes/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/04/23/ssh-notes/" itemprop="commentsCount"></span>
+                <a href="/2018/08/09/paper-neural-sign-language-translation/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/08/09/paper-neural-sign-language-translation/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -342,19 +342,13 @@
       
 
       
-        <h3 id="配置跳板机"><a href="#配置跳板机" class="headerlink" title="配置跳板机"></a>配置跳板机</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> 通过命令行</div><div class="line">ssh username@目标机器IP -p 22 -o ProxyCommand='ssh -p 22 username@跳板机IP -W %h:%p'</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> 通过ssh config</div><div class="line">vim ~/.ssh/config</div><div class="line"></div><div class="line">Host tiaoban				# 跳板机别名</div><div class="line">    HostName 192.168.1.1	# 跳板机IP/HostName</div><div class="line">    Port 22      			# 跳板机端口</div><div class="line">    User username_tiaoban	# 跳板机用户</div><div class="line"></div><div class="line">Host nginx      			# 目的主机别名</div><div class="line">    HostName 192.168.1.2  	# 目的主机IP/HostName</div><div class="line">    Port 22   				# 目的主机端口</div><div class="line">    User username   		# 目的主机用户</div><div class="line">    ProxyCommand ssh username_tiaoban@tiaoban -W %h:%p</div><div class="line"></div><div class="line">Host 10.10.0.*      		# 批量配置目的主机</div><div class="line">    Port 22   				# 目的主机端口</div><div class="line">    User username   		# 目的主机用户</div><div class="line">    ProxyCommand ssh username_tiaoban@tiaoban -W %h:%p</div><div class="line"></div><div class="line"><span class="meta">#</span> 通过nginx登录</div><div class="line">ssh nginx</div><div class="line"></div><div class="line"><span class="meta">#</span> 通过批量配置登录</div><div class="line">ssh username@10.10.0.&#123;&#125;		# &#123;&#125; 需要根据需要填充</div></pre></td></tr></table></figure>
-<h3 id="免密登录"><a href="#免密登录" class="headerlink" title="免密登录"></a>免密登录</h3><p>如果想在A服务器上不需要密码登录到B服务器，那么需要将A服务器的公钥放到B服务器上，具体如下。</p>
-<ol>
-<li><p>在A服务器上生成公钥。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> located at A server</div><div class="line">ssh-keygen -t rsa</div><div class="line">cat ~/.ssh/id_rsa.pub</div></pre></td></tr></table></figure>
-</li>
-<li><p>将A服务器的公钥拷贝到B服务器的<code>authorized_keys</code>文件中。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> located at B server</div><div class="line">vim ~/.ssh/authorized_keys</div><div class="line">chmod 600 ~/.ssh/authorized_keys</div></pre></td></tr></table></figure>
-<p>​</p>
-</li>
-</ol>
+        <h3 id="BLEU-Score"><a href="#BLEU-Score" class="headerlink" title="BLEU Score"></a>BLEU Score</h3><p>BLEU (Bilingual Evaluation Understudy Score)，is a metric used to evaluate a generated sentence to a reference sentence.</p>
+<p>BLEU的范围是[0.0, 1.0]，完美结果为1.0。BLEU的计算公式可以在[1]中找到。</p>
+<h3 id="ROUGE-Score"><a href="#ROUGE-Score" class="headerlink" title="ROUGE Score"></a>ROUGE Score</h3><p>ROUGE表示的是Recall-Oriented Understudy for Gisting Evaluation. 它是用在机器翻译和自动摘要中的评价指标。</p>
+<p>ROUGE的范围是[0.0, 1.0], 完美结果为1.0。ROUGE的计算公式可以在[3]中找到。</p>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p>[1] <a href="http://www.statmt.org/book/slides/08-evaluation.pdf" target="_blank" rel="external">Statistical Machine Translation - Evaluation</a></p>
+<p>[2] <a href="https://machinelearningmastery.com/calculate-bleu-score-for-text-python/" target="_blank" rel="external">A Gentle Introduction to Calculation the BLEU Score for Text in Python</a></p>
+<p>[3] <a href="http://www.aclweb.org/anthology/W04-1013" target="_blank" rel="external">ROUGE: A Package for Automatic Evaluation of Summaries</a></p>
 
       
     </div>
@@ -372,7 +366,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/ssh/" rel="tag"># ssh</a>
+            <a href="/tags/paper/" rel="tag"># paper</a>
+          
+            <a href="/tags/computer-vision/" rel="tag"># computer-vision</a>
           
         </div>
       
@@ -385,8 +381,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/21/rnn-w3/" rel="next" title="Recurrent Neural Networks / Week 3">
-                <i class="fa fa-chevron-left"></i> Recurrent Neural Networks / Week 3
+              <a href="/2018/07/29/gcp-notes/" rel="next" title="Google Cloud Platform Notes">
+                <i class="fa fa-chevron-left"></i> Google Cloud Platform Notes
               </a>
             
           </div>
@@ -394,10 +390,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/29/gcp-notes/" rel="prev" title="Google Cloud Platform Notes">
-                Google Cloud Platform Notes <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -536,7 +528,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置跳板机"><span class="nav-number">1.</span> <span class="nav-text">配置跳板机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#免密登录"><span class="nav-number">2.</span> <span class="nav-text">免密登录</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#BLEU-Score"><span class="nav-number">1.</span> <span class="nav-text">BLEU Score</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ROUGE-Score"><span class="nav-number">2.</span> <span class="nav-text">ROUGE Score</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reference"><span class="nav-number">3.</span> <span class="nav-text">Reference</span></a></li></ol></div>
             
 
           </div>
