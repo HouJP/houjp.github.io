@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://houjp.com/"/>
-  <updated>2018-08-10T00:25:23.157Z</updated>
+  <updated>2018-11-11T02:46:31.671Z</updated>
   <id>http://houjp.com/</id>
   
   <author>
@@ -20,12 +20,13 @@
     <link href="http://houjp.com/2018/08/09/paper-neural-sign-language-translation/"/>
     <id>http://houjp.com/2018/08/09/paper-neural-sign-language-translation/</id>
     <published>2018-08-09T15:06:27.000Z</published>
-    <updated>2018-08-10T00:25:23.157Z</updated>
+    <updated>2018-11-11T02:46:31.671Z</updated>
     
     <content type="html"><![CDATA[<h3 id="BLEU-Score"><a href="#BLEU-Score" class="headerlink" title="BLEU Score"></a>BLEU Score</h3><p>BLEU (Bilingual Evaluation Understudy Score)，is a metric used to evaluate a generated sentence to a reference sentence.</p>
 <p>BLEU的范围是[0.0, 1.0]，完美结果为1.0。BLEU的计算公式可以在[1]中找到。</p>
 <h3 id="ROUGE-Score"><a href="#ROUGE-Score" class="headerlink" title="ROUGE Score"></a>ROUGE Score</h3><p>ROUGE表示的是Recall-Oriented Understudy for Gisting Evaluation. 它是用在机器翻译和自动摘要中的评价指标。</p>
 <p>ROUGE的范围是[0.0, 1.0], 完美结果为1.0。ROUGE的计算公式可以在[3]中找到。</p>
+<a id="more"></a>
 <h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p>[1] <a href="http://www.statmt.org/book/slides/08-evaluation.pdf" target="_blank" rel="external">Statistical Machine Translation - Evaluation</a></p>
 <p>[2] <a href="https://machinelearningmastery.com/calculate-bleu-score-for-text-python/" target="_blank" rel="external">A Gentle Introduction to Calculation the BLEU Score for Text in Python</a></p>
 <p>[3] <a href="http://www.aclweb.org/anthology/W04-1013" target="_blank" rel="external">ROUGE: A Package for Automatic Evaluation of Summaries</a></p>
@@ -33,7 +34,10 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;BLEU-Score&quot;&gt;&lt;a href=&quot;#BLEU-Score&quot; class=&quot;headerlink&quot; title=&quot;BLEU Score&quot;&gt;&lt;/a&gt;BLEU Score&lt;/h3&gt;&lt;p&gt;BLEU (Bilingual Evaluation Understudy 
+      &lt;h3 id=&quot;BLEU-Score&quot;&gt;&lt;a href=&quot;#BLEU-Score&quot; class=&quot;headerlink&quot; title=&quot;BLEU Score&quot;&gt;&lt;/a&gt;BLEU Score&lt;/h3&gt;&lt;p&gt;BLEU (Bilingual Evaluation Understudy Score)，is a metric used to evaluate a generated sentence to a reference sentence.&lt;/p&gt;
+&lt;p&gt;BLEU的范围是[0.0, 1.0]，完美结果为1.0。BLEU的计算公式可以在[1]中找到。&lt;/p&gt;
+&lt;h3 id=&quot;ROUGE-Score&quot;&gt;&lt;a href=&quot;#ROUGE-Score&quot; class=&quot;headerlink&quot; title=&quot;ROUGE Score&quot;&gt;&lt;/a&gt;ROUGE Score&lt;/h3&gt;&lt;p&gt;ROUGE表示的是Recall-Oriented Understudy for Gisting Evaluation. 它是用在机器翻译和自动摘要中的评价指标。&lt;/p&gt;
+&lt;p&gt;ROUGE的范围是[0.0, 1.0], 完美结果为1.0。ROUGE的计算公式可以在[3]中找到。&lt;/p&gt;
     
     </summary>
     
